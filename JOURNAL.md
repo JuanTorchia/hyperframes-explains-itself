@@ -205,3 +205,63 @@ Conclusion:
 The earlier Docker-running failure was transient, likely Docker Desktop still settling after startup. The guide should not present it as a stable HyperFrames bug. Keep `npm run doctor:docker` as a direct Docker preflight because it is explicit and easy to understand, but `npm run doctor` is now consistent with Docker being available.
 
 No Docker render has been run yet.
+
+## 2026-06-07
+
+### First Docker Render
+
+Preflight:
+
+```bash
+npm run check
+npm run doctor:docker
+```
+
+Result:
+
+```text
+npm run check -> 0 lint errors, 1 warning, 0 layout issues
+npm run doctor:docker -> Docker CLI and Docker Desktop server available
+```
+
+Render command:
+
+```bash
+npm run render
+```
+
+The first attempt timed out after 10 minutes while Docker was still building the `hyperframes-renderer:0.6.80` image.
+
+Investigation:
+
+```text
+docker-buildx was still running.
+No MP4 existed in renders/.
+No HyperFrames render container was active yet.
+```
+
+After the Docker image finished building, the render was run again.
+
+Final render result:
+
+```text
+Output: renders/hyperframes-in-60-seconds.mp4
+Size: 1.0 MB
+Render duration reported by HyperFrames: 4m 54.6s
+Video duration: 60.000000 seconds
+Resolution: 1920x1080
+Frame rate: 30fps
+Frames: 1800
+```
+
+Verification command:
+
+```bash
+docker run --rm -v "${PWD}:/work" --entrypoint ffprobe hyperframes-renderer:0.6.80 -v error -select_streams v:0 -show_entries stream=width,height,r_frame_rate,duration,nb_frames -show_entries format=duration,size -of json /work/renders/hyperframes-in-60-seconds.mp4
+```
+
+Notes:
+
+- The `timeline_track_too_dense` warning did not block render. `--strict` blocks lint errors; warnings continue.
+- HyperFrames auto-calibration reduced workers from 2 to 1 because frame capture was expensive.
+- A rendered-video contact sheet was extracted to `video/hyperframes-in-60-seconds/screenshots/render-contact-sheet.jpg`.

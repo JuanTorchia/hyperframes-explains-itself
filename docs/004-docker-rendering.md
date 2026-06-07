@@ -27,7 +27,26 @@ Host FFprobe: not available on PATH
 HyperFrames doctor Docker-running check: passes after Docker Desktop is ready
 ```
 
-This means local non-Docker rendering is blocked, but Docker rendering is the preferred next render test. Use `npm run doctor:docker` as an explicit Docker preflight because it validates the Docker daemon directly.
+This means local non-Docker rendering is blocked, but Docker rendering is the correct render path for this project. Use `npm run doctor:docker` as an explicit Docker preflight because it validates the Docker daemon directly.
+
+## First Render Result
+
+The first Docker render completed on 2026-06-07.
+
+The first attempt timed out while Docker was still building the `hyperframes-renderer:0.6.80` image. After the image build completed, the second render succeeded.
+
+Result:
+
+```text
+Output: renders/hyperframes-in-60-seconds.mp4
+Duration: 60 seconds
+Resolution: 1920x1080
+Frame rate: 30fps
+Frames: 1800
+Size: 1.0 MB
+```
+
+The first Docker render can be slow because the renderer image is built or pulled. Later renders use the cached image.
 
 ## Planned Commands
 
@@ -94,8 +113,9 @@ Use it only when FFmpeg and FFprobe are installed on the host and `npm run docto
 - Docker Desktop must be running before `npm run render`.
 - `npm run doctor` checks the whole HyperFrames environment; `npm run doctor:docker` checks Docker directly.
 - The first Docker render may be slower while the image is prepared.
+- If the first render appears stuck, check whether `docker-buildx` is still building the renderer image before treating it as a failed render.
 - Do not mount or commit `node_modules` into Docker render artifacts.
-- Keep `renders/` ignored until the final MP4 is intentionally produced.
+- Keep generated render files ignored by default, but track `renders/hyperframes-in-60-seconds.mp4` because this tutorial includes the final output.
 - For CI, prefer Docker mode or the official HyperFrames render action rather than installing global tools ad hoc.
 
 ## References

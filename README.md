@@ -26,7 +26,7 @@ The video should explain:
 - The high-level workflow: initialize, preview, render.
 - The final idea: HTML is the source, MP4 is the artifact.
 
-No video has been rendered yet. Render output is pending.
+The first Docker-rendered MP4 has been produced at `renders/hyperframes-in-60-seconds.mp4`.
 
 ## Tools
 
@@ -51,7 +51,7 @@ Validated so far:
 
 ## How To Run Once Ready
 
-This project is partially implemented. The guide is now Docker-first for rendering. Docker CLI access has been validated, but the Docker render itself has not been run yet.
+This project is partially implemented. The guide is Docker-first for rendering, and the first Docker render has completed.
 
 Install dependencies:
 
@@ -83,13 +83,13 @@ Check the composition:
 npm run check
 ```
 
-Render command, pending Docker daemon validation:
+Render the video:
 
 ```bash
 npm run render
 ```
 
-Expected output path once rendering works:
+Output path:
 
 ```text
 renders/hyperframes-in-60-seconds.mp4
@@ -97,7 +97,7 @@ renders/hyperframes-in-60-seconds.mp4
 
 ## Current Project Status
 
-Status: initial implementation in progress.
+Status: first Docker render completed.
 
 Completed:
 
@@ -110,6 +110,9 @@ Completed:
 - `npm run check` run successfully with 0 lint errors and 0 layout issues.
 - `npm run snapshot` captured four verification frames and a contact sheet.
 - Docker-first rendering plan documented.
+- `npm run render` produced `renders/hyperframes-in-60-seconds.mp4`.
+- Rendered MP4 verified with containerized `ffprobe`: 1920x1080, 30fps, 60 seconds, 1800 frames.
+- Rendered MP4 contact sheet extracted to `video/hyperframes-in-60-seconds/screenshots/render-contact-sheet.jpg`.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.
@@ -120,9 +123,7 @@ Completed:
 
 Pending:
 
-- Validate Docker rendering.
 - Keep `npm run doctor:docker` as an explicit Docker preflight for this tutorial.
 - Resolve `npm run doctor` host-local FFmpeg/FFprobe warnings only if local rendering is needed.
-- Preview the composition.
-- Render the final MP4.
-- Document mistakes, fixes, and final results.
+- Review the final MP4 end to end.
+- Decide whether to split the single `index.html` into sub-compositions to remove the timeline density warning.

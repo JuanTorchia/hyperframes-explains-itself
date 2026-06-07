@@ -1,5 +1,7 @@
 node_modules/
-renders/
+renders/*
+!renders/
+!renders/hyperframes-in-60-seconds.mp4
 snapshots/
 .hyperframes/
 .hyperframes-preview*.log

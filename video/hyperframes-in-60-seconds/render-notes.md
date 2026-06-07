@@ -2,7 +2,7 @@
 
 This file will record preview and render attempts for `HyperFrames in 60 Seconds`.
 
-No preview or render has been run yet.
+Preview, snapshots, checks, and the first Docker render have been run.
 
 ## Environment
 
@@ -94,11 +94,63 @@ Decision: keep the first version as a single `index.html` for readability. Split
 
 ## Render Attempts
 
-No render attempts yet.
+### 2026-06-07
+
+Command:
+
+```bash
+npm run render
+```
+
+First attempt:
+
+```text
+Timed out after 10 minutes while Docker was still building hyperframes-renderer:0.6.80.
+```
+
+Investigation:
+
+```text
+docker-buildx was still running.
+No MP4 existed in renders/.
+No HyperFrames render container was active yet.
+```
+
+Second attempt after the Docker image build completed:
+
+```text
+Render completed.
+Output: renders/hyperframes-in-60-seconds.mp4
+Size: 1.0 MB
+HyperFrames reported render time: 4m 54.6s
+```
+
+Containerized `ffprobe` verification:
+
+```text
+Resolution: 1920x1080
+Frame rate: 30fps
+Duration: 60.000000 seconds
+Frames: 1800
+Size: 1090238 bytes
+```
+
+Render warnings:
+
+- `timeline_track_too_dense` remains a warning.
+- HyperFrames reduced workers from 2 to 1 after calibration because frame capture was expensive.
+
+Rendered artifact visual check:
+
+- Extracted `video/hyperframes-in-60-seconds/screenshots/render-contact-sheet.jpg` from the final MP4.
 
 ## Output
 
-Final MP4 output path: pending.
+Final MP4 output path:
+
+```text
+renders/hyperframes-in-60-seconds.mp4
+```
 
 ## Issues
 
