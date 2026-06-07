@@ -321,3 +321,17 @@ Voice: af_nova
 Language: en-us
 Speed: 1.15
 ```
+
+### Audio Documentation For Article
+
+Created:
+
+```text
+docs/006-audio-and-tts-for-the-article.md
+```
+
+Key framing for the article:
+
+```text
+The TTS generation step is not deterministic. The generated WAV is committed and treated as a source asset. The Docker render from HTML plus WAV is reproducible.
+```

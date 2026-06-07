@@ -125,6 +125,7 @@ Completed:
 - Rendered MP4 contact sheet extracted to `video/hyperframes-in-60-seconds/screenshots/render-contact-sheet.jpg`.
 - AI TTS voiceover generated with HyperFrames `tts`, Kokoro-82M, voice `af_nova`.
 - Rendered MP4 now includes AAC audio.
+- Audio/TTS article notes documented in `docs/006-audio-and-tts-for-the-article.md`.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.

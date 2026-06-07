@@ -37,3 +37,8 @@ npx hyperframes tts audio/source/voiceover.txt --voice af_nova --lang en-us --sp
 
 This is AI-generated speech. It should be disclosed as part of the build log because it affects the final artifact.
 
+The TTS generation step is the non-deterministic part. Once the WAV exists and is committed, the render can treat it as a normal media source.
+
+See also:
+
+- `docs/006-audio-and-tts-for-the-article.md`
