@@ -129,6 +129,8 @@ Completed:
 - Article outline documented in `docs/007-article-outline.md`.
 - Video expansion plan documented in `docs/008-video-expansion-plan.md`.
 - Reproducible proof captured under `evidence/2026-06-07/`.
+- Composition architecture refactored into `index.html`, `compositions/`, and `styles/video.css`.
+- HyperFrames validation now reports 0 errors, 0 warnings, and 0 layout issues.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.

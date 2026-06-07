@@ -45,11 +45,10 @@ HyperFrames validation currently reports:
 
 ```text
 0 errors
-1 warning: timeline_track_too_dense
+0 warnings
 0 layout issues
 ```
 
 ## Article Rule
 
 Only use evidence that exists in this directory or in the build journal. Do not invent results.
-

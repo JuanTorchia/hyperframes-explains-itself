@@ -170,12 +170,55 @@ Size: 1090238 bytes
 
 Render warnings:
 
-- `timeline_track_too_dense` remains a warning.
-- HyperFrames reduced workers from 2 to 1 after calibration because frame capture was expensive.
+- Earlier versions reported `timeline_track_too_dense`; the composition was split into sub-compositions to remove it.
+- Earlier Docker renders reduced workers from 2 to 1 after calibration because frame capture was expensive. The render script now pins `--workers 1`.
 
 Rendered artifact visual check:
 
 - Extracted `video/hyperframes-in-60-seconds/screenshots/render-contact-sheet.jpg` from the final MP4.
+
+### 2026-06-07 Composition Refactor Render
+
+Command:
+
+```bash
+npm run render
+```
+
+Script mapping:
+
+```bash
+hyperframes render --docker --strict-all --workers 1 --output renders/hyperframes-in-60-seconds.mp4
+```
+
+Result:
+
+```text
+Render completed.
+Output: renders/hyperframes-in-60-seconds.mp4
+Size: 2.4 MB
+HyperFrames reported render time: 3m 17.3s
+```
+
+Architecture changes:
+
+- `index.html` now owns the parent composition, audio track, scene mounts, and parent timeline.
+- `styles/video.css` owns shared visual styling.
+- `compositions/` owns per-scene HTML files for scenes after the hook.
+- The hook remains inline in `index.html` so the exact `t=0` frame is visible.
+
+Validation after refactor:
+
+```text
+hyperframes lint -> 0 errors, 0 warnings
+hyperframes inspect -> 0 layout issues across 9 samples
+```
+
+Docker render notes:
+
+- The first refactor render exposed mismatched sub-composition timeline IDs.
+- Scene files now register timelines using the same IDs as their parent mounts.
+- The render script pins `--workers 1` to match observed capture behavior and skip auto-worker calibration noise.
 
 ## Output
 

@@ -24,7 +24,6 @@ Proposed structure:
 
 ```text
 compositions/
-  001-hook.html
   002-html-as-source.html
   003-timeline-and-scenes.html
   004-preview-snapshot-check.html
@@ -51,6 +50,10 @@ Visual:
 - Clean type.
 - HTML source lines entering as timeline elements.
 - No feature claims yet.
+
+Implementation note:
+
+The hook can remain inline in `index.html` so the exact `t=0` frame is visible before nested compositions finish loading.
 
 ### 2. HTML As Source
 
@@ -184,11 +187,9 @@ The expanded version is successful when:
 
 ## Pending Work
 
-- Create `compositions/`.
-- Move current scene markup into scene files.
-- Update `index.html` to mount the scene files.
-- Re-run `npm run check`.
-- Re-run `npm run snapshot`.
+- Add more visual examples beyond the first proof video.
+- Consider deeper animation inside each sub-composition.
+- Keep `npm run check` at 0 errors and 0 warnings.
+- Re-run `npm run snapshot` after visual changes.
 - Re-render with Docker only after the source is clean.
-- Refresh `evidence/` after the new render.
-
+- Refresh `evidence/` after each new render.

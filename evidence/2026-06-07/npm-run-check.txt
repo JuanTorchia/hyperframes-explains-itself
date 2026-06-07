@@ -6,12 +6,9 @@
 > hyperframes-explains-itself@0.1.0 lint
 > hyperframes lint
 
-◆  Linting HyperFrame/index.html
+◆  Linting HyperFrame/8 files
 
-  ⚠ timeline_track_too_dense: Track 1 has 8 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.
-    Fix: Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate.
-
-◇  0 error(s), 1 warning(s)
+◇  0 errors, 0 warnings
 
 > hyperframes-explains-itself@0.1.0 inspect
 > hyperframes inspect

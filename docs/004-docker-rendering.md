@@ -95,8 +95,12 @@ npm run render
 The render script maps to:
 
 ```bash
-hyperframes render --docker --strict --output renders/hyperframes-in-60-seconds.mp4
+hyperframes render --docker --strict-all --workers 1 --output renders/hyperframes-in-60-seconds.mp4
 ```
+
+The script pins one worker because this composition is capture-heavy on the current machine. Earlier auto-worker renders calibrated down from 2 workers to 1. Making that explicit removes noisy worker-reduction warnings and makes the default render path match observed behavior.
+
+The script uses `--strict-all` so lint warnings fail the render. This keeps the tutorial honest: warnings should be fixed or documented before a new MP4 is treated as current output.
 
 ## Local Render Fallback
 

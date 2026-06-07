@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-what" data-width="1920" data-height="1080">
+      <div class="scene">
+        <p class="kicker">What it is</p>
+        <h2>HyperFrames turns web-native source files into video.</h2>
+        <p>Developers can author scenes with HTML, CSS, JavaScript, and components.</p>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 8 }, 0);
+      window.__timelines["scene-what"] = tl;
+    </script>
+  </body>
+</html>

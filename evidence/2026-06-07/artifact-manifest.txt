@@ -4,7 +4,7 @@ MP4 artifact:
 Path: renders/hyperframes-in-60-seconds.mp4
 Size bytes: 2488679
 SHA256: 4C67E201657F34733520F75EF71CAB7DAA47619ABCBE25297AA591651F6FDB51
-LastWriteTime: 2026-06-07 19:17:10 -03:00
+LastWriteTime: 2026-06-07 20:38:38 -03:00
 
 Voiceover WAV artifact:
 Path: audio/generated/hyperframes-in-60-seconds-af-nova.wav

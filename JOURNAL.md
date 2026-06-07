@@ -367,3 +367,41 @@ Pending:
 ```text
 Refactor the video into smaller scene compositions and update evidence after the next render.
 ```
+
+### Composition Architecture Refactor
+
+Changed:
+
+```text
+index.html
+styles/video.css
+compositions/002-what-it-is.html
+compositions/003-html-source.html
+compositions/004-setup.html
+compositions/005-init.html
+compositions/006-preview.html
+compositions/007-render.html
+compositions/008-close.html
+```
+
+Decision:
+
+```text
+Keep the hook scene inline in index.html so the exact t=0 frame is visible before nested compositions finish loading. Mount the remaining scenes as sub-compositions.
+```
+
+Issues fixed:
+
+```text
+timeline_track_too_dense was removed by moving scenes into sub-compositions.
+The first t=0 snapshot frame stayed blank when the hook was nested, so the hook remains inline.
+Sub-composition timeline IDs initially used internal names; Docker render expected host IDs. The scene files now register timelines with the same IDs as their parent mounts.
+```
+
+Current validation:
+
+```text
+npm run check -> 0 errors, 0 warnings, 0 layout issues
+npm run snapshot -> 4 frames captured and moved into video/hyperframes-in-60-seconds/screenshots
+npm run render -> completed with Docker, --strict-all, and --workers 1
+```

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-init" data-width="1920" data-height="1080">
+      <div class="scene">
+        <p class="kicker">Step 1</p>
+        <h2>Initialize the project.</h2>
+        <div class="terminal">
+          <div class="terminal-bar"></div>
+          <div class="terminal-body">
+            <span class="prompt">$</span> npm install<br />
+            <span class="prompt">$</span> npm run doctor
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 8 }, 0);
+      window.__timelines["scene-init"] = tl;
+    </script>
+  </body>
+</html>
