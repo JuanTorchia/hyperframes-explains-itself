@@ -126,6 +126,9 @@ Completed:
 - AI TTS voiceover generated with HyperFrames `tts`, Kokoro-82M, voice `af_nova`.
 - Rendered MP4 now includes AAC audio.
 - Audio/TTS article notes documented in `docs/006-audio-and-tts-for-the-article.md`.
+- Article outline documented in `docs/007-article-outline.md`.
+- Video expansion plan documented in `docs/008-video-expansion-plan.md`.
+- Reproducible proof captured under `evidence/2026-06-07/`.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.

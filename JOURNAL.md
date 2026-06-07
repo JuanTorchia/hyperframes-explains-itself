@@ -335,3 +335,35 @@ Key framing for the article:
 ```text
 The TTS generation step is not deterministic. The generated WAV is committed and treated as a source asset. The Docker render from HTML plus WAV is reproducible.
 ```
+
+### Article Outline And Evidence
+
+Created:
+
+```text
+docs/007-article-outline.md
+docs/008-video-expansion-plan.md
+evidence/README.md
+evidence/2026-06-07/npm-run-check.txt
+evidence/2026-06-07/ffprobe-render.json
+evidence/2026-06-07/artifact-manifest.txt
+```
+
+Purpose:
+
+```text
+Turn the working proof into article-ready structure and keep the article grounded in captured command output.
+```
+
+Current proof:
+
+```text
+npm run check -> 0 errors, 1 warning, 0 layout issues
+ffprobe -> h264 video stream and aac audio stream in the rendered MP4
+```
+
+Pending:
+
+```text
+Refactor the video into smaller scene compositions and update evidence after the next render.
+```
