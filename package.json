@@ -6,13 +6,15 @@
   "type": "module",
   "scripts": {
     "doctor": "hyperframes doctor",
+    "doctor:docker": "docker version && docker info",
     "dev": "hyperframes preview --no-open",
     "preview": "hyperframes preview",
     "lint": "hyperframes lint",
     "inspect": "hyperframes inspect",
     "check": "npm run lint && npm run inspect",
     "snapshot": "hyperframes snapshot --at 0,14,32,56 --describe false && node tools/move-snapshots.mjs",
-    "render": "hyperframes render --strict --output renders/hyperframes-in-60-seconds.mp4"
+    "render": "hyperframes render --docker --strict --output renders/hyperframes-in-60-seconds.mp4",
+    "render:local": "hyperframes render --strict --output renders/hyperframes-in-60-seconds.mp4"
   },
   "keywords": [
     "hyperframes",

@@ -24,8 +24,8 @@
 ## Scene 4
 
 - Timestamp: 0:24-0:32
-- On-screen text: "Setup: Node 22 + FFmpeg"
-- Suggested visual: Terminal-style setup checklist with Node 22 and FFmpeg marked as requirements, not yet as completed results.
+- On-screen text: "Setup: Node 22 + Docker"
+- Suggested visual: Terminal-style setup checklist with Node 22 and Docker marked as requirements, with FFmpeg shown as part of the containerized render environment.
 - Animation notes: Requirements appear one at a time. Avoid fake terminal output.
 
 ## Scene 5
@@ -55,4 +55,3 @@
 - On-screen text: "HTML is the source. MP4 is the artifact."
 - Suggested visual: Final concise end card with source on the left and artifact on the right.
 - Animation notes: Fade in the closing line. End cleanly without extra branding language.
-

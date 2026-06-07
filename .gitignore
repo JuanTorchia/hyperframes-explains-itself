@@ -3,5 +3,6 @@ renders/
 snapshots/
 .hyperframes/
 .hyperframes-preview*.log
+.thumbnails/
 .DS_Store
 Thumbs.db

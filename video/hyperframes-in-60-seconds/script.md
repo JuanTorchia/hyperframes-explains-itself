@@ -12,7 +12,7 @@ HyperFrames is a way to make video from web-native source files. Instead of trea
 
 That is interesting because HTML becomes inspectable source. Layout, timing, text, animation, and visual states can live in code. The MP4 is not the starting point. It is the artifact generated from the source.
 
-For this project, the setup target is simple: Node 22 and FFmpeg.
+For this project, the setup target is simple: Node 22 and Docker. Docker gives the render step a fixed environment, including the FFmpeg stack.
 
 First, initialize the project.
 
@@ -29,6 +29,5 @@ HTML is the source. MP4 is the artifact.
 ## Notes
 
 - No render has been completed yet.
-- Exact HyperFrames commands are pending validation.
+- Docker render has not been validated yet.
 - Timing may change after preview.
-

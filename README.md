@@ -34,7 +34,8 @@ Planned tools:
 
 - HyperFrames CLI, pinned as a local npm dependency.
 - Node.js 22 or newer for the JavaScript runtime.
-- FFmpeg 6 or newer for video rendering support.
+- Docker for the default render path.
+- FFmpeg 6 or newer for optional host-local rendering.
 - GSAP, pinned as a local npm dependency, for timeline animation.
 - Markdown for documentation, prompts, script, storyboard, and build notes.
 - Git for versioned build history.
@@ -43,11 +44,14 @@ Validated so far:
 
 - Local Node.js: `v24.11.1`, which satisfies the `>=22` runtime requirement.
 - npm package: `hyperframes@0.6.80`.
-- FFmpeg: not currently available on PATH.
+- Docker CLI: available.
+- Docker daemon: available through `docker info`.
+- HyperFrames `doctor` currently reports Docker running as failed on this machine, even though `docker ps` and `docker info` work. This is logged as an environment-check discrepancy.
+- Host FFmpeg: not currently available on PATH.
 
 ## How To Run Once Ready
 
-This project is partially implemented but not ready to render yet because FFmpeg is not installed or not available on PATH.
+This project is partially implemented. The guide is now Docker-first for rendering. Docker CLI access has been validated, but the Docker render itself has not been run yet.
 
 Install dependencies:
 
@@ -59,6 +63,12 @@ Check the local environment:
 
 ```bash
 npm run doctor
+```
+
+Check Docker:
+
+```bash
+npm run doctor:docker
 ```
 
 Preview the composition:
@@ -73,7 +83,7 @@ Check the composition:
 npm run check
 ```
 
-Render command, pending FFmpeg validation:
+Render command, pending Docker daemon validation:
 
 ```bash
 npm run render
@@ -99,6 +109,7 @@ Completed:
 - HyperFrames managed Chrome verified from cache.
 - `npm run check` run successfully with 0 lint errors and 0 layout issues.
 - `npm run snapshot` captured four verification frames and a contact sheet.
+- Docker-first rendering plan documented.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.
@@ -109,8 +120,9 @@ Completed:
 
 Pending:
 
-- Install or expose FFmpeg on PATH.
-- Resolve `npm run doctor` failures for FFmpeg, FFprobe, and Docker state.
+- Validate Docker rendering.
+- Keep using `npm run doctor:docker` as the Docker preflight until the HyperFrames `doctor` Docker-running discrepancy is understood.
+- Resolve `npm run doctor` host-local FFmpeg/FFprobe warnings only if local rendering is needed.
 - Preview the composition.
 - Render the final MP4.
 - Document mistakes, fixes, and final results.

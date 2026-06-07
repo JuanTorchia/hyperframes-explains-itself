@@ -7,8 +7,10 @@ No preview or render has been run yet.
 ## Environment
 
 - Node.js: `v24.11.1` observed locally.
-- FFmpeg: not available on PATH.
-- FFprobe: not available on PATH.
+- Docker CLI: available.
+- Docker daemon: available through `docker info`.
+- Host FFmpeg: not available on PATH.
+- Host FFprobe: not available on PATH.
 - HyperFrames: `0.6.80` installed as a local dev dependency.
 - GSAP: `3.14.2` installed as a local dev dependency.
 - Chrome: available from HyperFrames cache after `npx hyperframes browser ensure`.
@@ -102,4 +104,6 @@ Final MP4 output path: pending.
 
 - FFmpeg is missing from PATH, so local render is blocked.
 - FFprobe is missing from PATH, so local render is blocked.
+- Docker render is the preferred path.
+- `hyperframes doctor` currently reports Docker running as failed even though `docker info` and `docker ps` succeed.
 - The globally installed `hyperframes` command is not available; this project uses local npm scripts instead.

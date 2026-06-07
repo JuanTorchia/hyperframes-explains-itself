@@ -158,3 +158,44 @@ No MP4 render has been run yet.
 ### Current Blocker
 
 FFmpeg and FFprobe are not available on PATH. Rendering should not be attempted until this is fixed or a Docker/cloud render path is intentionally chosen and documented.
+
+## 2026-06-07
+
+### Docker-First Decision
+
+The guide now treats Docker rendering as the default path.
+
+Reasoning:
+
+- HyperFrames documentation recommends Docker mode for deterministic output across platforms.
+- Docker mode avoids requiring each developer to install and expose the same FFmpeg/FFprobe build on the host.
+- CI and agent-driven rendering are better aligned with a containerized render environment.
+
+The local `ffmpeg-static` idea was rejected because it adds wrapper complexity and still does not match HyperFrames' documented Docker-first reproducibility story.
+
+### Docker Investigation
+
+Commands run:
+
+```bash
+npm run doctor:docker
+docker ps
+docker context ls
+npm run doctor
+```
+
+Observed:
+
+```text
+docker version -> Docker CLI and Docker Desktop server available
+docker info -> succeeds
+docker ps -> succeeds
+active context -> desktop-linux
+hyperframes doctor -> still reports Docker running as failed
+```
+
+Working hypothesis:
+
+`hyperframes doctor` has an environment-check discrepancy on this machine. The Docker CLI itself can reach the daemon, so this project now uses `npm run doctor:docker` as the explicit Docker preflight.
+
+No Docker render has been run yet.
