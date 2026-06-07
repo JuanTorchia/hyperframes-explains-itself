@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>HyperFrames in 60 Seconds</title>
+    <script src="./node_modules/gsap/dist/gsap.min.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        margin: 0;
+        overflow: hidden;
+        background: #090b0f;
+        color: #f6f2e8;
+        font-family: sans-serif;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(246, 242, 232, 0.04) 1px, transparent 1px),
+          linear-gradient(rgba(246, 242, 232, 0.04) 1px, transparent 1px),
+          radial-gradient(circle at 76% 18%, rgba(41, 171, 135, 0.28), transparent 26%),
+          radial-gradient(circle at 18% 82%, rgba(246, 195, 75, 0.2), transparent 24%),
+          #090b0f;
+        background-size:
+          80px 80px,
+          80px 80px,
+          auto,
+          auto,
+          auto;
+      }
+
+      .clip {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 96px;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      #scene-hook {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .scene {
+        width: 100%;
+        max-width: 1500px;
+      }
+
+      .kicker {
+        margin: 0 0 26px;
+        color: #7bdcb5;
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 1300px;
+        font-size: 118px;
+        line-height: 1;
+        font-weight: 850;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        max-width: 1320px;
+        font-size: 86px;
+        line-height: 1.05;
+        font-weight: 820;
+        letter-spacing: 0;
+      }
+
+      p {
+        max-width: 1120px;
+        margin-top: 34px;
+        color: #d6d0c2;
+        font-size: 42px;
+        line-height: 1.28;
+        letter-spacing: 0;
+      }
+
+      .code-row {
+        display: flex;
+        gap: 28px;
+        margin-top: 50px;
+      }
+
+      .code-card {
+        width: 360px;
+        border: 1px solid rgba(246, 242, 232, 0.22);
+        border-radius: 8px;
+        background: rgba(10, 14, 20, 0.78);
+        padding: 26px;
+        color: #f6f2e8;
+        font-family: monospace;
+        font-size: 28px;
+        line-height: 1.35;
+      }
+
+      .terminal {
+        width: 1180px;
+        border: 1px solid rgba(246, 242, 232, 0.24);
+        border-radius: 8px;
+        background: #10151d;
+        box-shadow: 0 24px 90px rgba(0, 0, 0, 0.34);
+        font-family: monospace;
+      }
+
+      .terminal-bar {
+        height: 58px;
+        border-bottom: 1px solid rgba(246, 242, 232, 0.14);
+        background: #151b24;
+      }
+
+      .terminal-body {
+        padding: 42px;
+        font-size: 34px;
+        line-height: 1.65;
+      }
+
+      .prompt {
+        color: #7bdcb5;
+      }
+
+      .muted {
+        color: #9fa6ad;
+      }
+
+      .artifact {
+        display: grid;
+        grid-template-columns: 1fr 170px 1fr;
+        align-items: center;
+        gap: 42px;
+        margin-top: 64px;
+      }
+
+      .artifact-box {
+        min-height: 210px;
+        border: 1px solid rgba(246, 242, 232, 0.24);
+        border-radius: 8px;
+        background: rgba(246, 242, 232, 0.08);
+        padding: 42px;
+      }
+
+      .artifact-box strong {
+        display: block;
+        margin-bottom: 18px;
+        color: #f6c34b;
+        font-size: 40px;
+      }
+
+      .artifact-box span {
+        color: #d6d0c2;
+        font-family: monospace;
+        font-size: 30px;
+      }
+
+      .arrow {
+        color: #7bdcb5;
+        font-size: 88px;
+        text-align: center;
+      }
+
+      .caption {
+        position: absolute;
+        right: 64px;
+        bottom: 46px;
+        color: rgba(246, 242, 232, 0.62);
+        font-family: monospace;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="60"
+      data-width="1920"
+      data-height="1080"
+      data-fps="30"
+    >
+      <section id="scene-hook" class="clip" data-start="0" data-duration="6" data-track-index="1">
+        <div class="scene">
+          <p class="kicker">Experiment</p>
+          <h1>Can HyperFrames explain HyperFrames?</h1>
+        </div>
+      </section>
+
+      <section id="scene-what" class="clip" data-start="6" data-duration="8" data-track-index="1">
+        <div class="scene">
+          <p class="kicker">What it is</p>
+          <h2>HyperFrames turns web-native source files into video.</h2>
+          <p>Developers can author scenes with HTML, CSS, JavaScript, and components.</p>
+        </div>
+      </section>
+
+      <section id="scene-source" class="clip" data-start="14" data-duration="10" data-track-index="1">
+        <div class="scene">
+          <p class="kicker">Why it matters</p>
+          <h2>HTML is inspectable. Video output becomes generated artifact.</h2>
+          <div class="code-row">
+            <div class="code-card">&lt;section<br />data-start="14"<br />data-duration="10"&gt;</div>
+            <div class="code-card">CSS controls<br />layout,<br />type,<br />motion.</div>
+            <div class="code-card">Git can diff<br />the actual<br />video source.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-setup" class="clip" data-start="24" data-duration="8" data-track-index="1">
+        <div class="scene">
+          <p class="kicker">Setup target</p>
+          <h2>Node 22 plus FFmpeg.</h2>
+          <p>This repo validates the local environment before claiming any render result.</p>
+        </div>
+      </section>
+
+      <section id="scene-init" class="clip" data-start="32" data-duration="8" data-track-index="1">
+        <div class="scene">
+          <p class="kicker">Step 1</p>
+          <h2>Initialize the project.</h2>
+          <div class="terminal">
+            <div class="terminal-bar"></div>
+            <div class="terminal-body">
+              <span class="prompt">$</span> npm install<br />
+              <span class="prompt">$</span> npm run doctor
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-preview" class="clip" data-start="40" data-duration="9" data-track-index="1">
+        <div class="scene">
+          <p class="kicker">Step 2</p>
+          <h2>Preview before rendering.</h2>
+          <div class="terminal">
+            <div class="terminal-bar"></div>
+            <div class="terminal-body">
+              <span class="prompt">$</span> npm run dev<br />
+              <span class="muted">Scrub timing. Fix layout. Repeat.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-render" class="clip" data-start="49" data-duration="7" data-track-index="1">
+        <div class="scene">
+          <p class="kicker">Step 3</p>
+          <h2>Render only after checks pass.</h2>
+          <div class="terminal">
+            <div class="terminal-bar"></div>
+            <div class="terminal-body">
+              <span class="prompt">$</span> npm run check<br />
+              <span class="prompt">$</span> npm run render
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-close" class="clip" data-start="56" data-duration="4" data-track-index="1">
+        <div class="scene">
+          <h2>HTML is the source. MP4 is the artifact.</h2>
+          <div class="artifact">
+            <div class="artifact-box">
+              <strong>Source</strong>
+              <span>index.html</span>
+            </div>
+            <div class="arrow">-&gt;</div>
+            <div class="artifact-box">
+              <strong>Artifact</strong>
+              <span>renders/hyperframes-in-60-seconds.mp4</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="caption">hyperframes-explains-itself</div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const tl = gsap.timeline({ paused: true });
+      tl.set("#scene-hook", { autoAlpha: 1 }, 0);
+      tl.set("#scene-hook", { autoAlpha: 0 }, 6);
+      tl.set("#scene-what", { autoAlpha: 1 }, 6);
+      tl.set("#scene-what", { autoAlpha: 0 }, 14);
+      tl.set("#scene-source", { autoAlpha: 1 }, 14);
+      tl.set("#scene-source", { autoAlpha: 0 }, 24);
+      tl.set("#scene-setup", { autoAlpha: 1 }, 24);
+      tl.set("#scene-setup", { autoAlpha: 0 }, 32);
+      tl.set("#scene-init", { autoAlpha: 1 }, 32);
+      tl.set("#scene-init", { autoAlpha: 0 }, 40);
+      tl.set("#scene-preview", { autoAlpha: 1 }, 40);
+      tl.set("#scene-preview", { autoAlpha: 0 }, 49);
+      tl.set("#scene-render", { autoAlpha: 1 }, 49);
+      tl.set("#scene-render", { autoAlpha: 0 }, 56);
+      tl.set("#scene-close", { autoAlpha: 1 }, 56);
+      tl.set("#scene-close", { autoAlpha: 0 }, 60);
+      tl.to({}, { duration: 60 }, 0);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

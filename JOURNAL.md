@@ -48,3 +48,113 @@ The process should be understandable from the repository without needing private
 - Preview the video.
 - Render the final artifact.
 
+## 2026-06-07
+
+### Local Git Initialization
+
+The repository already contained a `.git` directory but had no commits.
+
+Created the initial local commit:
+
+```bash
+git commit -m "chore: scaffold hyperframes explains itself"
+```
+
+Created a local implementation branch:
+
+```bash
+git switch -c jtorchia/implement-hyperframes-tutorial
+```
+
+### Environment Check
+
+Observed local environment:
+
+```text
+node --version -> v24.11.1
+ffmpeg -version -> command not found
+hyperframes --version -> command not found
+npm view hyperframes version -> 0.6.80
+```
+
+Node is newer than the planned Node 22 baseline. FFmpeg and a global HyperFrames command are not available on PATH.
+
+Decision: use a local npm dependency for HyperFrames instead of a global install. This makes the repository more reproducible and avoids relying on machine-global CLI state.
+
+### Implementation Started
+
+Installed local development dependencies:
+
+```bash
+npm install --save-dev hyperframes@0.6.80
+npm install --save-dev gsap@3.14.2
+```
+
+Created the first HyperFrames composition in `index.html`.
+
+Ran HyperFrames browser setup:
+
+```bash
+npx hyperframes browser ensure
+```
+
+Result:
+
+```text
+Browser found in HyperFrames cache.
+Ready to render.
+```
+
+Ran the project checks:
+
+```bash
+npm run check
+```
+
+Result:
+
+```text
+hyperframes lint -> 0 errors, 1 warning
+hyperframes inspect -> 0 layout issues across 9 samples
+```
+
+The remaining lint warning is `timeline_track_too_dense`. For this first tutorial pass, all eight scenes stay in `index.html` because the single-file source is easier to read and review. If the composition grows, scenes should move into sub-compositions.
+
+Ran snapshots:
+
+```bash
+npm run snapshot
+```
+
+First snapshot result exposed a real visual bug: all scenes were visible at once, and the frame at 0.0s was later blank after the first fix.
+
+Fixes:
+
+- Replaced the broad `tl.set(".clip", { autoAlpha: 1 })` with explicit per-scene visibility changes.
+- Set the hook scene visible in CSS so the 0.0s frame is not blank.
+- Added `tools/move-snapshots.mjs` so HyperFrames snapshot output is moved from the CLI default `snapshots/` directory into `video/hyperframes-in-60-seconds/screenshots`.
+
+Current snapshot result:
+
+```text
+4 snapshots captured at 0.0s, 14.0s, 32.0s, and 56.0s.
+5 files moved to video/hyperframes-in-60-seconds/screenshots.
+```
+
+Preview server was started with:
+
+```bash
+npm run dev
+```
+
+Preview URL:
+
+```text
+http://localhost:3002
+```
+
+No MP4 render has been run yet.
+
+### Current Blocker
+
+FFmpeg and FFprobe are not available on PATH. Rendering should not be attempted until this is fixed or a Docker/cloud render path is intentionally chosen and documented.

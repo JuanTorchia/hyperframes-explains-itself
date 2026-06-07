@@ -1,0 +1,32 @@
+{
+  "name": "hyperframes-explains-itself",
+  "version": "0.1.0",
+  "description": "Use HyperFrames to explain HyperFrames.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "doctor": "hyperframes doctor",
+    "dev": "hyperframes preview --no-open",
+    "preview": "hyperframes preview",
+    "lint": "hyperframes lint",
+    "inspect": "hyperframes inspect",
+    "check": "npm run lint && npm run inspect",
+    "snapshot": "hyperframes snapshot --at 0,14,32,56 --describe false && node tools/move-snapshots.mjs",
+    "render": "hyperframes render --strict --output renders/hyperframes-in-60-seconds.mp4"
+  },
+  "keywords": [
+    "hyperframes",
+    "html-video",
+    "tutorial",
+    "developer-tools"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "gsap": "3.14.2",
+    "hyperframes": "0.6.80"
+  }
+}

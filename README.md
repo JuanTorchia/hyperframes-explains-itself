@@ -32,39 +32,73 @@ No video has been rendered yet. Render output is pending.
 
 Planned tools:
 
-- HyperFrames for the video project workflow.
-- Node.js 22 for the JavaScript runtime.
-- FFmpeg for video rendering support.
+- HyperFrames CLI, pinned as a local npm dependency.
+- Node.js 22 or newer for the JavaScript runtime.
+- FFmpeg 6 or newer for video rendering support.
+- GSAP, pinned as a local npm dependency, for timeline animation.
 - Markdown for documentation, prompts, script, storyboard, and build notes.
 - Git for versioned build history.
 
-Tool choices may be refined as the project setup is validated.
+Validated so far:
+
+- Local Node.js: `v24.11.1`, which satisfies the `>=22` runtime requirement.
+- npm package: `hyperframes@0.6.80`.
+- FFmpeg: not currently available on PATH.
 
 ## How To Run Once Ready
 
-This project is not ready to run yet.
+This project is partially implemented but not ready to render yet because FFmpeg is not installed or not available on PATH.
 
-The planned workflow will be documented once the HyperFrames setup is verified:
+Install dependencies:
 
 ```bash
-# Placeholder only. Exact commands are pending validation.
-node --version
-ffmpeg -version
-
-# Initialize the HyperFrames project.
-# Preview the video.
-# Render the final MP4.
+npm install
 ```
 
-When ready, this section will include exact commands, expected output locations, and troubleshooting notes.
+Check the local environment:
+
+```bash
+npm run doctor
+```
+
+Preview the composition:
+
+```bash
+npm run dev
+```
+
+Check the composition:
+
+```bash
+npm run check
+```
+
+Render command, pending FFmpeg validation:
+
+```bash
+npm run render
+```
+
+Expected output path once rendering works:
+
+```text
+renders/hyperframes-in-60-seconds.mp4
+```
 
 ## Current Project Status
 
-Status: initial documentation scaffold.
+Status: initial implementation in progress.
 
 Completed:
 
 - Repository structure created.
+- Local npm project created.
+- HyperFrames pinned as a local dev dependency.
+- GSAP pinned as a local dev dependency.
+- First `index.html` HyperFrames composition drafted.
+- HyperFrames managed Chrome verified from cache.
+- `npm run check` run successfully with 0 lint errors and 0 layout issues.
+- `npm run snapshot` captured four verification frames and a contact sheet.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.
@@ -75,11 +109,8 @@ Completed:
 
 Pending:
 
-- Validate HyperFrames installation path.
-- Confirm exact CLI commands.
-- Build the actual video source.
-- Capture screenshots.
+- Install or expose FFmpeg on PATH.
+- Resolve `npm run doctor` failures for FFmpeg, FFprobe, and Docker state.
 - Preview the composition.
 - Render the final MP4.
 - Document mistakes, fixes, and final results.
-
