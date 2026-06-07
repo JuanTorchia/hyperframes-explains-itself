@@ -14,6 +14,7 @@ Preview, snapshots, checks, and the first Docker render have been run.
 - HyperFrames: `0.6.80` installed as a local dev dependency.
 - GSAP: `3.14.2` installed as a local dev dependency.
 - Chrome: available from HyperFrames cache after `npx hyperframes browser ensure`.
+- Voiceover: `audio/generated/hyperframes-in-60-seconds-af-nova.wav`, generated with HyperFrames `tts`, Kokoro-82M, voice `af_nova`, speed `1.15`.
 
 ## Preview Attempts
 
@@ -123,6 +124,38 @@ Render completed.
 Output: renders/hyperframes-in-60-seconds.mp4
 Size: 1.0 MB
 HyperFrames reported render time: 4m 54.6s
+```
+
+### 2026-06-07 Audio Render
+
+Command:
+
+```bash
+npm run render
+```
+
+Result:
+
+```text
+Render completed.
+Output: renders/hyperframes-in-60-seconds.mp4
+Size: 2.4 MB
+HyperFrames reported render time: 5m 48.5s
+```
+
+The render included one audio track from:
+
+```text
+audio/generated/hyperframes-in-60-seconds-af-nova.wav
+```
+
+Containerized `ffprobe` verification:
+
+```text
+Video stream: h264, 1920x1080, 30fps, 60.000000 seconds, 1800 frames
+Audio stream: aac, 60.053333 seconds, 2815 frames
+Container duration: 60.054000 seconds
+Size: 2488679 bytes
 ```
 
 Containerized `ffprobe` verification:

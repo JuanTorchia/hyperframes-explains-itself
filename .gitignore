@@ -1,4 +1,5 @@
 node_modules/
+.venv/
 renders/*
 !renders/
 !renders/hyperframes-in-60-seconds.mp4

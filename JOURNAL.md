@@ -265,3 +265,59 @@ Notes:
 - The `timeline_track_too_dense` warning did not block render. `--strict` blocks lint errors; warnings continue.
 - HyperFrames auto-calibration reduced workers from 2 to 1 because frame capture was expensive.
 - A rendered-video contact sheet was extracted to `video/hyperframes-in-60-seconds/screenshots/render-contact-sheet.jpg`.
+
+## 2026-06-07
+
+### AI TTS Voiceover
+
+Decision:
+
+Use AI TTS, but keep it reproducible and disclosed in the build log.
+
+HyperFrames provides local TTS through Kokoro-82M:
+
+```bash
+npx hyperframes tts --list
+```
+
+Initial TTS attempt failed:
+
+```text
+Speech synthesis failed: The kokoro-onnx package is not installed. Run: pip install kokoro-onnx soundfile
+```
+
+Fix:
+
+- Created a local `.venv`.
+- Added `tools/setup-tts-python.mjs`.
+- Added `tools/run-with-venv.mjs`.
+- Added `npm run tts:setup`.
+- Added `npm run tts`.
+
+Setup command:
+
+```bash
+npm run tts:setup
+```
+
+Generation command:
+
+```bash
+npm run tts
+```
+
+Result:
+
+```text
+Generated 55.9s of speech -> audio/generated/hyperframes-in-60-seconds-af-nova.wav
+ffprobe duration -> 55.850667 seconds
+```
+
+Voice settings:
+
+```text
+Model: Kokoro-82M through HyperFrames tts
+Voice: af_nova
+Language: en-us
+Speed: 1.15
+```

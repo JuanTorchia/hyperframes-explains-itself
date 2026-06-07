@@ -37,6 +37,8 @@ Planned tools:
 - Docker for the default render path.
 - FFmpeg 6 or newer for optional host-local rendering.
 - GSAP, pinned as a local npm dependency, for timeline animation.
+- HyperFrames TTS with Kokoro-82M for AI-generated voiceover.
+- Python `.venv` for local TTS dependencies.
 - Markdown for documentation, prompts, script, storyboard, and build notes.
 - Git for versioned build history.
 
@@ -48,6 +50,7 @@ Validated so far:
 - Docker daemon: available through `docker info`.
 - HyperFrames `doctor` detects Docker as running.
 - Host FFmpeg: not currently available on PATH.
+- TTS Python dependencies: installed in `.venv`.
 
 ## How To Run Once Ready
 
@@ -95,6 +98,13 @@ Output path:
 renders/hyperframes-in-60-seconds.mp4
 ```
 
+Generate the AI voiceover:
+
+```bash
+npm run tts:setup
+npm run tts
+```
+
 ## Current Project Status
 
 Status: first Docker render completed.
@@ -113,6 +123,8 @@ Completed:
 - `npm run render` produced `renders/hyperframes-in-60-seconds.mp4`.
 - Rendered MP4 verified with containerized `ffprobe`: 1920x1080, 30fps, 60 seconds, 1800 frames.
 - Rendered MP4 contact sheet extracted to `video/hyperframes-in-60-seconds/screenshots/render-contact-sheet.jpg`.
+- AI TTS voiceover generated with HyperFrames `tts`, Kokoro-82M, voice `af_nova`.
+- Rendered MP4 now includes AAC audio.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.
@@ -127,3 +139,4 @@ Pending:
 - Resolve `npm run doctor` host-local FFmpeg/FFprobe warnings only if local rendering is needed.
 - Review the final MP4 end to end.
 - Decide whether to split the single `index.html` into sub-compositions to remove the timeline density warning.
+- Evaluate whether `af_nova` is the final voice or whether to audition alternate voices.

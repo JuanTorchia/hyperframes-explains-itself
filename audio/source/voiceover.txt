@@ -1,9 +1,3 @@
-# HyperFrames In 60 Seconds Script
-
-Target length: approximately 60 seconds.
-
-## Voiceover
-
 Can HyperFrames explain HyperFrames?
 
 That is the test.
@@ -20,15 +14,8 @@ Then, preview the video so the timing, layout, and motion can be checked before 
 
 Finally, render the MP4 and document exactly what happened.
 
-This repository will keep the script, storyboard, prompts, setup notes, mistakes, fixes, screenshots, and final output path visible.
+This repository keeps the script, storyboard, prompts, setup notes, mistakes, fixes, screenshots, audio, and final output path visible.
 
 The goal is not to pretend the workflow is perfect. The goal is to make it reproducible.
 
 HTML is the source. MP4 is the artifact.
-
-## Notes
-
-- No render has been completed yet.
-- AI TTS voiceover was generated with HyperFrames `tts`, Kokoro-82M, voice `af_nova`, speed `1.15`.
-- Generated voiceover duration: 55.850667 seconds.
-- Timing may change after audio review.

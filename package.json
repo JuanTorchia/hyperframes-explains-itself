@@ -13,6 +13,8 @@
     "inspect": "hyperframes inspect",
     "check": "npm run lint && npm run inspect",
     "snapshot": "hyperframes snapshot --at 0,14,32,56 --describe false && node tools/move-snapshots.mjs",
+    "tts:setup": "node tools/setup-tts-python.mjs",
+    "tts": "node tools/run-with-venv.mjs hyperframes tts audio/source/voiceover.txt --voice af_nova --lang en-us --speed 1.15 --output audio/generated/hyperframes-in-60-seconds-af-nova.wav",
     "render": "hyperframes render --docker --strict --output renders/hyperframes-in-60-seconds.mp4",
     "render:local": "hyperframes render --strict --output renders/hyperframes-in-60-seconds.mp4"
   },
