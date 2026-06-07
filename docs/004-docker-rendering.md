@@ -24,10 +24,10 @@ Docker daemon: available through docker info
 HyperFrames managed Chrome: available from cache
 Host FFmpeg: not available on PATH
 Host FFprobe: not available on PATH
-HyperFrames doctor Docker-running check: reports failed on this machine
+HyperFrames doctor Docker-running check: passes after Docker Desktop is ready
 ```
 
-This means local non-Docker rendering is blocked, but Docker rendering is the preferred next render test. Use `npm run doctor:docker` as the Docker preflight because it validates the Docker daemon directly.
+This means local non-Docker rendering is blocked, but Docker rendering is the preferred next render test. Use `npm run doctor:docker` as an explicit Docker preflight because it validates the Docker daemon directly.
 
 ## Planned Commands
 
@@ -92,7 +92,7 @@ Use it only when FFmpeg and FFprobe are installed on the host and `npm run docto
 ## Operational Notes
 
 - Docker Desktop must be running before `npm run render`.
-- On this machine, `npm run doctor:docker` is a more reliable Docker preflight than the Docker-running line in `npm run doctor`.
+- `npm run doctor` checks the whole HyperFrames environment; `npm run doctor:docker` checks Docker directly.
 - The first Docker render may be slower while the image is prepared.
 - Do not mount or commit `node_modules` into Docker render artifacts.
 - Keep `renders/` ignored until the final MP4 is intentionally produced.

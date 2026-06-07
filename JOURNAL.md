@@ -184,7 +184,7 @@ docker context ls
 npm run doctor
 ```
 
-Observed:
+Observed first:
 
 ```text
 docker version -> Docker CLI and Docker Desktop server available
@@ -194,8 +194,14 @@ active context -> desktop-linux
 hyperframes doctor -> still reports Docker running as failed
 ```
 
-Working hypothesis:
+Follow-up check:
 
-`hyperframes doctor` has an environment-check discrepancy on this machine. The Docker CLI itself can reach the daemon, so this project now uses `npm run doctor:docker` as the explicit Docker preflight.
+```text
+hyperframes doctor -> Docker running
+```
+
+Conclusion:
+
+The earlier Docker-running failure was transient, likely Docker Desktop still settling after startup. The guide should not present it as a stable HyperFrames bug. Keep `npm run doctor:docker` as a direct Docker preflight because it is explicit and easy to understand, but `npm run doctor` is now consistent with Docker being available.
 
 No Docker render has been run yet.

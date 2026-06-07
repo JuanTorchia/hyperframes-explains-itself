@@ -46,7 +46,7 @@ Validated so far:
 - npm package: `hyperframes@0.6.80`.
 - Docker CLI: available.
 - Docker daemon: available through `docker info`.
-- HyperFrames `doctor` currently reports Docker running as failed on this machine, even though `docker ps` and `docker info` work. This is logged as an environment-check discrepancy.
+- HyperFrames `doctor` detects Docker as running.
 - Host FFmpeg: not currently available on PATH.
 
 ## How To Run Once Ready
@@ -121,7 +121,7 @@ Completed:
 Pending:
 
 - Validate Docker rendering.
-- Keep using `npm run doctor:docker` as the Docker preflight until the HyperFrames `doctor` Docker-running discrepancy is understood.
+- Keep `npm run doctor:docker` as an explicit Docker preflight for this tutorial.
 - Resolve `npm run doctor` host-local FFmpeg/FFprobe warnings only if local rendering is needed.
 - Preview the composition.
 - Render the final MP4.

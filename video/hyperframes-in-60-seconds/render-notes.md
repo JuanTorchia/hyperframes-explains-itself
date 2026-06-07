@@ -105,5 +105,5 @@ Final MP4 output path: pending.
 - FFmpeg is missing from PATH, so local render is blocked.
 - FFprobe is missing from PATH, so local render is blocked.
 - Docker render is the preferred path.
-- `hyperframes doctor` currently reports Docker running as failed even though `docker info` and `docker ps` succeed.
+- `hyperframes doctor` detects Docker running after Docker Desktop is ready.
 - The globally installed `hyperframes` command is not available; this project uses local npm scripts instead.
