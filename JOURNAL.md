@@ -692,3 +692,36 @@ Decision:
 Use Whisper output for timing evidence and bootstrap captions.
 Use curated script text for final developer-facing captions unless the article explicitly wants to show raw machine transcript quality.
 ```
+
+### Captioned Main Render Variant
+
+Implemented:
+
+```text
+compositions/captions-data.js -> curated scene-level caption data
+variants/main-with-captions/index.html -> alternate main render template
+tools/render-main-with-captions.mjs -> temporary index swap, lint, inspect, render, restore
+```
+
+Rendered:
+
+```text
+renders/hyperframes-in-60-seconds-with-captions.mp4
+```
+
+Validation:
+
+```text
+npm run render:captions -> completed
+lint -> 0 errors, 0 warnings
+inspect -> 0 layout issues
+ffprobe -> h264 video, aac audio, 1920x1080, 30fps, 108.054000 seconds
+frames extracted at 8s, 40s, and 88s
+```
+
+Finding:
+
+```text
+The caption overlay is legible on sampled frames.
+The brand footer is still visible behind the caption area in some scenes; acceptable for proof, but final polish should move or hide it while captions are active.
+```

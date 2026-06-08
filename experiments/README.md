@@ -59,6 +59,7 @@ npm run experiment:captions:render
 - `hyperframes transcribe` can import SRT and Whisper JSON. Direct audio transcription works locally with the official Windows x64 `whisper-cli.exe`; the tested Python package does not support HyperFrames' `--suppress-nst` argument.
 - `hyperframes add caption-weight-shift --no-clipboard --json` wrote the expected component file in an isolated sandbox, but the JSON reported `clipboardCopied: true`.
 - `008-captions-layer` is intentionally silent. It is evidence for caption rendering and copy comparison, not a final audio-synced tutorial export.
+- The main walkthrough now has a captioned render variant documented in `docs/013-captioned-main-render.md`.
 
 ## Rules
 

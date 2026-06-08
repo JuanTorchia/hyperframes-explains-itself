@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>HyperFrames Developer Walkthrough With Captions</title>
+    <script src="./node_modules/gsap/dist/gsap.min.js"></script>
+    <script src="./compositions/captions-data.js"></script>
+    <link rel="stylesheet" href="./styles/video.css" />
+  </head>
+  <body>
+    <div
+      id="root"
+      class="hf-stage"
+      data-composition-id="main-with-captions"
+      data-start="0"
+      data-duration="108"
+      data-width="1920"
+      data-height="1080"
+      data-fps="30"
+    >
+      <audio
+        id="voiceover"
+        src="audio/generated/hyperframes-in-60-seconds-af-nova.wav"
+        data-start="0"
+        data-duration="97.472000"
+        data-track-index="0"
+        data-volume="1"
+      ></audio>
+
+      <section id="scene-hook" class="clip" data-start="0" data-duration="6" data-track-index="1">
+        <div class="scene">
+          <p class="kicker">Experiment</p>
+          <h1>Can HyperFrames explain HyperFrames?</h1>
+        </div>
+      </section>
+
+      <div
+        id="scene-repository"
+        class="clip"
+        data-composition-id="scene-repository"
+        data-composition-src="compositions/002-repository-proof.html"
+        data-start="6"
+        data-duration="8"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-parent"
+        class="clip"
+        data-composition-id="scene-parent"
+        data-composition-src="compositions/003-parent-composition.html"
+        data-start="14"
+        data-duration="8"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-subcomps"
+        class="clip"
+        data-composition-id="scene-subcomps"
+        data-composition-src="compositions/004-sub-compositions.html"
+        data-start="22"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-timing"
+        class="clip"
+        data-composition-id="scene-timing"
+        data-composition-src="compositions/005-explicit-timing.html"
+        data-start="32"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-variables"
+        class="clip"
+        data-composition-id="scene-variables"
+        data-composition-src="compositions/006-variables-and-reuse.html"
+        data-start="42"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-loop"
+        class="clip"
+        data-composition-id="scene-loop"
+        data-composition-src="compositions/007-developer-loop.html"
+        data-start="52"
+        data-duration="12"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-docker"
+        class="clip"
+        data-composition-id="scene-docker"
+        data-composition-src="compositions/008-docker-render-and-formats.html"
+        data-start="64"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-audio"
+        class="clip"
+        data-composition-id="scene-audio"
+        data-composition-src="compositions/009-audio-tts.html"
+        data-start="74"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-evidence"
+        class="clip"
+        data-composition-id="scene-evidence"
+        data-composition-src="compositions/010-evidence.html"
+        data-start="84"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-mistakes"
+        class="clip"
+        data-composition-id="scene-mistakes"
+        data-composition-src="compositions/011-mistakes-found.html"
+        data-start="94"
+        data-duration="8"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-close"
+        class="clip"
+        data-composition-id="scene-close"
+        data-composition-src="compositions/012-close.html"
+        data-start="102"
+        data-duration="6"
+        data-track-index="1"
+      ></div>
+
+      <div id="main-captions" class="main-captions" aria-label="Curated captions"></div>
+      <div class="caption">hyperframes-explains-itself</div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const sceneRanges = [
+        ["scene-repository", 6, 14],
+        ["scene-parent", 14, 22],
+        ["scene-subcomps", 22, 32],
+        ["scene-timing", 32, 42],
+        ["scene-variables", 42, 52],
+        ["scene-loop", 52, 64],
+        ["scene-docker", 64, 74],
+        ["scene-audio", 74, 84],
+        ["scene-evidence", 84, 94],
+        ["scene-mistakes", 94, 102],
+        ["scene-close", 102, 108],
+      ];
+
+      function mountCaptions(captions) {
+        const root = document.getElementById("main-captions");
+        const nodes = [];
+
+        for (const caption of captions) {
+          const node = document.createElement("div");
+          node.className = "main-caption-group";
+          node.dataset.start = caption.start;
+          node.dataset.end = caption.end;
+          node.textContent = caption.text;
+          root.appendChild(node);
+          nodes.push(node);
+        }
+
+        return nodes;
+      }
+
+      const captionNodes = mountCaptions(window.__mainCaptionData.captions);
+      const tl = gsap.timeline({ paused: true });
+
+      for (const [id] of sceneRanges) {
+        tl.set(`#${id}`, { autoAlpha: 0 }, 0);
+      }
+
+      tl.set("#scene-hook", { autoAlpha: 0 }, 6);
+      for (const [id, start, end] of sceneRanges) {
+        tl.set(`#${id}`, { autoAlpha: 1 }, start);
+        tl.set(`#${id}`, { autoAlpha: 0 }, end);
+      }
+
+      for (const node of captionNodes) {
+        const start = Number(node.dataset.start);
+        const end = Number(node.dataset.end);
+        const duration = Math.max(0.2, end - start);
+        tl.fromTo(
+          node,
+          { autoAlpha: 0, y: 18 },
+          { autoAlpha: 1, y: 0, duration: 0.2, overwrite: "auto" },
+          start + 0.12,
+        );
+        tl.to(node, { autoAlpha: 1, duration: Math.max(0.1, duration - 0.52), overwrite: "auto" }, start + 0.32);
+        tl.to(node, { autoAlpha: 0, y: -12, duration: 0.2, overwrite: "auto" }, Math.max(start + 0.4, end - 0.2));
+      }
+
+      tl.to({}, { duration: 108 }, 0);
+
+      window.__timelines["main-with-captions"] = tl;
+    </script>
+  </body>
+</html>

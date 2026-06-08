@@ -189,6 +189,37 @@ p {
   font-size: 24px;
 }
 
+.main-captions {
+  pointer-events: none;
+  position: absolute;
+  right: 210px;
+  bottom: 34px;
+  left: 210px;
+  z-index: 20;
+  min-height: 128px;
+}
+
+.main-caption-group {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 1120px;
+  margin: 0 auto;
+  border: 1px solid rgba(246, 242, 232, 0.2);
+  border-radius: 8px;
+  background: rgba(7, 10, 14, 0.82);
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.36);
+  padding: 18px 28px;
+  color: #f6f2e8;
+  font-size: 32px;
+  font-weight: 760;
+  line-height: 1.16;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+}
+
 .split-scene {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 560px;

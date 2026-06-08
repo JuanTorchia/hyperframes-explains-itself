@@ -1,0 +1,3 @@
+◆  Linting HyperFrame/12 files
+
+◇  0 errors, 0 warnings

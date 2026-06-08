@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-06-08",
+  "captionCount": 12,
+  "durationSeconds": 108,
+  "captionMode": "curated scene-level captions",
+  "finding": "Scene-level curated captions are more readable for the main walkthrough than raw Whisper word groups.",
+  "coverage": [
+    {
+      "start": 0,
+      "end": 6,
+      "captionText": "Can HyperFrames explain HyperFrames? This repository is the test.",
+      "transcriptWordCount": 20,
+      "transcriptFirstWord": "Hyperframes",
+      "transcriptLastWord": "timeline."
+    },
+    {
+      "start": 6,
+      "end": 14,
+      "captionText": "This video is source code: HTML, CSS, JavaScript, Markdown, audio, and Docker.",
+      "transcriptWordCount": 21,
+      "transcriptFirstWord": "It",
+      "transcriptLastWord": "is"
+    },
+    {
+      "start": 14,
+      "end": 22,
+      "captionText": "The parent composition owns duration, audio, and scene mounts.",
+      "transcriptWordCount": 28,
+      "transcriptFirstWord": "index.html.",
+      "transcriptLastWord": "inspect,"
+    },
+    {
+      "start": 22,
+      "end": 32,
+      "captionText": "Each scene lives in compositions, keeping the timeline inspectable.",
+      "transcriptWordCount": 33,
+      "transcriptFirstWord": "revise,",
+      "transcriptLastWord": "status"
+    },
+    {
+      "start": 32,
+      "end": 42,
+      "captionText": "Timing is explicit: data-start, data-duration, and parent-controlled visibility.",
+      "transcriptWordCount": 30,
+      "transcriptFirstWord": "card",
+      "transcriptLastWord": "lay"
+    },
+    {
+      "start": 42,
+      "end": 52,
+      "captionText": "Reusable components can render different states from variable values.",
+      "transcriptWordCount": 38,
+      "transcriptFirstWord": "out",
+      "transcriptLastWord": "the"
+    },
+    {
+      "start": 52,
+      "end": 64,
+      "captionText": "The developer loop is preview, snapshot, lint, inspect, then render.",
+      "transcriptWordCount": 40,
+      "transcriptFirstWord": "render",
+      "transcriptLastWord": "normal"
+    },
+    {
+      "start": 64,
+      "end": 74,
+      "captionText": "Docker gives the render step a fixed browser and FFmpeg stack.",
+      "transcriptWordCount": 34,
+      "transcriptFirstWord": "media",
+      "transcriptLastWord": "264"
+    },
+    {
+      "start": 74,
+      "end": 84,
+      "captionText": "TTS generated the voiceover; the committed WAV is the reproducible input.",
+      "transcriptWordCount": 29,
+      "transcriptFirstWord": "video",
+      "transcriptLastWord": "warning,"
+    },
+    {
+      "start": 84,
+      "end": 94,
+      "captionText": "The final proof is ffprobe: codec, audio stream, resolution, fps, and duration.",
+      "transcriptWordCount": 29,
+      "transcriptFirstWord": "a",
+      "transcriptLastWord": "source."
+    },
+    {
+      "start": 94,
+      "end": 102,
+      "captionText": "Mistakes are documented instead of hidden.",
+      "transcriptWordCount": 13,
+      "transcriptFirstWord": "MP4",
+      "transcriptLastWord": "demo."
+    },
+    {
+      "start": 102,
+      "end": 108,
+      "captionText": "HTML is the source. MP4 is the artifact.",
+      "transcriptWordCount": 0,
+      "transcriptFirstWord": null,
+      "transcriptLastWord": null
+    }
+  ]
+}
