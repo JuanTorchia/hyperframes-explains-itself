@@ -30,6 +30,7 @@
     "experiment:adapters:check": "node tools/run-adapter-evidence.mjs check",
     "experiment:adapters:render": "node tools/run-adapter-evidence.mjs render",
     "experiment:adapters:frames": "node tools/run-adapter-evidence.mjs frames",
+    "experiment:init-template": "node tools/run-init-template-evidence.mjs",
     "experiment:mov:check": "hyperframes lint experiments/014-mov-output && hyperframes inspect experiments/014-mov-output",
     "experiment:mov:render": "hyperframes render experiments/014-mov-output --docker --strict-all --workers 1 --format mov --output experiments/014-mov-output/output/mov-alpha-proof.mov",
     "experiment:remove-background:source": "node tools/run-remove-background-evidence.mjs source",
@@ -72,6 +73,7 @@
     "gsap": "3.14.2",
     "hyperframes": "0.6.81",
     "lottie-web": "5.13.0",
+    "pixi.js": "8.19.0",
     "three": "0.184.0"
   }
 }

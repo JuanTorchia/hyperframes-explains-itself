@@ -1,0 +1,12 @@
+
+> check
+> npx --yes hyperframes@0.6.81 lint && npx --yes hyperframes@0.6.81 validate && npx --yes hyperframes@0.6.81 inspect
+
+◆  Linting init-blank/index.html
+
+◇  0 errors, 0 warnings
+◆  Validating init-blank in headless Chrome
+◇  No console errors
+◆  Inspecting layout for init-blank (9 timeline samples)
+
+◇  0 layout issues across 9 sample(s)

@@ -75,7 +75,7 @@ For this project, local CLI behavior is the operational source of truth. The art
 
 | Area | Surface | Current Coverage | Status |
 | --- | --- | --- | --- |
-| Project scaffold | `init` | Repo was initialized manually; no isolated `init` experiment yet | Partial |
+| Project scaffold | `init` | Blank project generated in `016-init-template`; direct checks and generated `npm run check` passed | Covered |
 | Preview | `preview`, `npm run dev` | Used during build, documented, not preserved as a standalone evidence run | Partial |
 | Render | `render --docker`, `--strict-all`, `--workers` | Main render and captioned render completed | Covered |
 | Output formats | `--format mp4`, `webm`, `png-sequence`, `mov` | MP4, WebM, PNG sequence, and MOV tested | Covered locally |
@@ -152,7 +152,7 @@ Rive -> missing
 Anime.js -> covered by local hf-seek bridge
 WAAPI -> covered by local seek-clock bridge
 D3 -> covered by local hf-seek bridge
-PixiJS -> missing
+PixiJS -> covered by local hf-seek bridge
 custom adapter -> missing
 ```
 
@@ -198,22 +198,23 @@ Three.js
 Anime.js
 D3
 Lottie Web
+PixiJS
 ```
 
-All four use project-local `hf-seek` bridges because the documented `@hyperframes/adapters/*` package was not installable from npm during this run. `@hyperframes/core@0.6.81` contains GSAP adapter internals, but no first-party Lottie, Three.js, Anime.js, D3, PixiJS, Rive, or dotLottie adapter implementations were found in the published tarball.
+All five use project-local `hf-seek` bridges because the documented `@hyperframes/adapters/*` package was not installable from npm during this run. `@hyperframes/core@0.6.81` contains GSAP adapter internals, but no first-party Lottie, Three.js, Anime.js, D3, PixiJS, Rive, or dotLottie adapter implementations were found in the published tarball.
 
-### 013: Remaining Adapter Sampler
+### Remaining Adapter Sampler
 
 Goal:
 
 ```text
-Test Rive or PixiJS if we can keep fixtures local, small, and legally clean.
+Test Rive if we can keep a real `.riv` fixture local, small, and legally clean.
 ```
 
 Why:
 
 ```text
-Docs emphasize adapters. Our current project now exercises GSAP, WAAPI, Three.js, Anime.js, D3, and Lottie bridge paths, but not Rive, PixiJS, dotLottie, or official adapter packages.
+Docs emphasize adapters. Our current project now exercises GSAP, WAAPI, Three.js, Anime.js, D3, Lottie, and PixiJS bridge paths, but not Rive, dotLottie, or official adapter packages.
 ```
 
 ### Completed MOV And Remove Background Probes
@@ -271,7 +272,7 @@ Risk:
 May require much more CPU/GPU time than the one-image proof, which took 9.81 seconds on CPU after the model was cached.
 ```
 
-### 016: Init And Template Probe
+### Completed Init And Template Probe
 
 Goal:
 
@@ -282,10 +283,25 @@ Run hyperframes init in an isolated scratch experiment with --non-interactive an
 Why:
 
 ```text
-The public docs start with init. Our repo has not preserved init evidence.
+The public docs start with init. The repo now preserves generated scaffold evidence.
 ```
 
-### 016: Optional Cloud/Publish/Lambda Audit
+Result:
+
+```text
+Generated blank project files: AGENTS.md, CLAUDE.md, hyperframes.json, index.html, meta.json, package.json
+Direct lint/inspect: passed
+Generated npm run check: passed
+```
+
+Finding:
+
+```text
+The generated package uses `hyperframes validate`; the command works in 0.6.81 even though it was not listed in the earlier top-level command map.
+The generated `meta.json` includes `createdAt`, so repeated init runs are structurally reproducible but not byte-for-byte deterministic.
+```
+
+### Optional Cloud/Publish/Lambda Audit
 
 Goal:
 

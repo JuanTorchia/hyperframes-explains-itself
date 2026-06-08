@@ -58,5 +58,20 @@
     "sizeBytes": 122212,
     "frameSizeBytes": 132787,
     "bridge": "project-local hf-seek bridge"
+  },
+  {
+    "name": "pixi",
+    "project": "experiments/013-adapter-sampler/pixi",
+    "output": "experiments/013-adapter-sampler/output/pixi-adapter-proof.mp4",
+    "frame": "experiments/013-adapter-sampler/evidence/frame-pixi.png",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 3,
+      "fps": 30
+    },
+    "sizeBytes": 741207,
+    "frameSizeBytes": 286124,
+    "bridge": "project-local hf-seek bridge"
   }
 ]

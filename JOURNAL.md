@@ -1014,3 +1014,84 @@ Alpha validation:
 background samples -> alpha 0
 subject samples -> alpha 255
 ```
+
+## 2026-06-08 - Init Probe And PixiJS Adapter Proof
+
+Implemented:
+
+```text
+experiments/016-init-template
+experiments/013-adapter-sampler/pixi
+tools/run-init-template-evidence.mjs
+```
+
+Updated:
+
+```text
+tools/run-adapter-evidence.mjs
+package.json
+package-lock.json
+```
+
+Init probe:
+
+```text
+npm run experiment:init-template
+```
+
+Generated project:
+
+```text
+experiments/016-init-template/generated/init-blank
+```
+
+Generated files:
+
+```text
+AGENTS.md
+CLAUDE.md
+hyperframes.json
+index.html
+meta.json
+package.json
+```
+
+Validation:
+
+```text
+direct hyperframes lint -> passed
+direct hyperframes inspect -> passed
+generated npm run check -> passed
+```
+
+Important finding:
+
+```text
+The generated package script includes `hyperframes validate`.
+That command works in hyperframes@0.6.81, even though it was not included in the earlier top-level command map.
+The generated `meta.json` includes `createdAt`, so repeated init runs are structurally reproducible but not byte-for-byte deterministic.
+```
+
+PixiJS probe:
+
+```text
+npm run experiment:adapters:check
+npm run experiment:adapters:render
+```
+
+Result:
+
+```text
+experiments/013-adapter-sampler/output/pixi-adapter-proof.mp4
+duration: 3 seconds
+resolution: 1920x1080
+fps: 30
+size: 741,207 bytes
+```
+
+Decision:
+
+```text
+PixiJS is now covered as a project-local `hf-seek` bridge.
+Rive remains pending because a real `.riv` fixture should be local, small, and clearly licensed before we claim evidence.
+```

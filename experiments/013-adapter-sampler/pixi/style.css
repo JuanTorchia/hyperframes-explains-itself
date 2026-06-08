@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #111311;
+  color: #f8f4ec;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(120deg, rgba(234, 90, 74, 0.16), transparent 32%),
+    linear-gradient(90deg, rgba(248, 244, 236, 0.07) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(248, 244, 236, 0.07) 1px, transparent 1px),
+    #111311;
+  background-size: auto, 96px 96px, 96px 96px;
+}
+
+.label {
+  position: absolute;
+  top: 72px;
+  left: 84px;
+  z-index: 2;
+  max-width: 760px;
+}
+
+p,
+h1 {
+  margin: 0;
+}
+
+p {
+  color: #ea5a4a;
+  font-size: 34px;
+  font-weight: 760;
+}
+
+h1 {
+  margin-top: 18px;
+  font-size: 72px;
+  line-height: 1.02;
+}
+
+code {
+  color: #f5d36f;
+}
+
+.visual {
+  position: absolute;
+  inset: 0;
+}

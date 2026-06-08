@@ -1,0 +1,10 @@
+{
+  "command": "hyperframes init init-blank --example blank --non-interactive --skip-skills",
+  "cwd": "experiments/016-init-template/generated",
+  "output": "experiments/016-init-template/generated/init-blank",
+  "startedAt": "2026-06-08T19:07:16.015Z",
+  "completedAt": "2026-06-08T19:07:49.353Z",
+  "directoryCreated": true,
+  "stdout": "Created init-blank/\n  AGENTS.md\n  CLAUDE.md\n  hyperframes.json\n  index.html\n  meta.json\n  package.json\n\nGet started:\n\n  1. Install AI coding skills (one-time):\n     npx skills add heygen-com/hyperframes\n\n  2. Open this project with your AI coding agent:\n     cd init-blank then start Claude Code, Cursor, or your preferred agent\n\n  3. Try a starter prompt:\n     \"Using /hyperframes, create a 15-second intro about [your topic]\"\n     More patterns: hyperframes.heygen.com/guides/prompting\n\n  4. Preview in the browser:\n     cd init-blank && npm run dev\n\n  5. Check the composition:\n     cd init-blank && npm run check\n\n  6. Render to MP4 when ready:\n     cd init-blank && npm run render\n\n  Full docs: hyperframes.heygen.com\n",
+  "stderr": ""
+}

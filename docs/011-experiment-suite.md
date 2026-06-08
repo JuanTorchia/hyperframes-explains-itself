@@ -20,9 +20,10 @@ The main walkthrough proves the core workflow, but it should not carry every Hyp
 | `010-social-aspects` | Rendered landscape, portrait, and square MP4 variants from separate composition roots. |
 | `011-render-controls` | Rendered quality, CRF, and bitrate variants from one deterministic composition. |
 | `012-waapi-adapter` | Rendered a browser-native WAAPI animation controlled by a seek-clock bridge. |
-| `013-adapter-sampler` | Rendered Three.js, Anime.js, D3, and Lottie proof clips through project-local `hf-seek` bridges. |
+| `013-adapter-sampler` | Rendered Three.js, Anime.js, D3, Lottie, and PixiJS proof clips through project-local `hf-seek` bridges. |
 | `014-mov-output` | Rendered and verified a transparent ProRes 4444 MOV artifact. |
 | `015-remove-background` | Processed a public domain portrait with local CPU background removal and verified alpha samples. |
+| `016-init-template` | Generated a blank project with non-interactive `hyperframes init` and validated the scaffold. |
 
 ## Practical Findings
 
@@ -289,13 +290,14 @@ FFprobe evidence shows a 3-second 1920x1080 MP4 with H.264 video. This covers a 
 
 ### Adapter Sampler
 
-The adapter sampler tests four popular libraries:
+The adapter sampler tests five popular libraries:
 
 ```text
 Three.js
 Anime.js
 D3
 Lottie Web
+PixiJS
 ```
 
 The official docs describe built-in adapters under `@hyperframes/adapters/*`, but `npm view @hyperframes/adapters version` returned a public registry 404 during this run. The published `@hyperframes/core@0.6.81` tarball exposes adapter internals only for GSAP. The experiment therefore uses the documented `hf-seek` event pattern directly and should be described as project-local bridge evidence.
@@ -307,6 +309,7 @@ experiments/013-adapter-sampler/output/three-adapter-proof.mp4
 experiments/013-adapter-sampler/output/anime-adapter-proof.mp4
 experiments/013-adapter-sampler/output/d3-adapter-proof.mp4
 experiments/013-adapter-sampler/output/lottie-adapter-proof.mp4
+experiments/013-adapter-sampler/output/pixi-adapter-proof.mp4
 ```
 
 Summary:
@@ -316,9 +319,55 @@ three -> 3 seconds, 1920x1080, 30fps, 418,195 bytes
 anime -> 3 seconds, 1920x1080, 30fps, 221,247 bytes
 d3 -> 3 seconds, 1920x1080, 30fps, 80,397 bytes
 lottie -> 3 seconds, 1920x1080, 30fps, 122,212 bytes
+pixi -> 3 seconds, 1920x1080, 30fps, 741,207 bytes
 ```
 
-This covers practical rendering with WebGL, DOM animation, data-driven SVG, and Lottie JSON. It does not cover Rive, PixiJS, dotLottie, or official adapter-package installation.
+This covers practical rendering with WebGL, DOM animation, data-driven SVG, Lottie JSON, and PixiJS canvas graphics. It does not cover Rive, dotLottie, or official adapter-package installation.
+
+### Init Template
+
+The init probe runs:
+
+```bash
+npm run experiment:init-template
+```
+
+It creates an isolated generated project:
+
+```text
+experiments/016-init-template/generated/init-blank/
+```
+
+Generated files:
+
+```text
+AGENTS.md
+CLAUDE.md
+hyperframes.json
+index.html
+meta.json
+package.json
+```
+
+Validation evidence:
+
+```text
+experiments/016-init-template/evidence/init-result.json
+experiments/016-init-template/evidence/generated-tree.txt
+experiments/016-init-template/evidence/lint.txt
+experiments/016-init-template/evidence/inspect.txt
+experiments/016-init-template/evidence/generated-npm-check.txt
+```
+
+The generated package script passed:
+
+```text
+npm run check
+```
+
+Finding: the generated `package.json` includes `hyperframes validate` in its check script. That command works in `hyperframes@0.6.81`, even though it was not listed in the earlier top-level command map.
+
+Reproducibility note: the generated `meta.json` includes `createdAt`, so the scaffold is structurally reproducible but not byte-for-byte deterministic across reruns.
 
 ### MOV Output
 
@@ -384,8 +433,7 @@ The first input was a flat synthetic icon. It produced a successful command resp
 
 ## Next Recommended Proofs
 
-1. Add Rive or PixiJS only if we can use a real, small fixture without pulling in fragile external assets.
-2. Run an isolated `hyperframes init` probe because the public docs start there.
-3. Decide whether final captions should be generated from official Whisper output, curated from the script, or shown as both machine output and edited captions.
-4. Investigate why the 30fps standard 4-worker benchmark preset remains unstable.
-5. Extract 2-3 short clips from the experiment artifacts for the article draft.
+1. Add Rive only if we can use a real, small `.riv` fixture with clear licensing.
+2. Decide whether final captions should be generated from official Whisper output, curated from the script, or shown as both machine output and edited captions.
+3. Investigate why the 30fps standard 4-worker benchmark preset remains unstable.
+4. Extract 2-3 short clips from the experiment artifacts for the article draft.

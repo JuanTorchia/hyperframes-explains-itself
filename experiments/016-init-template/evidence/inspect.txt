@@ -1,0 +1,3 @@
+◆  Inspecting layout for init-blank (9 timeline samples)
+
+◇  0 layout issues across 9 sample(s)

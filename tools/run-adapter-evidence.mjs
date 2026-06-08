@@ -15,6 +15,7 @@ const adapters = [
   { name: "anime", project: `${projectDir}/anime`, output: `${outputDir}/anime-adapter-proof.mp4`, frame: `${evidenceDir}/frame-anime.png` },
   { name: "d3", project: `${projectDir}/d3`, output: `${outputDir}/d3-adapter-proof.mp4`, frame: `${evidenceDir}/frame-d3.png` },
   { name: "lottie", project: `${projectDir}/lottie`, output: `${outputDir}/lottie-adapter-proof.mp4`, frame: `${evidenceDir}/frame-lottie.png` },
+  { name: "pixi", project: `${projectDir}/pixi`, output: `${outputDir}/pixi-adapter-proof.mp4`, frame: `${evidenceDir}/frame-pixi.png` },
 ];
 
 function hyperframesArgs(args) {
@@ -147,4 +148,3 @@ if (mode === "prepare") {
 } else {
   throw new Error(`Unknown adapter evidence mode: ${mode}`);
 }
-
