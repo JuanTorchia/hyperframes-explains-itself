@@ -8,6 +8,7 @@ Use the referenced files in place. Large videos stay in `experiments/**/output/`
 
 | Label | Source | Why It Matters |
 | --- | --- | --- |
+| `final-demo` | `renders/final-demo.mp4` | Main article demo, rendered from `video/final-demo/`. |
 | `captions-comparison` | `experiments/008-captions-layer/output/captions-layer-proof.mp4` | Shows automatic vs curated captions. |
 | `track-attributes` | `experiments/009-track-attributes/output/track-attributes-proof.mp4` | Shows timeline primitives: fade, loop, speed, mute, tracks. |
 | `social-portrait` | `experiments/010-social-aspects/output/social-portrait.mp4` | Shows vertical output for social formats. |
@@ -31,6 +32,7 @@ Use the referenced files in place. Large videos stay in `experiments/**/output/`
 
 | Topic | Evidence |
 | --- | --- |
+| Final demo metadata | `video/final-demo/evidence/ffprobe-final-demo.json` |
 | CLI surface and Docker status | `experiments/003-cli-introspection/evidence/doctor.json` |
 | WebM output | `experiments/002-output-formats/evidence/ffprobe-webm.json` |
 | PNG sequence | `experiments/002-output-formats/evidence/png-sequence-summary.txt` |

@@ -1,5 +1,26 @@
 # Final Demo Plan
 
+## Status
+
+Rendered and verified.
+
+Output:
+
+```text
+renders/final-demo.mp4
+```
+
+Evidence:
+
+```text
+video/final-demo/evidence/ffprobe-final-demo.json
+video/final-demo/evidence/frame-02s.png
+video/final-demo/evidence/frame-30s.png
+video/final-demo/evidence/frame-50s.png
+video/final-demo/evidence/frame-70s.png
+video/final-demo/evidence/frame-88s.png
+```
+
 ## Goal
 
 Create one cohesive final demo from the evidence gathered so far.
@@ -93,7 +114,7 @@ video/final-demo/assets.md
 
 ## Draft Commands
 
-Do not run these until the final demo composition exists:
+Rendered with:
 
 ```bash
 npm run check
@@ -105,11 +126,11 @@ hyperframes render video/final-demo --docker --strict-all --workers 1 --output r
 The final demo is ready when:
 
 ```text
-The script does not claim untested features.
-Every visual claim maps to an artifact in `article-assets/README.md`.
-The final render passes lint and inspect.
-FFprobe evidence exists for the final MP4.
-The journal records at least one failed assumption and its fix.
+The script does not claim untested features: done.
+Every visual claim maps to an artifact in `article-assets/README.md`: done.
+The final render passes lint and inspect: done.
+FFprobe evidence exists for the final MP4: done.
+The journal records at least one failed assumption and its fix: done.
 ```
 
 ## Open Decisions

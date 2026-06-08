@@ -1181,3 +1181,57 @@ curated captions
 final MP4
 FFprobe evidence
 ```
+
+## 2026-06-08 - Final Demo Render
+
+Implemented:
+
+```text
+video/final-demo/index.html
+video/final-demo/style.css
+audio/source/final-demo-voiceover.txt
+video/final-demo/assets/audio/final-demo-af-nova.wav
+video/final-demo/assets/stills/
+```
+
+Rendered:
+
+```text
+renders/final-demo.mp4
+```
+
+Commands:
+
+```text
+npm run tts:final-demo
+npm run final-demo:check
+npm run final-demo:render
+```
+
+Validation:
+
+```text
+final-demo:check -> 0 errors, 0 warnings, 0 layout issues
+final-demo:render -> Docker render completed
+FFprobe -> H.264 video, AAC audio, 90.048 seconds, 2700 frames
+```
+
+Evidence:
+
+```text
+video/final-demo/evidence/ffprobe-final-demo.json
+video/final-demo/evidence/frame-02s.png
+video/final-demo/evidence/frame-30s.png
+video/final-demo/evidence/frame-50s.png
+video/final-demo/evidence/frame-70s.png
+video/final-demo/evidence/frame-88s.png
+```
+
+Fixes during implementation:
+
+```text
+The first TTS run produced 93.5 seconds of speech, which was too long for the 90-second composition.
+The TTS speed was raised to 1.2 and regenerated as 88.7 seconds.
+The first lint pass warned that timed scenes were missing `clip` and had an overlapping GSAP `y` tween.
+All timed scenes now include `clip`, and the global scene transition no longer animates `y`.
+```

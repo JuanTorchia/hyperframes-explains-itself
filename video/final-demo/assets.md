@@ -2,7 +2,9 @@
 
 Status: draft asset map.
 
-This file lists the source artifacts the final demo may use. It does not copy large files.
+This file lists the source artifacts the final demo uses or cites.
+
+Implementation note: the final composition copies selected stills into `video/final-demo/assets/stills/` so it can render as a self-contained HyperFrames project. The original experiment artifacts remain the canonical evidence.
 
 ## Primary Video Inputs
 
@@ -61,12 +63,11 @@ reason
 
 ## Missing Assets
 
-The final demo still needs:
+The final demo still does not include:
 
 ```text
-terminal-style visual treatment
-source-to-artifact end card
-possibly one generated or designed title background
+burned-in word-level captions
+derived short clips
 ```
 
-These should be created as HTML/CSS in the final composition, not as separate static artwork unless a specific image is needed.
+The current version uses HTML/CSS for the terminal-style visuals and source-to-artifact end card.

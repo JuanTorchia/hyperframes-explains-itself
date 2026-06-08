@@ -4,6 +4,7 @@ renders/*
 !renders/
 !renders/hyperframes-in-60-seconds.mp4
 !renders/hyperframes-in-60-seconds-with-captions.mp4
+!renders/final-demo.mp4
 snapshots/
 .hyperframes/
 tools/.cache/

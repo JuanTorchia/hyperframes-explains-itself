@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>HyperFrames Final Demo</title>
+    <script src="../../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main
+      id="root"
+      class="stage"
+      data-composition-id="final-demo"
+      data-start="0"
+      data-duration="90"
+      data-width="1920"
+      data-height="1080"
+      data-fps="30"
+      data-bg="#111312"
+    >
+      <audio
+        id="voiceover"
+        src="./assets/audio/final-demo-af-nova.wav"
+        data-start="0"
+        data-duration="88.7"
+        data-track="voiceover"
+        data-volume="1"
+      ></audio>
+
+      <section id="scene-hook" class="scene clip scene-hook" data-start="0" data-duration="6">
+        <div class="source-stack" aria-hidden="true">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JS</span>
+          <span>Evidence</span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Final demo</p>
+          <h1>Can HyperFrames explain HyperFrames?</h1>
+          <p class="support">A reproducible video build with the mistakes left in.</p>
+        </div>
+        <div class="artifact-badge">MP4</div>
+      </section>
+
+      <section id="scene-source" class="scene clip scene-source" data-start="6" data-duration="8">
+        <div class="section-copy">
+          <p class="eyebrow">Source first</p>
+          <h2>Start from HTML, not an editor timeline.</h2>
+        </div>
+        <div class="flow">
+          <div class="file-list">
+            <span>index.html</span>
+            <span>style.css</span>
+            <span>script.md</span>
+            <span>JOURNAL.md</span>
+          </div>
+          <div class="arrow-line"></div>
+          <div class="composition-preview">
+            <span>composition</span>
+            <strong>1920 x 1080</strong>
+            <small>90s at 30fps</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-init" class="scene clip scene-init" data-start="14" data-duration="10">
+        <div class="section-copy">
+          <p class="eyebrow">Scaffold</p>
+          <h2><code>hyperframes init --example blank</code></h2>
+        </div>
+        <div class="terminal-tree">
+          <span>Created init-blank/</span>
+          <span>  AGENTS.md</span>
+          <span>  CLAUDE.md</span>
+          <span>  hyperframes.json</span>
+          <span>  index.html</span>
+          <span>  meta.json</span>
+          <span>  package.json</span>
+        </div>
+        <p class="finding">Finding: the generated scaffold is structural evidence, but `meta.json` includes a timestamp.</p>
+      </section>
+
+      <section id="scene-check" class="scene clip scene-check" data-start="24" data-duration="8">
+        <div class="section-copy">
+          <p class="eyebrow">Before render</p>
+          <h2>Check the composition before creating artifacts.</h2>
+        </div>
+        <div class="check-grid">
+          <div><strong>lint</strong><span>0 errors</span></div>
+          <div><strong>inspect</strong><span>0 layout issues</span></div>
+          <div><strong>validate</strong><span>no console errors</span></div>
+        </div>
+      </section>
+
+      <section id="scene-formats" class="scene clip scene-formats" data-start="32" data-duration="10">
+        <div class="section-copy">
+          <p class="eyebrow">Artifacts</p>
+          <h2>One source can produce different output jobs.</h2>
+        </div>
+        <div class="format-row">
+          <div><strong>MP4</strong><span>delivery</span></div>
+          <div><strong>WebM</strong><span>browser</span></div>
+          <div><strong>PNG</strong><span>frames</span></div>
+          <div><strong>MOV</strong><span>ProRes 4444</span></div>
+        </div>
+        <p class="finding">MOV proof: prores, profile 4444, pixel format yuva444p12le.</p>
+      </section>
+
+      <section id="scene-captions" class="scene clip scene-captions" data-start="42" data-duration="10">
+        <div class="section-copy compact">
+          <p class="eyebrow">Captions</p>
+          <h2>Transcribe, then edit.</h2>
+        </div>
+        <img src="./assets/stills/captions-frame-5s.png" alt="Caption comparison proof frame" />
+        <p class="finding">Machine timing helped. The final tutorial copy still needed human editing.</p>
+      </section>
+
+      <section id="scene-motion" class="scene clip scene-motion" data-start="52" data-duration="12">
+        <div class="section-copy compact">
+          <p class="eyebrow">Motion</p>
+          <h2>Browser animation can follow the seek clock.</h2>
+        </div>
+        <div class="motion-grid">
+          <img src="./assets/stills/waapi-frame-2s.png" alt="WAAPI proof frame" />
+          <img src="./assets/stills/pixi-frame.png" alt="PixiJS proof frame" />
+          <div class="library-list">
+            <span>Three.js</span>
+            <span>Anime.js</span>
+            <span>D3</span>
+            <span>Lottie</span>
+            <span>WAAPI</span>
+            <span>PixiJS</span>
+          </div>
+        </div>
+        <p class="finding">These are local bridges, not proof that every official adapter package is installable.</p>
+      </section>
+
+      <section id="scene-background" class="scene clip scene-background" data-start="64" data-duration="10">
+        <div class="section-copy compact">
+          <p class="eyebrow">Background removal</p>
+          <h2>Use honest fixtures.</h2>
+        </div>
+        <div class="background-proof">
+          <img src="./assets/stills/remove-background-output.png" alt="Background removal output" />
+          <div class="alpha-box">
+            <span>background alpha: 0</span>
+            <span>subject alpha: 255</span>
+            <span>provider: CPU</span>
+          </div>
+        </div>
+        <p class="finding">The first flat icon fixture passed the command but failed as evidence.</p>
+      </section>
+
+      <section id="scene-log" class="scene clip scene-log" data-start="74" data-duration="8">
+        <div class="section-copy">
+          <p class="eyebrow">Build log</p>
+          <h2>Mistakes are part of the proof.</h2>
+        </div>
+        <div class="log-cards">
+          <div>Sparse keyframes required re-encoding.</div>
+          <div>Adapter docs did not match npm availability.</div>
+          <div>Utility commands still needed host-visible tools.</div>
+        </div>
+      </section>
+
+      <section id="scene-scope" class="scene clip scene-scope" data-start="82" data-duration="5">
+        <div class="section-copy">
+          <p class="eyebrow">Mapped, not claimed</p>
+          <h2>Cloud, publish, Lambda, auth, Rive, and dotLottie remain outside this local proof.</h2>
+        </div>
+      </section>
+
+      <section id="scene-close" class="scene clip scene-close" data-start="87" data-duration="3">
+        <h2>HTML is the source.</h2>
+        <h2>MP4 is the artifact.</h2>
+      </section>
+
+      <div class="progress-rail" aria-hidden="true">
+        <div id="progress-fill"></div>
+      </div>
+    </main>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const sceneIds = [
+        "scene-hook",
+        "scene-source",
+        "scene-init",
+        "scene-check",
+        "scene-formats",
+        "scene-captions",
+        "scene-motion",
+        "scene-background",
+        "scene-log",
+        "scene-scope",
+        "scene-close",
+      ];
+
+      const tl = gsap.timeline({ paused: true });
+
+      for (const id of sceneIds) {
+        const el = document.getElementById(id);
+        const start = Number(el.dataset.start);
+        const duration = Number(el.dataset.duration);
+
+        tl.set(el, { autoAlpha: 0 }, 0);
+        tl.set(el, { autoAlpha: 1 }, start);
+        tl.fromTo(el, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.25, overwrite: "auto" }, start);
+        tl.to(el, { autoAlpha: 0, duration: 0.25, overwrite: "auto" }, start + duration - 0.25);
+      }
+
+      tl.fromTo(".source-stack span", { x: -40, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.12, duration: 0.35 }, 0.4);
+      tl.fromTo(".artifact-badge", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45 }, 2.2);
+      tl.fromTo(".terminal-tree span", { x: -28, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.1, duration: 0.22 }, 15.2);
+      tl.fromTo(".check-grid div", { y: 28, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.18, duration: 0.3 }, 26);
+      tl.fromTo(".format-row div", { y: 28, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.15, duration: 0.3 }, 34);
+      tl.fromTo(".motion-grid img", { scale: 0.96, opacity: 0 }, { scale: 1, opacity: 1, stagger: 0.2, duration: 0.4 }, 54);
+      tl.fromTo(".library-list span", { x: 28, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.08, duration: 0.22 }, 55);
+      tl.fromTo(".alpha-box span", { x: 24, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.12, duration: 0.26 }, 67);
+      tl.fromTo(".log-cards div", { y: 24, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.18, duration: 0.28 }, 76);
+      tl.to("#progress-fill", { width: "100%", duration: 90, ease: "none" }, 0);
+      tl.to({}, { duration: 90 }, 0);
+
+      window.__timelines["final-demo"] = tl;
+    </script>
+  </body>
+</html>

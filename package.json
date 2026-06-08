@@ -49,6 +49,9 @@
     "transcribe:setup:official": "node tools/setup-whisper-official.mjs",
     "tts:setup": "node tools/setup-tts-python.mjs",
     "tts": "node tools/run-with-venv.mjs hyperframes tts audio/source/voiceover.txt --voice af_nova --lang en-us --speed 1.15 --output audio/generated/hyperframes-in-60-seconds-af-nova.wav",
+    "tts:final-demo": "node tools/run-with-venv.mjs hyperframes tts audio/source/final-demo-voiceover.txt --voice af_nova --lang en-us --speed 1.2 --output video/final-demo/assets/audio/final-demo-af-nova.wav",
+    "final-demo:check": "hyperframes lint video/final-demo && hyperframes inspect video/final-demo",
+    "final-demo:render": "hyperframes render video/final-demo --docker --strict-all --workers 1 --output renders/final-demo.mp4",
     "render": "hyperframes render --docker --strict-all --workers 1 --output renders/hyperframes-in-60-seconds.mp4",
     "render:captions": "node tools/render-main-with-captions.mjs",
     "render:local": "hyperframes render --strict-all --workers 1 --output renders/hyperframes-in-60-seconds.mp4"

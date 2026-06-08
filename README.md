@@ -16,7 +16,7 @@ This project tries to prove that HyperFrames can be used as a practical develope
 
 ## Expected Output
 
-The current output is a 108-second technical developer walkthrough generated from this repository.
+The current main article demo is a 90-second technical developer walkthrough generated from this repository.
 
 The video should explain:
 
@@ -26,7 +26,9 @@ The video should explain:
 - The high-level workflow: initialize, preview, render.
 - The final idea: HTML is the source, MP4 is the artifact.
 
-The current Docker-rendered MP4 has been produced at `renders/hyperframes-in-60-seconds.mp4`.
+The current final demo has been produced at `renders/final-demo.mp4`.
+
+The earlier v2 walkthrough is preserved at `renders/hyperframes-in-60-seconds.mp4`.
 
 ## Tools
 
@@ -92,10 +94,18 @@ Render the video:
 npm run render
 ```
 
+Render the final article demo:
+
+```bash
+npm run tts:final-demo
+npm run final-demo:check
+npm run final-demo:render
+```
+
 Output path:
 
 ```text
-renders/hyperframes-in-60-seconds.mp4
+renders/final-demo.mp4
 ```
 
 Generate the AI voiceover:
@@ -107,7 +117,7 @@ npm run tts
 
 ## Current Project Status
 
-Status: v2 Docker render completed.
+Status: final article demo rendered and verified.
 
 Completed:
 
@@ -145,11 +155,16 @@ Completed:
 - Initial 60-second script drafted.
 - Initial storyboard drafted.
 - Render notes file created.
+- Final demo composition implemented in `video/final-demo/`.
+- Final demo TTS voiceover generated at `video/final-demo/assets/audio/final-demo-af-nova.wav`.
+- `npm run final-demo:check` completed with 0 errors, 0 warnings, and 0 layout issues.
+- `npm run final-demo:render` produced `renders/final-demo.mp4`.
+- Final demo FFprobe evidence captured at `video/final-demo/evidence/ffprobe-final-demo.json`.
 
 Pending:
 
 - Keep `npm run doctor:docker` as an explicit Docker preflight for this tutorial.
 - Resolve `npm run doctor` host-local FFmpeg/FFprobe warnings only if local rendering is needed.
-- Review the final MP4 end to end.
-- Re-render the main walkthrough after source-only changes.
-- Continue the experiment suite: investigate the unstable 4-worker benchmark preset, decide on `whisper-cpp`, and decide whether the isolated caption component should become a real captions scene.
+- Review `renders/final-demo.mp4` end to end for editorial pacing.
+- Add burned-in word-level captions to the final demo if the article needs an accessible embed.
+- Continue only targeted experiments: Rive or cloud/publish/lambda/auth should wait until assets, accounts, and credentials are explicitly decided.
