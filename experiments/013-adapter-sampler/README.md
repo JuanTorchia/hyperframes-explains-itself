@@ -15,7 +15,7 @@ D3
 Lottie
 ```
 
-The official docs describe adapters under `@hyperframes/adapters/*`, but `@hyperframes/adapters` was not available from the public npm registry during this run. These proofs therefore use the documented `hf-seek` pattern directly instead of claiming official adapter package coverage.
+The official docs describe adapters under `@hyperframes/adapters/*`, but `@hyperframes/adapters` was not available from the public npm registry during this run. The published `@hyperframes/core@0.6.81` tarball exposes adapter internals only for GSAP. These proofs therefore use the documented `hf-seek` pattern directly instead of claiming official adapter package coverage.
 
 ## Commands
 

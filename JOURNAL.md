@@ -897,3 +897,52 @@ Operational note:
 npm install added `three`, `animejs`, `d3`, `lottie-web`, and explicit `esbuild` dev dependencies.
 npm printed an EPERM cleanup warning for a temporary `node_modules/@esbuild/.win32-x64-*` directory. It is inside node_modules and not a repository artifact.
 ```
+
+## 2026-06-08 - HyperFrames 0.6.81 And Adapter Package Follow-up
+
+Investigated:
+
+```text
+npm metadata for hyperframes, @hyperframes/core, and @hyperframes/adapters
+published @hyperframes/core@0.6.81 tarball
+GitHub main branch packages/core/src/adapters
+public docs on hyperframes.video and hyperframes.heygen.com
+```
+
+Findings:
+
+```text
+hyperframes latest -> 0.6.81
+@hyperframes/core latest -> 0.6.81
+@hyperframes/adapters -> public npm registry 404
+@hyperframes/core@0.6.81 contains GSAP adapter internals only
+GitHub main packages/core/src/adapters also contains GSAP adapter files only
+```
+
+Updated:
+
+```text
+package.json -> hyperframes@0.6.81
+package-lock.json -> hyperframes@0.6.81
+docs/016-adapter-package-investigation.md
+docs/015-hyperframes-coverage-audit.md
+docs/011-experiment-suite.md
+experiments/013-adapter-sampler/README.md
+```
+
+Decision:
+
+```text
+Keep the adapter sampler wording as project-local `hf-seek` bridges.
+Do not claim official adapter package coverage for Lottie, Three.js, Anime.js, D3, PixiJS, Rive, or dotLottie.
+```
+
+Validation:
+
+```text
+npx hyperframes --version -> 0.6.81
+npm run experiment:adapters:check -> passed
+npm run experiment:adapters:render -> passed
+npm run check -> passed
+Adapter sampler artifact hashes stayed unchanged after the 0.6.81 render.
+```

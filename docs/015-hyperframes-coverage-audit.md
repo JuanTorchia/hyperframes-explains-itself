@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This audit compares the current repository against HyperFrames documentation and the local `hyperframes@0.6.80` CLI surface. It answers one question:
+This audit compares the current repository against HyperFrames documentation and the local `hyperframes@0.6.81` CLI surface. It answers one question:
 
 ```text
 Have we covered everything HyperFrames gives us?
@@ -13,11 +13,14 @@ Short answer: no. We covered a strong developer tutorial core and many advanced 
 ## Sources Checked
 
 - Official docs index at `https://hyperframes.video/docs`.
+- Official docs at `https://hyperframes.heygen.com`.
 - Official CLI reference at `https://hyperframes.video/docs/workflow/cli-reference`.
 - Official concepts pages for data attributes and frame adapters.
 - Local CLI help from `npx hyperframes --help`.
 - Local command help for `render`, `init`, `snapshot`, `capture`, `transcribe`, `tts`, `publish`, `cloud`, `lambda`, `auth`, `skills`, and `remove-background`.
 - Existing repository docs and experiment evidence.
+- NPM package metadata for `hyperframes`, `@hyperframes/core`, and `@hyperframes/adapters`.
+- GitHub repository contents for `packages/core/src/adapters`.
 
 ## Important Documentation Mismatch
 
@@ -35,7 +38,7 @@ upgrade
 browser
 ```
 
-The installed local CLI exposes a broader surface in `hyperframes@0.6.80`:
+The installed local CLI exposes a broader surface in `hyperframes@0.6.81`:
 
 ```text
 init
@@ -153,7 +156,7 @@ PixiJS -> missing
 custom adapter -> missing
 ```
 
-Important caveat: the docs describe `@hyperframes/adapters/*`, but `@hyperframes/adapters` returned a public npm registry 404 during the adapter sampler run. The repository now proves local `hf-seek` bridges for several popular libraries, not official adapter package installation.
+Important caveat: the docs describe `@hyperframes/adapters/*`, but `@hyperframes/adapters` returned a public npm registry 404 during the adapter sampler run. The published `@hyperframes/core@0.6.81` tarball and GitHub `main` branch expose adapter internals only for GSAP. The repository now proves local `hf-seek` bridges for several popular libraries, not official adapter package installation. See `docs/016-adapter-package-investigation.md`.
 
 ## Recipe Coverage
 
@@ -197,7 +200,7 @@ D3
 Lottie Web
 ```
 
-All four use project-local `hf-seek` bridges because the documented `@hyperframes/adapters/*` package was not installable from npm during this run.
+All four use project-local `hf-seek` bridges because the documented `@hyperframes/adapters/*` package was not installable from npm during this run. `@hyperframes/core@0.6.81` contains GSAP adapter internals, but no first-party Lottie, Three.js, Anime.js, D3, PixiJS, Rive, or dotLottie adapter implementations were found in the published tarball.
 
 ### 013: Remaining Adapter Sampler
 

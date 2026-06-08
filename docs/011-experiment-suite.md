@@ -296,7 +296,7 @@ D3
 Lottie Web
 ```
 
-The official docs describe built-in adapters under `@hyperframes/adapters/*`, but `npm view @hyperframes/adapters version` returned a public registry 404 during this run. The experiment therefore uses the documented `hf-seek` event pattern directly and should be described as project-local bridge evidence.
+The official docs describe built-in adapters under `@hyperframes/adapters/*`, but `npm view @hyperframes/adapters version` returned a public registry 404 during this run. The published `@hyperframes/core@0.6.81` tarball exposes adapter internals only for GSAP. The experiment therefore uses the documented `hf-seek` event pattern directly and should be described as project-local bridge evidence.
 
 Rendered outputs:
 
