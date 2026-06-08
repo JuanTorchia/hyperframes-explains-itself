@@ -727,3 +727,20 @@ The brand footer initially competed with the caption area in some scenes.
 Polish fix: move the footer to the top-right corner only in the captioned variant.
 The captioned render was regenerated after the footer fix.
 ```
+
+### Article Structure Pass
+
+Updated:
+
+```text
+docs/007-article-outline.md -> post-ready technical outline based on current evidence
+docs/014-publication-checklist.md -> checklist for claims, media, commands, and follow-ups
+```
+
+Decision:
+
+```text
+The article should be drafted from evidence, not from product claims.
+Use the captioned render and experiment clips as article assets.
+Keep failure sections explicit: FFmpeg, keyframes, PNG timeout, benchmark worker setup, Whisper package mismatch, caption footer polish.
+```

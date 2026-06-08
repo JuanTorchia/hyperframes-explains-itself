@@ -136,6 +136,8 @@ Completed:
 - Capability experiments started in `experiments/`.
 - Experiment suite notes documented in `docs/011-experiment-suite.md`.
 - Local tooling fixes documented in `docs/012-local-tooling-fixes.md`.
+- Captioned main render documented in `docs/013-captioned-main-render.md`.
+- Publication checklist documented in `docs/014-publication-checklist.md`.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.
