@@ -12,7 +12,7 @@ The main video should not become a command encyclopedia. These experiments let t
 | `002-output-formats` | WebM and PNG sequence outputs | WebM and PNG sequence rendered and verified |
 | `003-cli-introspection` | `info`, `compositions`, `doctor`, `browser` | Evidence captured |
 | `004-benchmark` | Benchmark with a tiny composition | Fixed with project-local FFmpeg and explicit browser path; one 4-worker config remains unstable |
-| `005-transcribe-captions` | Transcript import, local Whisper JSON, caption source data | SRT import works; direct HyperFrames audio transcription is blocked by a local Whisper flag mismatch; Whisper JSON import works |
+| `005-transcribe-captions` | Transcript import, local Whisper JSON, caption source data | SRT import works; Python package import workaround works; official whisper.cpp direct audio transcription works |
 | `006-registry-components` | `catalog` and `add` discovery | Catalog discovery and isolated component install captured |
 | `007-capture-website` | Local website capture | Local capture completed |
 
@@ -26,6 +26,8 @@ npm run experiment:formats:png
 npm run experiment:introspection
 npm run experiment:benchmark
 npm run experiment:transcribe
+npm run transcribe:setup:official
+npm run experiment:transcribe:official
 npm run experiment:capture
 ```
 
@@ -39,7 +41,7 @@ npm run experiment:capture
 - `003-cli-introspection` produced JSON evidence for `info`, `compositions`, `doctor`, and browser path.
 - `004-benchmark` was fixed by using the managed Chrome path and project-local `ffmpeg-static` binary.
 - `005-transcribe-captions` imported an SRT transcript and produced `source/transcript.json`.
-- `005-transcribe-captions` installed `whisper.cpp-cli` in `.venv`, captured the HyperFrames direct-audio failure, generated Whisper JSON directly, and imported that JSON with HyperFrames.
+- `005-transcribe-captions` installed `whisper.cpp-cli` in `.venv`, captured the Python-package direct-audio failure, generated Whisper JSON directly, imported that JSON with HyperFrames, then validated direct HyperFrames audio transcription with the official `whisper-bin-x64.zip` release asset.
 - `006-registry-components` captured registry catalog JSON, caption-specific catalog JSON, and an isolated `caption-weight-shift` install.
 - `007-capture-website` captured a local static website into editable capture output.
 
@@ -49,7 +51,7 @@ npm run experiment:capture
 - The WebM command exceeded the shell timeout, but the produced artifact was verified with FFprobe as a 6.008 second WebM with VP9 video and Opus audio.
 - A PNG sequence render against the media-heavy composition exceeded a 10-minute timeout and left 174 partial frames. The reproducible PNG proof now uses a dedicated 1-second composition and produces 30 complete frames.
 - `hyperframes benchmark` does not expose Docker mode in the current CLI help. The local benchmark initially failed because workers did not receive a browser executable path, then failed because host FFmpeg was missing. The current runner fixes both locally, but one 4-worker preset can still fail.
-- `hyperframes transcribe` can import SRT and Whisper JSON. Direct audio transcription still needs a compatible `whisper-cli`; the tested Python package does not support HyperFrames' `--suppress-nst` argument.
+- `hyperframes transcribe` can import SRT and Whisper JSON. Direct audio transcription works locally with the official Windows x64 `whisper-cli.exe`; the tested Python package does not support HyperFrames' `--suppress-nst` argument.
 - `hyperframes add caption-weight-shift --no-clipboard --json` wrote the expected component file in an isolated sandbox, but the JSON reported `clipboardCopied: true`.
 
 ## Rules

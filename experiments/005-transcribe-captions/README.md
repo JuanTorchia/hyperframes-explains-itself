@@ -9,12 +9,15 @@ Can HyperFrames produce or import transcript data that can become captions?
 - `hyperframes transcribe audio/generated/hyperframes-in-60-seconds-af-nova.wav --model tiny.en --language en --json`
 - `hyperframes transcribe experiments/005-transcribe-captions/source/manual-transcript.srt --json`
 - direct `whisper.cpp-cli` JSON generation followed by `hyperframes transcribe <whisper-json> --json`
+- official `ggml-org/whisper.cpp` Windows x64 `whisper-cli.exe` with direct HyperFrames audio transcription
 
 ## Notes
 
 Audio transcription may download or require a Whisper model. The first safe probe is transcript import from SRT, because it avoids model setup and still tests the command path.
 
 The second probe uses `whisper.cpp-cli` installed in the project Python virtual environment. This is not the final recommended production setup. It is a local experiment to find out how close a lightweight install can get before a full `whisper.cpp` build is required.
+
+The third probe uses the official `ggml-org/whisper.cpp` Windows x64 release asset. This is the first local path that worked with HyperFrames direct audio transcription.
 
 ## Expected Evidence
 
@@ -30,6 +33,11 @@ experiments/005-transcribe-captions/evidence/ffmpeg-voiceover-16k.stderr.txt
 experiments/005-transcribe-captions/evidence/imported-direct-whisper-json.json
 experiments/005-transcribe-captions/source/direct-whisper-transcript.json
 experiments/005-transcribe-captions/source/direct-whisper-imported-transcript.json
+experiments/005-transcribe-captions/evidence/official-whisper-release.json
+experiments/005-transcribe-captions/evidence/official-whisper-cli-help.stderr.txt
+experiments/005-transcribe-captions/evidence/generated-transcript-official-whisper.json
+experiments/005-transcribe-captions/source/official-hyperframes-transcript.json
+audio/generated/transcript.json
 ```
 
 ## Result
@@ -117,16 +125,54 @@ experiments/005-transcribe-captions/source/direct-whisper-imported-transcript.js
 
 The transcript is real local evidence, but it should not be presented as final caption quality. It used `tiny.en`, and the recognized text contains transcription errors.
 
+## Working Direct Audio Path
+
+The official Windows x64 release asset was installed with:
+
+```bash
+npm run transcribe:setup:official
+```
+
+That downloaded the latest `ggml-org/whisper.cpp` release asset tested here:
+
+```json
+{
+  "tagName": "v1.8.6",
+  "assetName": "whisper-bin-x64.zip"
+}
+```
+
+The official binary exposes the flag HyperFrames passes:
+
+```text
+--suppress-nst
+```
+
+Direct HyperFrames audio transcription then worked:
+
+```bash
+npm run experiment:transcribe:official
+```
+
+Result:
+
+```json
+{"ok":true,"model":"tiny.en","wordCount":315,"durationSeconds":97.22,"speechOnsetSeconds":null,"transcriptPath":"C:\\Users\\jstor\\OneDrive\\Documentos\\HyperFrame\\audio\\generated\\transcript.json"}
+```
+
+This is the recommended local transcription path for the article on Windows: use the official `whisper-bin-x64.zip`, not the Python `whisper.cpp-cli` package.
+
 ## Reproducible Command
 
 ```bash
 npm run experiment:transcribe
+npm run transcribe:setup:official
+npm run experiment:transcribe:official
 ```
 
-This command records the failed direct HyperFrames path, the unsupported-flag probe, the direct Whisper JSON generation, and the successful HyperFrames import of that JSON.
+These commands record the failed Python-package path, the unsupported-flag probe, the direct Whisper JSON workaround, and the successful official direct-audio HyperFrames path.
 
 ## Pending
 
-- Test a full `whisper.cpp` build or official `whisper-cli` binary that supports `--suppress-nst`.
 - Decide whether the final video should use generated captions from Whisper, curated captions from the approved script, or both.
-- Do not claim direct HyperFrames audio transcription works on this machine yet.
+- Test the same official setup inside Docker if we want the caption workflow to be fully containerized.

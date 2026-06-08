@@ -116,4 +116,36 @@ experiments/005-transcribe-captions/source/direct-whisper-transcript.json
 experiments/005-transcribe-captions/source/direct-whisper-imported-transcript.json
 ```
 
-Decision: the final guide should document three caption paths separately: SRT import, Whisper JSON import, and direct audio transcription with a compatible `whisper-cli`. Only the first two have passed locally.
+Decision: the final guide should document three caption paths separately: SRT import, Whisper JSON import, and direct audio transcription with a compatible `whisper-cli`. The compatible direct path is the official Windows x64 release asset tested below.
+
+### Official Whisper.cpp Release
+
+The compatible Windows path is the official `ggml-org/whisper.cpp` release asset:
+
+```bash
+npm run transcribe:setup:official
+npm run experiment:transcribe:official
+```
+
+The tested release metadata:
+
+```json
+{
+  "tagName": "v1.8.6",
+  "assetName": "whisper-bin-x64.zip"
+}
+```
+
+The official `whisper-cli.exe` help includes:
+
+```text
+--suppress-nst
+```
+
+HyperFrames direct audio transcription succeeded with that binary:
+
+```json
+{"ok":true,"model":"tiny.en","wordCount":315,"durationSeconds":97.22,"speechOnsetSeconds":null,"transcriptPath":"C:\\Users\\jstor\\OneDrive\\Documentos\\HyperFrame\\audio\\generated\\transcript.json"}
+```
+
+Updated decision: for Windows local transcription, document the official `whisper-bin-x64.zip` setup as the recommended path. Keep the Python package attempt in the article as a useful near miss.

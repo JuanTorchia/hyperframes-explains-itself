@@ -12,7 +12,7 @@ The main walkthrough proves the core workflow, but it should not carry every Hyp
 | `002-output-formats` | Rendered and verified WebM plus a 30-frame PNG sequence. |
 | `003-cli-introspection` | Captured `info`, `compositions`, `doctor`, and browser-path evidence. |
 | `004-benchmark` | Fixed enough to produce timing evidence with managed Chrome and project-local FFmpeg; one 4-worker preset remains unstable. |
-| `005-transcribe-captions` | Imported SRT, installed a local Whisper package, captured a direct-audio compatibility failure, generated Whisper JSON directly, and imported that JSON with HyperFrames. |
+| `005-transcribe-captions` | Imported SRT, tested a local Python Whisper package, captured its compatibility failure, imported generated Whisper JSON, and validated direct audio transcription with the official whisper.cpp Windows x64 release. |
 | `006-registry-components` | Captured full catalog and captions catalog JSON; installed one caption component in an isolated sandbox. |
 | `007-capture-website` | Captured a local static website into HyperFrames capture output. |
 
@@ -162,9 +162,24 @@ experiments/005-transcribe-captions/evidence/imported-direct-whisper-json.json
 
 The transcript should be treated as local evidence, not as final copy. It uses `tiny.en` and contains recognition errors.
 
+The official Windows x64 release asset was then tested:
+
+```bash
+npm run transcribe:setup:official
+npm run experiment:transcribe:official
+```
+
+Evidence shows the official `whisper-cli.exe` exposes `--suppress-nst`, and HyperFrames direct audio transcription completed:
+
+```json
+{"ok":true,"model":"tiny.en","wordCount":315,"durationSeconds":97.22,"speechOnsetSeconds":null,"transcriptPath":"C:\\Users\\jstor\\OneDrive\\Documentos\\HyperFrame\\audio\\generated\\transcript.json"}
+```
+
+This changes the recommendation: use the official `ggml-org/whisper.cpp` Windows x64 release for local direct audio transcription, not the Python `whisper.cpp-cli` package.
+
 ## Next Recommended Proofs
 
-1. Test a full `whisper.cpp` build or official `whisper-cli` binary that supports HyperFrames' transcription arguments.
+1. Decide whether final captions should be generated from official Whisper output, curated from the script, or shown as both machine output and edited captions.
 2. Investigate why the 30fps standard 4-worker benchmark preset remains unstable.
 3. Decide whether the isolated caption component should be adapted into a real captions scene.
 4. Extract 2-3 short clips from the experiment artifacts for the article draft.

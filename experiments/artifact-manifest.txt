@@ -85,6 +85,31 @@ Size bytes: 20754
 SHA256: 3664A3ABCDE55B4C5D8F9466C7E4A336BE292C37F8F049D68F2D93B344FFBDDC
 LastWriteTime: 2026-06-08 02:08:08 -03:00
 
+audio\generated\transcript.json
+Size bytes: 20946
+SHA256: 940E636138FE764C1B1CEDC855F44788B25C21773B6E08F012CFB9BE733BDDED
+LastWriteTime: 2026-06-08 02:59:44 -03:00
+
+experiments\005-transcribe-captions\evidence\official-whisper-release.json
+Size bytes: 165
+SHA256: 337ACAAA7D7EB4C059DE9FF1A0D5E0A0131BC6AE3E891FC279D9AEFBCC301761
+LastWriteTime: 2026-06-08 02:59:44 -03:00
+
+experiments\005-transcribe-captions\evidence\official-whisper-cli-help.stderr.txt
+Size bytes: 5609
+SHA256: 350B342F0B7956741919A6749BE892A8C9480922ADCB3C8BAF2B65DFF48DB795
+LastWriteTime: 2026-06-08 02:59:08 -03:00
+
+experiments\005-transcribe-captions\evidence\generated-transcript-official-whisper.json
+Size bytes: 201
+SHA256: 02984F69F447B10A98DC8C4C7289355FE552A21405D3420B8B1712F7E6ACAA29
+LastWriteTime: 2026-06-08 02:59:44 -03:00
+
+experiments\005-transcribe-captions\source\official-hyperframes-transcript.json
+Size bytes: 20946
+SHA256: 940E636138FE764C1B1CEDC855F44788B25C21773B6E08F012CFB9BE733BDDED
+LastWriteTime: 2026-06-08 02:59:44 -03:00
+
 experiments\006-registry-components\install-sandbox\compositions\components\caption-weight-shift.html
 Size bytes: 13590
 SHA256: E057DD3396E8A4133F27C8F9F9647F9297A300391BACDD7CD5ADAF8146A381B3

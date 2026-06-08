@@ -628,3 +628,36 @@ Pending:
 Test a full whisper.cpp build or official whisper-cli binary that supports --suppress-nst.
 Decide whether final captions should come from Whisper output, curated script text, or both.
 ```
+
+### Official Whisper.cpp Transcription
+
+Tested:
+
+```text
+npm run transcribe:setup:official -> installed official ggml-org/whisper.cpp v1.8.6 Windows x64 asset into tools/.cache
+npm run experiment:transcribe:official -> completed direct HyperFrames audio transcription
+```
+
+Result:
+
+```json
+{"ok":true,"model":"tiny.en","wordCount":315,"durationSeconds":97.22,"speechOnsetSeconds":null,"transcriptPath":"C:\\Users\\jstor\\OneDrive\\Documentos\\HyperFrame\\audio\\generated\\transcript.json"}
+```
+
+Finding:
+
+```text
+The official whisper-cli.exe supports --suppress-nst.
+The Python whisper.cpp-cli package remains a near miss, but it should not be recommended as the primary path for HyperFrames direct audio transcription.
+The official Windows x64 release asset is the recommended local path for this project.
+```
+
+Evidence:
+
+```text
+experiments/005-transcribe-captions/evidence/official-whisper-release.json
+experiments/005-transcribe-captions/evidence/official-whisper-cli-help.stderr.txt
+experiments/005-transcribe-captions/evidence/generated-transcript-official-whisper.json
+experiments/005-transcribe-captions/source/official-hyperframes-transcript.json
+audio/generated/transcript.json
+```
