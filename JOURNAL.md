@@ -1140,3 +1140,44 @@ Use experiments as source material.
 Do not turn the final demo into a command encyclopedia.
 Keep untested cloud, publish, lambda, auth, Rive, and dotLottie surfaces out of the demo claims.
 ```
+
+## 2026-06-08 - Final Demo Preproduction
+
+Created:
+
+```text
+video/final-demo/script.md
+video/final-demo/storyboard.md
+video/final-demo/assets.md
+video/final-demo/render-notes.md
+```
+
+Decision:
+
+```text
+The final demo will be 75-90 seconds.
+It will use selected experiment artifacts as source material.
+It will not render yet.
+```
+
+Scope:
+
+```text
+init scaffold
+lint / inspect / validate
+render artifacts
+captions
+animation bridges
+honest build-log mistakes
+remaining unclaimed surfaces
+```
+
+Pending before render:
+
+```text
+index.html implementation
+voiceover audio
+curated captions
+final MP4
+FFprobe evidence
+```
