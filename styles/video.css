@@ -189,6 +189,12 @@ p {
   font-size: 24px;
 }
 
+.captioned-stage .caption {
+  top: 42px;
+  bottom: auto;
+  color: rgba(246, 242, 232, 0.44);
+}
+
 .main-captions {
   pointer-events: none;
   position: absolute;

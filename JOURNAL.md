@@ -723,5 +723,7 @@ Finding:
 
 ```text
 The caption overlay is legible on sampled frames.
-The brand footer is still visible behind the caption area in some scenes; acceptable for proof, but final polish should move or hide it while captions are active.
+The brand footer initially competed with the caption area in some scenes.
+Polish fix: move the footer to the top-right corner only in the captioned variant.
+The captioned render was regenerated after the footer fix.
 ```

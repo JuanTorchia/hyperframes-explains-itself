@@ -67,7 +67,7 @@ evidence/captions/frames/main-with-captions-88s.png
 
 ## Result
 
-The captioned render completed and the overlay is legible in sampled frames. The brand footer remains visible behind the caption area in some scenes; that is acceptable for the proof, but the final version should either move the footer or hide it while captions are active.
+The captioned render completed and the overlay is legible in sampled frames. The brand footer was moved to the top-right corner only for the captioned variant so it no longer competes with the caption area.
 
 ## Decision
 
