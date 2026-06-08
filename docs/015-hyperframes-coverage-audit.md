@@ -75,11 +75,11 @@ For this project, local CLI behavior is the operational source of truth. The art
 | Project scaffold | `init` | Repo was initialized manually; no isolated `init` experiment yet | Partial |
 | Preview | `preview`, `npm run dev` | Used during build, documented, not preserved as a standalone evidence run | Partial |
 | Render | `render --docker`, `--strict-all`, `--workers` | Main render and captioned render completed | Covered |
-| Output formats | `--format mp4`, `webm`, `png-sequence` | MP4, WebM, PNG sequence tested | Partial |
+| Output formats | `--format mp4`, `webm`, `png-sequence` | MP4, WebM, PNG sequence tested | Covered locally except MOV |
 | MOV output | `--format mov` | Not tested | Missing |
-| Resolution presets | `--resolution landscape`, `portrait`, `square`, `4k` | Main landscape only; social aspect recipes not tested | Missing |
-| Quality presets | `--quality draft/standard/high` | Standard used; no comparison | Partial |
-| Bitrate/CRF | `--video-bitrate`, `--crf` | Not tested | Missing |
+| Resolution presets | `--resolution landscape`, `portrait`, `square`, `4k` | Landscape, portrait, and square compositions rendered; 4k not tested | Partial |
+| Quality presets | `--quality draft/standard/high` | Draft, standard, and high variants rendered in `011-render-controls` | Covered |
+| Bitrate/CRF | `--video-bitrate`, `--crf` | `--video-bitrate 2M` and `--crf 28` rendered in `011-render-controls` | Covered |
 | GPU/browser GPU | `--gpu`, `--browser-gpu` | Not tested | Missing |
 | Low-memory mode | `--low-memory-mode` | Not tested | Missing |
 | Page-side compositing | `--page-side-compositing` | Not tested explicitly | Missing |
@@ -112,15 +112,15 @@ For this project, local CLI behavior is the operational source of truth. The art
 | Feature | Docs Surface | Current Coverage | Status |
 | --- | --- | --- | --- |
 | Composition root | `data-composition-id`, `data-width`, `data-height`, `data-duration`, `data-fps` | Main and experiments use these | Covered |
-| Background color | `data-bg` | Not tested | Missing |
-| Track timing | `data-start`, `data-duration`, `data-end` | `data-start` and `data-duration` covered; `data-end` not tested | Partial |
-| Track fade | `data-fade` | Not tested | Missing |
-| Track loop | `data-loop` | Not tested | Missing |
-| Track label | `data-track` | Not tested | Missing |
+| Background color | `data-bg` | Tested in `009-track-attributes` | Covered |
+| Track timing | `data-start`, `data-duration`, `data-end` | `data-start` and `data-duration` covered; `data-end` tested as deprecated by lint | Partial |
+| Track fade | `data-fade` | Tested in `009-track-attributes` | Covered |
+| Track loop | `data-loop` | Tested in `009-track-attributes` | Covered |
+| Track label | `data-track` | Tested in `009-track-attributes` | Covered |
 | Audio/video volume | `data-volume` | Main audio and media timing experiment | Covered |
-| Audio/video mute | `data-mute` | Not tested | Missing |
+| Audio/video mute | `data-mute` | Tested in `009-track-attributes` | Covered |
 | Media trimming | Docs use `data-trim-start`; local project used `data-media-start` successfully | Partial |
-| Media speed | `data-speed` | Not tested | Missing |
+| Media speed | `data-speed` | Tested in `009-track-attributes` | Covered |
 | Nested compositions | `data-composition-src` | Main scene architecture | Covered |
 | Variables | `data-composition-variables`, `data-variable-values`, render `--variables` | Concept shown in main scene; render-time variables not tested | Partial |
 
@@ -146,7 +146,7 @@ GSAP -> covered
 Lottie -> missing
 Three.js -> missing
 Rive -> missing
-WAAPI -> missing
+WAAPI -> covered by local seek-clock bridge
 D3 -> missing
 PixiJS -> missing
 custom adapter -> missing
@@ -163,8 +163,8 @@ This is the largest remaining gap if the article wants to claim broad animation 
 | CI and batch rendering | Not tested | Missing |
 | Programmatic video from data | Not tested with CSV/JSON batch variants | Missing |
 | Personalized video at scale | Not tested | Missing |
-| Shorts/Reels/TikTok from one source | Not tested with portrait/square variants | Missing |
-| Video editing without an NLE | Media trimming, captions, and overlays tested; fades/loops/speed/cross-fades missing | Partial |
+| Shorts/Reels/TikTok from one source | Landscape, portrait, and square variants rendered as separate roots; one-source responsive flow not tested | Partial |
+| Video editing without an NLE | Media trimming, captions, overlays, fades, loops, speed, and mute tested; cross-fades still minimal | Partial |
 | Animated captions | Captions rendered; registry caption component installed but not integrated into final | Partial |
 | Open Graph images/thumbnails | PNG frames and contact sheets exist; no explicit OG image workflow | Partial |
 | Branding with design tokens | Capture produced design token evidence; no full branded-token workflow | Partial |
@@ -172,77 +172,34 @@ This is the largest remaining gap if the article wants to claim broad animation 
 
 ## Recommended Next Experiments
 
-### 009: Track Attributes And Editing
+### Completed In This Batch
+
+The following recommended probes were implemented and validated after the initial audit:
+
+```text
+009-track-attributes
+010-social-aspects
+011-render-controls
+012-waapi-adapter
+```
+
+They added evidence for track/media attributes, social aspect outputs, render quality/encoder controls, and a practical WAAPI bridge.
+
+### 013: Frame Adapter Sampler
 
 Goal:
 
 ```text
-Test data-fade, data-loop, data-end, data-mute, data-speed, and data-track in one tiny composition.
+Test at least one additional non-GSAP adapter beyond WAAPI, preferably Three.js or Lottie.
 ```
 
 Why:
 
 ```text
-This fills the biggest HTML data-attribute gap without requiring external services.
+Docs emphasize adapters. Our current project now exercises GSAP and one WAAPI bridge, but not the rest of the adapter surface.
 ```
 
-Suggested output:
-
-```text
-experiments/009-track-attributes/output/track-attributes-proof.mp4
-```
-
-### 010: Social Aspect Ratios
-
-Goal:
-
-```text
-Render the same simple composition as landscape, portrait, and square.
-```
-
-Why:
-
-```text
-The docs emphasize Shorts/Reels/TikTok and multi-aspect exports. We have not tested this.
-```
-
-Suggested commands:
-
-```bash
-hyperframes render experiments/010-social-aspects --docker --resolution landscape
-hyperframes render experiments/010-social-aspects --docker --resolution portrait
-hyperframes render experiments/010-social-aspects --docker --resolution square
-```
-
-### 011: Render Controls
-
-Goal:
-
-```text
-Compare draft, standard, high, CRF, and video bitrate on a tiny composition.
-```
-
-Why:
-
-```text
-We use standard quality, but we have not documented what the controls do in practice.
-```
-
-### 012: Frame Adapter Sampler
-
-Goal:
-
-```text
-Test at least one non-GSAP adapter, preferably WAAPI first because it needs no extra package.
-```
-
-Why:
-
-```text
-Docs emphasize adapters. Our current project only exercises GSAP.
-```
-
-### 013: Remove Background
+### 014: Remove Background
 
 Goal:
 
@@ -262,7 +219,7 @@ Risk:
 May download a local model or require CPU/GPU time. Keep input tiny.
 ```
 
-### 014: Init And Template Probe
+### 015: Init And Template Probe
 
 Goal:
 
@@ -276,7 +233,7 @@ Why:
 The public docs start with init. Our repo has not preserved init evidence.
 ```
 
-### 015: Optional Cloud/Publish/Lambda Audit
+### 016: Optional Cloud/Publish/Lambda Audit
 
 Goal:
 
@@ -294,12 +251,12 @@ These surfaces involve accounts, public URLs, AWS, or credentials. They should n
 
 We have enough coverage for a strong article about a reproducible developer video build.
 
-We do not yet have enough coverage to claim “this project demonstrates everything HyperFrames can do.”
+We do not yet have enough coverage to claim "this project demonstrates everything HyperFrames can do."
 
 The honest phrasing should be:
 
 ```text
-This repository exercises the core local workflow plus several advanced surfaces: Docker rendering, audio/TTS, transcription, captions, website capture, registry components, output formats, snapshots, lint/inspect, and benchmark evidence.
+This repository exercises the core local workflow plus several advanced surfaces: Docker rendering, audio/TTS, transcription, captions, website capture, registry components, output formats, social aspect variants, render controls, WAAPI, snapshots, lint/inspect, and benchmark evidence.
 ```
 
 Avoid:

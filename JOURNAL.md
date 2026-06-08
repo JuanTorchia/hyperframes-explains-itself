@@ -770,3 +770,74 @@ Documented:
 ```text
 docs/015-hyperframes-coverage-audit.md
 ```
+
+## 2026-06-08 - Coverage Experiments Batch
+
+Implemented:
+
+```text
+experiments/009-track-attributes
+experiments/010-social-aspects
+experiments/011-render-controls
+experiments/012-waapi-adapter
+tools/run-social-aspects-evidence.mjs
+tools/run-render-controls-evidence.mjs
+tools/extract-experiment-frames.mjs
+```
+
+Validated:
+
+```text
+npm run experiment:track:check
+npm run experiment:track:render
+npm run experiment:social:check
+npm run experiment:social:render
+npm run experiment:render-controls:check
+npm run experiment:render-controls:render
+npm run experiment:waapi:check
+npm run experiment:waapi:render
+npm run experiment:frames
+```
+
+Findings:
+
+```text
+Track/media attributes can be demonstrated in a tiny deterministic composition.
+`data-end` should not be used in new examples because local lint marks it deprecated and recommends `data-duration`.
+Landscape, portrait, and square exports work cleanly when each aspect ratio lives in its own project directory.
+Putting multiple root HTML files in one directory triggered `multiple_root_compositions`, which is a useful article mistake to show.
+Each social aspect project needs local assets. A first styled render referenced `../social.css`, but the stylesheet did not load from the isolated project root.
+Render quality, CRF, and bitrate controls all produced artifacts, but tiny file-size differences should not be treated as general encoder benchmarks.
+A browser-native WAAPI animation can be bridged to the HyperFrames seek clock for local deterministic rendering.
+The WAAPI proof does not cover Lottie, Three.js, Rive, D3, PixiJS, or custom adapters.
+```
+
+Evidence:
+
+```text
+experiments/009-track-attributes/output/track-attributes-proof.mp4
+experiments/010-social-aspects/output/social-landscape.mp4
+experiments/010-social-aspects/output/social-portrait.mp4
+experiments/010-social-aspects/output/social-square.mp4
+experiments/011-render-controls/output/render-controls-draft.mp4
+experiments/011-render-controls/output/render-controls-standard.mp4
+experiments/011-render-controls/output/render-controls-high.mp4
+experiments/011-render-controls/output/render-controls-crf-28.mp4
+experiments/011-render-controls/output/render-controls-bitrate-2m.mp4
+experiments/012-waapi-adapter/output/waapi-adapter-proof.mp4
+experiments/009-track-attributes/evidence/frame-3s.png
+experiments/010-social-aspects/evidence/frame-landscape.png
+experiments/010-social-aspects/evidence/frame-portrait.png
+experiments/010-social-aspects/evidence/frame-square.png
+experiments/011-render-controls/evidence/frame-standard.png
+experiments/012-waapi-adapter/evidence/frame-2s.png
+```
+
+Next:
+
+```text
+Test remove-background on a tiny input.
+Decide whether MOV output is worth proving separately.
+Add one more adapter family beyond WAAPI, likely Three.js or Lottie.
+Keep cloud, publish, Lambda, and auth as documented surfaces until there is an explicit credentials decision.
+```

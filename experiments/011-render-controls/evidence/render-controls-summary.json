@@ -1,0 +1,77 @@
+[
+  {
+    "name": "draft",
+    "args": [
+      "--quality",
+      "draft"
+    ],
+    "output": "experiments/011-render-controls/output/render-controls-draft.mp4",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 1,
+      "fps": 30
+    },
+    "sizeBytes": 44692
+  },
+  {
+    "name": "standard",
+    "args": [
+      "--quality",
+      "standard"
+    ],
+    "output": "experiments/011-render-controls/output/render-controls-standard.mp4",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 1,
+      "fps": 30
+    },
+    "sizeBytes": 47686
+  },
+  {
+    "name": "high",
+    "args": [
+      "--quality",
+      "high"
+    ],
+    "output": "experiments/011-render-controls/output/render-controls-high.mp4",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 1,
+      "fps": 30
+    },
+    "sizeBytes": 60688
+  },
+  {
+    "name": "crf-28",
+    "args": [
+      "--crf",
+      "28"
+    ],
+    "output": "experiments/011-render-controls/output/render-controls-crf-28.mp4",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 1,
+      "fps": 30
+    },
+    "sizeBytes": 25051
+  },
+  {
+    "name": "bitrate-2m",
+    "args": [
+      "--video-bitrate",
+      "2M"
+    ],
+    "output": "experiments/011-render-controls/output/render-controls-bitrate-2m.mp4",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 1,
+      "fps": 30
+    },
+    "sizeBytes": 70737
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "name": "landscape",
+    "project": "experiments/010-social-aspects/landscape",
+    "output": "experiments/010-social-aspects/output/social-landscape.mp4",
+    "exists": true,
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 2,
+      "fps": 30
+    },
+    "sizeBytes": 80916
+  },
+  {
+    "name": "portrait",
+    "project": "experiments/010-social-aspects/portrait",
+    "output": "experiments/010-social-aspects/output/social-portrait.mp4",
+    "exists": true,
+    "composition": {
+      "width": 1080,
+      "height": 1920,
+      "durationSeconds": 2,
+      "fps": 30
+    },
+    "sizeBytes": 69190
+  },
+  {
+    "name": "square",
+    "project": "experiments/010-social-aspects/square",
+    "output": "experiments/010-social-aspects/output/social-square.mp4",
+    "exists": true,
+    "composition": {
+      "width": 1080,
+      "height": 1080,
+      "durationSeconds": 2,
+      "fps": 30
+    },
+    "sizeBytes": 54601
+  }
+]

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Experiment 012 - WAAPI Adapter</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: #101214;
+        color: #f7f1e8;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      main {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(247, 241, 232, 0.05) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(247, 241, 232, 0.05) 1px, transparent 1px),
+          #101214;
+        background-size: 120px 120px;
+      }
+
+      h1 {
+        position: absolute;
+        top: 80px;
+        left: 86px;
+        max-width: 900px;
+        margin: 0;
+        font-size: 72px;
+        line-height: 1.04;
+      }
+
+      .orb {
+        position: absolute;
+        left: 220px;
+        top: 560px;
+        width: 180px;
+        height: 180px;
+        border-radius: 8px;
+        background: #9bf0ca;
+        box-shadow: 0 22px 80px rgba(155, 240, 202, 0.28);
+      }
+
+      .track {
+        position: absolute;
+        right: 220px;
+        bottom: 210px;
+        left: 220px;
+        height: 2px;
+        background: rgba(247, 241, 232, 0.28);
+      }
+    </style>
+  </head>
+  <body>
+    <main id="root" data-composition-id="waapi-adapter" data-start="0" data-width="1920" data-height="1080" data-duration="3" data-fps="30">
+      <h1>WAAPI animation on the HyperFrames seek clock.</h1>
+      <div class="track"></div>
+      <div id="waapi-orb" class="orb"></div>
+    </main>
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const animation = document.getElementById("waapi-orb").animate(
+        [
+          { transform: "translateX(0) rotate(0deg)", opacity: 0.65 },
+          { transform: "translateX(1120px) rotate(180deg)", opacity: 1 },
+        ],
+        {
+          duration: 3000,
+          fill: "both",
+          easing: "ease-in-out",
+        },
+      );
+
+      animation.pause();
+
+      const tl = {
+        duration: () => 3,
+        pause: () => undefined,
+        seek: (time) => {
+          animation.currentTime = Math.max(0, Math.min(3000, time * 1000));
+        },
+      };
+
+      window.__timelines["waapi-adapter"] = tl;
+    </script>
+  </body>
+</html>

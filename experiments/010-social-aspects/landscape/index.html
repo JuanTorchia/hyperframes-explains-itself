@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Experiment 010 - Social Aspects Landscape</title>
+    <link rel="stylesheet" href="./social.css" />
+  </head>
+  <body>
+    <main id="root" class="stage landscape" data-composition-id="social-landscape" data-start="0" data-width="1920" data-height="1080" data-duration="2" data-fps="30">
+      <section>
+        <p>Landscape</p>
+        <h1>One message, multiple aspect ratios.</h1>
+        <span>1920x1080</span>
+      </section>
+    </main>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["social-landscape"] = { duration: () => 2, pause: () => undefined, seek: () => undefined };
+    </script>
+  </body>
+</html>

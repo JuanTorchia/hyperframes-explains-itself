@@ -16,6 +16,10 @@ The main walkthrough proves the core workflow, but it should not carry every Hyp
 | `006-registry-components` | Captured full catalog and captions catalog JSON; installed one caption component in an isolated sandbox. |
 | `007-capture-website` | Captured a local static website into HyperFrames capture output. |
 | `008-captions-layer` | Rendered a 12-second MP4 comparing automatic Whisper captions with curated script captions. |
+| `009-track-attributes` | Rendered a 6-second MP4 covering track/media attributes and captured that `data-end` is deprecated. |
+| `010-social-aspects` | Rendered landscape, portrait, and square MP4 variants from separate composition roots. |
+| `011-render-controls` | Rendered quality, CRF, and bitrate variants from one deterministic composition. |
+| `012-waapi-adapter` | Rendered a browser-native WAAPI animation controlled by a seek-clock bridge. |
 
 ## Practical Findings
 
@@ -204,10 +208,87 @@ Evidence shows the official `whisper-cli.exe` exposes `--suppress-nst`, and Hype
 
 This changes the recommendation: use the official `ggml-org/whisper.cpp` Windows x64 release for local direct audio transcription, not the Python `whisper.cpp-cli` package.
 
+### Track Attributes
+
+The track attribute proof intentionally stays small:
+
+```text
+experiments/009-track-attributes/output/track-attributes-proof.mp4
+```
+
+It covers:
+
+```text
+data-bg
+data-fade
+data-loop
+data-track
+data-volume
+data-speed
+data-mute
+```
+
+FFprobe evidence shows a 6-second 1920x1080 MP4 with H.264 video and AAC audio. A static frame was extracted for article use:
+
+```text
+experiments/009-track-attributes/evidence/frame-3s.png
+```
+
+Important finding: `data-end` was attempted first, but local lint reports it as deprecated and recommends `data-duration`. Do not use `data-end` in final tutorial examples.
+
+### Social Aspect Ratios
+
+The social proof uses separate project directories because a first attempt with multiple root HTML files in one directory triggered `multiple_root_compositions`.
+
+Rendered outputs:
+
+```text
+experiments/010-social-aspects/output/social-landscape.mp4
+experiments/010-social-aspects/output/social-portrait.mp4
+experiments/010-social-aspects/output/social-square.mp4
+```
+
+The summary captures:
+
+```text
+landscape -> 1920x1080, 2 seconds, 30fps
+portrait -> 1080x1920, 2 seconds, 30fps
+square -> 1080x1080, 2 seconds, 30fps
+```
+
+This proves multi-aspect export as three explicit compositions. It does not yet prove a single responsive source that changes layout across aspect ratios.
+
+The first styled render attempt used `../social.css`, but each aspect project is served as its own root, so the stylesheet did not load. The fixed version keeps a local `social.css` beside each `index.html`.
+
+### Render Controls
+
+The render controls proof renders the same 1-second 1920x1080 composition five ways:
+
+```text
+draft -> 44,692 bytes
+standard -> 47,686 bytes
+high -> 60,688 bytes
+crf-28 -> 25,051 bytes
+bitrate-2m -> 70,737 bytes
+```
+
+This is useful as command evidence, not as a general compression benchmark. The composition is intentionally tiny, so file size differences are illustrative only.
+
+### WAAPI Adapter
+
+The WAAPI proof renders a browser-native Web Animations API animation through a project-local seek-clock bridge:
+
+```text
+experiments/012-waapi-adapter/output/waapi-adapter-proof.mp4
+```
+
+FFprobe evidence shows a 3-second 1920x1080 MP4 with H.264 video. This covers a practical WAAPI integration path but not the full adapter list from the docs.
+
 ## Next Recommended Proofs
 
-1. Decide whether final captions should be generated from official Whisper output, curated from the script, or shown as both machine output and edited captions.
-2. Investigate why the 30fps standard 4-worker benchmark preset remains unstable.
-3. Decide whether the isolated caption component should be adapted into a real captions scene.
-4. Decide whether to adapt the curated captions layer into the main tutorial render.
-5. Extract 2-3 short clips from the experiment artifacts for the article draft.
+1. Test `remove-background` on a tiny image or video and document model/download/runtime behavior.
+2. Test MOV output or document why MP4/WebM/PNG are enough for the article.
+3. Add one more adapter proof from a different family, likely Three.js or Lottie.
+4. Decide whether final captions should be generated from official Whisper output, curated from the script, or shown as both machine output and edited captions.
+5. Investigate why the 30fps standard 4-worker benchmark preset remains unstable.
+6. Extract 2-3 short clips from the experiment artifacts for the article draft.

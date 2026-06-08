@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" data-resolution="square">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1080" />
+    <title>Experiment 010 - Social Aspects Square</title>
+    <link rel="stylesheet" href="./social.css" />
+  </head>
+  <body>
+    <main id="root" class="stage square" data-composition-id="social-square" data-start="0" data-width="1080" data-height="1080" data-duration="2" data-fps="30">
+      <section>
+        <p>Square</p>
+        <h1>One message, multiple aspect ratios.</h1>
+        <span>1080x1080</span>
+      </section>
+    </main>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["social-square"] = { duration: () => 2, pause: () => undefined, seek: () => undefined };
+    </script>
+  </body>
+</html>

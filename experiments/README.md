@@ -16,6 +16,10 @@ The main video should not become a command encyclopedia. These experiments let t
 | `006-registry-components` | `catalog` and `add` discovery | Catalog discovery and isolated component install captured |
 | `007-capture-website` | Local website capture | Local capture completed |
 | `008-captions-layer` | Automatic vs curated captions | 12-second caption comparison MP4 rendered and verified |
+| `009-track-attributes` | Track and media attributes | MP4 rendered and verified; `data-end` deprecated finding captured |
+| `010-social-aspects` | Landscape, portrait, and square outputs | Three MP4 variants rendered and summarized |
+| `011-render-controls` | Quality, CRF, and bitrate controls | Five MP4 variants rendered and summarized |
+| `012-waapi-adapter` | Browser-native WAAPI animation bridge | MP4 rendered and verified |
 
 ## Commands
 
@@ -33,6 +37,15 @@ npm run experiment:capture
 npm run experiment:captions
 npm run experiment:captions:check
 npm run experiment:captions:render
+npm run experiment:track:check
+npm run experiment:track:render
+npm run experiment:social:check
+npm run experiment:social:render
+npm run experiment:render-controls:check
+npm run experiment:render-controls:render
+npm run experiment:waapi:check
+npm run experiment:waapi:render
+npm run experiment:frames
 ```
 
 ## Results So Far
@@ -49,6 +62,12 @@ npm run experiment:captions:render
 - `006-registry-components` captured registry catalog JSON, caption-specific catalog JSON, and an isolated `caption-weight-shift` install.
 - `007-capture-website` captured a local static website into editable capture output.
 - `008-captions-layer` generated automatic and curated caption groups, then rendered a 12-second comparison clip.
+- `009-track-attributes` rendered `data-bg`, `data-fade`, `data-loop`, `data-track`, `data-volume`, `data-speed`, and `data-mute` in a 6-second proof.
+- `009-track-attributes` also captured that `data-end` is deprecated in the local lint rules and should be replaced with `data-duration`.
+- `010-social-aspects` rendered landscape, portrait, and square MP4 variants as separate composition roots.
+- `011-render-controls` rendered draft, standard, high, CRF, and bitrate variants and saved a size comparison.
+- `012-waapi-adapter` rendered a browser-native WAAPI animation controlled by a HyperFrames seek-clock bridge.
+- `experiment:frames` extracted static PNG frames from experiments `009` through `012` for article evidence.
 
 ## Open Findings
 
@@ -60,6 +79,7 @@ npm run experiment:captions:render
 - `hyperframes add caption-weight-shift --no-clipboard --json` wrote the expected component file in an isolated sandbox, but the JSON reported `clipboardCopied: true`.
 - `008-captions-layer` is intentionally silent. It is evidence for caption rendering and copy comparison, not a final audio-synced tutorial export.
 - The main walkthrough now has a captioned render variant documented in `docs/013-captioned-main-render.md`.
+- `012-waapi-adapter` proves one local WAAPI integration path, not the full adapter surface.
 
 ## Rules
 
