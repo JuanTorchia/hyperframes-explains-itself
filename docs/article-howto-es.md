@@ -66,6 +66,20 @@ renders/ -> artefactos finales
 
 Esa estructura es parte de la tesis. Si el video tecnico se construye como software, entonces tambien deberia tener source, validaciones, outputs y evidencia. No quiero un video que solo se vea bien. Quiero un artefacto tecnico cuyo camino se pueda revisar.
 
+Repo publico:
+
+```text
+https://github.com/JuanTorchia/hyperframes-explains-itself
+```
+
+Demo final:
+
+```text
+https://github.com/JuanTorchia/hyperframes-explains-itself/blob/main/renders/final-demo.mp4
+```
+
+![Frame de la demo final a los 30 segundos](https://raw.githubusercontent.com/JuanTorchia/hyperframes-explains-itself/main/video/final-demo/evidence/frame-30s.png)
+
 ## Paso 1: armar un repo que cuente la historia
 
 Antes de renderizar nada, arme el repositorio como si fuera el material de un post, no solo como una carpeta de pruebas.
@@ -157,6 +171,15 @@ definir visibilidad escena por escena
 asegurar que el frame 0.0s tenga contenido visible
 ```
 
+Esa es la razon por la que deje screenshots y contact sheets versionadas:
+
+```text
+video/hyperframes-in-60-seconds/screenshots/
+video/final-demo/evidence/
+```
+
+![Frame inicial de la demo final](https://raw.githubusercontent.com/JuanTorchia/hyperframes-explains-itself/main/video/final-demo/evidence/frame-02s.png)
+
 ## Paso 4: elegir Docker como camino principal
 
 FFmpeg no estaba disponible en PATH. Podia instalarlo localmente, pero eso hubiera convertido el tutorial en "funciona en mi maquina".
@@ -247,6 +270,10 @@ Whisper ayuda a obtener timing.
 El texto final no deberia ser raw Whisper si queres una pieza tecnica legible.
 ```
 
+Evidencia visual de captions:
+
+![Comparacion de captions](https://raw.githubusercontent.com/JuanTorchia/hyperframes-explains-itself/main/experiments/008-captions-layer/evidence/frames/frame-5s.png)
+
 Esto conecta con como escribo posts tecnicos en general: la IA y las herramientas aceleran, pero no reemplazan la edicion.
 
 ## Paso 8: crear experimentos chicos para no inflar claims
@@ -283,6 +310,20 @@ background removal
 init scaffold
 ```
 
+La carpeta `experiments/` es casi una tabla de contenido tecnica del articulo. No es relleno. Cada subcarpeta existe para que un claim tenga un lugar donde mirar.
+
+Ejemplos:
+
+```text
+experiments/008-captions-layer -> captions automaticos vs curados
+experiments/010-social-aspects -> landscape, portrait y square
+experiments/013-adapter-sampler -> bridges locales con librerias browser
+experiments/014-mov-output -> ProRes MOV con alpha-capable pixel format
+experiments/015-remove-background -> salida PNG con alpha samples
+```
+
+![Prueba PixiJS sincronizada al timeline](https://raw.githubusercontent.com/JuanTorchia/hyperframes-explains-itself/main/experiments/013-adapter-sampler/evidence/frame-pixi.png)
+
 Esto hace el post mas fuerte porque no depende de una frase grande. Depende de muchas pruebas chicas.
 
 ## Paso 9: documentar cuando algo no prueba lo que parecia
@@ -302,6 +343,8 @@ No es evidencia de que todos los adapters oficiales esten publicados e instalabl
 Otro ejemplo fue background removal. El primer fixture era un icono plano y el resultado no servia como prueba. Despues use un retrato real de dominio publico y valide alpha samples.
 
 Ese error deberia estar en el post. No lo sacaria. Es lo que convierte el articulo en experiencia real.
+
+![Salida de background removal usada como evidencia](https://raw.githubusercontent.com/JuanTorchia/hyperframes-explains-itself/main/experiments/015-remove-background/output/scott-carpenter-portrait-transparent.png)
 
 ## Paso 10: cerrar con una demo final y evidencia FFprobe
 
@@ -326,6 +369,15 @@ Ese dato sale de:
 
 ```text
 video/final-demo/evidence/ffprobe-final-demo.json
+```
+
+Otros artefactos para revisar:
+
+```text
+MP4 final: renders/final-demo.mp4
+Walkthrough original: renders/hyperframes-in-60-seconds.mp4
+Walkthrough con captions: renders/hyperframes-in-60-seconds-with-captions.mp4
+MOV alpha proof: experiments/014-mov-output/output/mov-alpha-proof.mov
 ```
 
 Para mi, esta es la diferencia entre "hice una demo" y "deje una pieza tecnica reproducible".

@@ -66,6 +66,20 @@ renders/ -> final artifacts
 
 That structure is part of the thesis. If a technical video is built like software, it should also have source, validation, outputs, and evidence. I do not want a video that only looks good. I want a technical artifact whose path can be inspected.
 
+Public repository:
+
+```text
+https://github.com/JuanTorchia/hyperframes-explains-itself
+```
+
+Final demo:
+
+```text
+https://github.com/JuanTorchia/hyperframes-explains-itself/blob/main/renders/final-demo.mp4
+```
+
+![Final demo frame at 30 seconds](https://raw.githubusercontent.com/JuanTorchia/hyperframes-explains-itself/main/video/final-demo/evidence/frame-30s.png)
+
 ## Step 1: Build a Repository That Tells the Story
 
 Before rendering anything, I structured the repository as article material, not just as a pile of experiments.
@@ -157,6 +171,15 @@ set scene visibility explicitly
 ensure frame 0.0s has visible content
 ```
 
+That is why screenshots and contact sheets are versioned:
+
+```text
+video/hyperframes-in-60-seconds/screenshots/
+video/final-demo/evidence/
+```
+
+![Initial frame from the final demo](https://raw.githubusercontent.com/JuanTorchia/hyperframes-explains-itself/main/video/final-demo/evidence/frame-02s.png)
+
 ## Step 4: Choose Docker as the Main Render Path
 
 FFmpeg was not available on PATH. I could have installed it locally, but that would have moved the tutorial toward "works on my machine".
@@ -247,6 +270,10 @@ Whisper helped with timing.
 The final copy should not be raw Whisper text if you want a readable technical video.
 ```
 
+Visual caption evidence:
+
+![Caption comparison proof](https://raw.githubusercontent.com/JuanTorchia/hyperframes-explains-itself/main/experiments/008-captions-layer/evidence/frames/frame-5s.png)
+
 ## Step 8: Use Small Experiments Instead of Big Claims
 
 Instead of claiming "HyperFrames supports many things", I built small probes:
@@ -281,6 +308,20 @@ background removal
 init scaffold
 ```
 
+The `experiments/` folder is almost a technical table of contents for the article. It is not filler. Each subfolder exists so a claim has somewhere concrete to point.
+
+Examples:
+
+```text
+experiments/008-captions-layer -> automatic vs curated captions
+experiments/010-social-aspects -> landscape, portrait, and square
+experiments/013-adapter-sampler -> local bridges with browser libraries
+experiments/014-mov-output -> ProRes MOV with alpha-capable pixel format
+experiments/015-remove-background -> PNG output with alpha samples
+```
+
+![PixiJS proof synchronized to the timeline](https://raw.githubusercontent.com/JuanTorchia/hyperframes-explains-itself/main/experiments/013-adapter-sampler/evidence/frame-pixi.png)
+
 This makes the post stronger because it does not rely on one broad statement. It relies on many small pieces of evidence.
 
 ## Step 9: Document What the Evidence Does Not Prove
@@ -300,6 +341,8 @@ It is not evidence that every official adapter package is available.
 Background removal had a similar lesson. My first fixture was a flat icon and the output was useless as evidence. I later used a real public-domain portrait and validated alpha samples.
 
 That mistake belongs in the post. Removing it would make the article weaker.
+
+![Background removal output used as evidence](https://raw.githubusercontent.com/JuanTorchia/hyperframes-explains-itself/main/experiments/015-remove-background/output/scott-carpenter-portrait-transparent.png)
 
 ## Step 10: Close With the Final Demo and FFprobe Evidence
 
@@ -324,6 +367,15 @@ That comes from:
 
 ```text
 video/final-demo/evidence/ffprobe-final-demo.json
+```
+
+Other artifacts to inspect:
+
+```text
+Final MP4: renders/final-demo.mp4
+Original walkthrough: renders/hyperframes-in-60-seconds.mp4
+Captioned walkthrough: renders/hyperframes-in-60-seconds-with-captions.mp4
+MOV alpha proof: experiments/014-mov-output/output/mov-alpha-proof.mov
 ```
 
 This is the difference between "I made a demo" and "I left a reproducible technical artifact".
