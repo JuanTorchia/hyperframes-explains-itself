@@ -744,3 +744,29 @@ The article should be drafted from evidence, not from product claims.
 Use the captioned render and experiment clips as article assets.
 Keep failure sections explicit: FFmpeg, keyframes, PNG timeout, benchmark worker setup, Whisper package mismatch, caption footer polish.
 ```
+
+### HyperFrames Coverage Audit
+
+Investigated:
+
+```text
+Official docs index
+Official CLI reference
+Official data attribute and frame adapter pages
+Local hyperframes@0.6.80 command help
+Existing experiment evidence
+```
+
+Finding:
+
+```text
+The repo covers the core local workflow and several advanced surfaces, but it does not cover every HyperFrames feature.
+The installed CLI exposes more commands than the public nine-command CLI reference page.
+Major remaining gaps include remove-background, social aspect ratio renders, MOV output, render quality/bitrate controls, non-GSAP adapters, data-fade/data-loop/data-speed, init evidence, CI/batch rendering, cloud, publish, Lambda, and auth.
+```
+
+Documented:
+
+```text
+docs/015-hyperframes-coverage-audit.md
+```

@@ -160,3 +160,13 @@ The article should include two sections:
 - "What HyperFrames also provides, but this build does not exercise yet"
 
 That keeps the tutorial practical without hiding the broader tool surface.
+
+## 2026-06-08 Coverage Audit Update
+
+This map is no longer the latest coverage assessment. Several capabilities marked as future work here have now been tested, including transcription, captions, capture, registry components, and benchmark evidence.
+
+Use the newer audit for current planning:
+
+```text
+docs/015-hyperframes-coverage-audit.md
+```

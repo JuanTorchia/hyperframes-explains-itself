@@ -59,3 +59,4 @@ npm run render:captions
 - [ ] Decide whether to create a `docs/article-draft.md` prose draft.
 - [ ] Decide whether to publish the captioned render as the default output.
 - [ ] Investigate benchmark 4-worker instability before writing any performance section.
+- [ ] Use `docs/015-hyperframes-coverage-audit.md` to avoid claiming full HyperFrames coverage.
