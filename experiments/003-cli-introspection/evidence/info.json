@@ -1,0 +1,19 @@
+{
+  "name": "HyperFrame",
+  "resolution": "landscape",
+  "width": 1920,
+  "height": 1080,
+  "duration": 107,
+  "elements": 13,
+  "tracks": 1,
+  "types": {
+    "text": 12,
+    "audio": 1
+  },
+  "size": 627054196,
+  "_meta": {
+    "version": "0.6.80",
+    "latestVersion": "0.6.80",
+    "updateAvailable": false
+  }
+}

@@ -1,0 +1,10 @@
+
+> hyperframes-explains-itself@0.1.0 experiment:media:check
+> hyperframes lint experiments/001-media-timing && hyperframes inspect experiments/001-media-timing
+
+◆  Linting 001-media-timing/index.html
+
+◇  0 errors, 0 warnings
+◆  Inspecting layout for 001-media-timing (9 timeline samples)
+
+◇  0 layout issues across 9 sample(s)

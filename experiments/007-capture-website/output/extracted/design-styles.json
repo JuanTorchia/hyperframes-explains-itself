@@ -1,0 +1,49 @@
+{
+  "typography": [
+    {
+      "role": "display",
+      "fontFamily": "Arial",
+      "fontSize": "72px",
+      "fontWeight": "700",
+      "lineHeight": "70.56px",
+      "letterSpacing": "normal",
+      "color": "#172027",
+      "sampleText": "Capture a page, then turn it into video source."
+    },
+    {
+      "role": "body",
+      "fontFamily": "Arial",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "lineHeight": "37.8px",
+      "letterSpacing": "normal",
+      "color": "#172027",
+      "sampleText": "This local page is stable test input for `hyperframes captur"
+    }
+  ],
+  "spacing": {
+    "observed": [
+      18,
+      24
+    ],
+    "baseUnit": 8
+  },
+  "radius": [],
+  "shadows": [],
+  "buttons": [],
+  "cards": [
+    {
+      "label": "card",
+      "background": "#FFFFFF",
+      "color": "#172027",
+      "padding": "24px",
+      "borderRadius": "0px",
+      "border": "1px solid rgb(204, 211, 207)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "180px"
+    }
+  ],
+  "nav": null
+}

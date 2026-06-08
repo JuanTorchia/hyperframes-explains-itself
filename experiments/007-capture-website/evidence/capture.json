@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "projectDir": "C:\\Users\\jstor\\OneDrive\\Documentos\\HyperFrame\\experiments\\007-capture-website\\output",
+  "url": "http://127.0.0.1:13048/",
+  "title": "HyperFrames Capture Source",
+  "screenshots": 1,
+  "assets": 0,
+  "detectedSections": 0,
+  "fonts": [
+    "Arial"
+  ],
+  "fontsDetailed": [
+    {
+      "family": "Arial",
+      "weights": [
+        400,
+        700
+      ],
+      "variable": false
+    }
+  ],
+  "animations": {
+    "webAnimations": 0,
+    "cssDeclarations": 0,
+    "scrollTargets": 0,
+    "cdpAnimations": 0,
+    "canvases": 0
+  },
+  "warnings": [
+    "Asset catalog is empty — no images will be downloaded. The page may use non-standard image loading."
+  ]
+}

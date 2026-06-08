@@ -470,3 +470,62 @@ npm run snapshot -> frames at 0, 36, 69, and 105 seconds
 npm run render -> Docker render completed in 7m 46.0s
 ffprobe -> h264 video stream and aac audio stream
 ```
+
+## 2026-06-07
+
+### Capability Experiment Suite
+
+Decision:
+
+```text
+Do not force every HyperFrames capability into the main walkthrough yet.
+Create small reproducible experiments first, then choose the best proof clips and screenshots for the article or final demo.
+```
+
+Created:
+
+```text
+experiments/README.md
+experiments/001-media-timing/
+experiments/002-output-formats/
+experiments/003-cli-introspection/
+experiments/004-benchmark/
+experiments/005-transcribe-captions/
+experiments/006-registry-components/
+experiments/007-capture-website/
+docs/011-experiment-suite.md
+tools/run-introspection-evidence.mjs
+tools/run-local-capture.mjs
+```
+
+Implemented and validated:
+
+```text
+001-media-timing -> lint and inspect passed with 0 errors, 0 warnings, 0 layout issues
+001-media-timing -> rendered 6-second MP4 proof with real video source, data-media-start, data-volume, image layer, HTML overlays, and audio
+002-output-formats -> produced WebM artifact and verified VP9 video plus Opus audio with FFprobe
+003-cli-introspection -> captured info, compositions, doctor, and browser-path evidence
+005-transcribe-captions -> imported SRT transcript and generated transcript.json
+006-registry-components -> captured full catalog JSON and captions catalog JSON
+007-capture-website -> captured a local static website into screenshots, extracted tokens, visible text, font metadata, and agent instructions
+```
+
+Mistakes and findings:
+
+```text
+The first media render referenced assets outside the experiment root. HyperFrames rendered but warned that the video and image could not be resolved. The fix was to copy source assets into experiments/001-media-timing/assets.
+The first valid media-source render warned about sparse keyframes in the input MP4. The fix was to re-encode the source with FFmpeg inside the Docker renderer image using -g 30.
+The WebM render exceeded the shell timeout, but the artifact existed afterward and passed FFprobe verification. Treat this as an operational warning before recommending WebM for short proof clips.
+hyperframes info --json reported duration 107, while hyperframes compositions --json reported main.duration 108. Do not use info.duration as proof until that mismatch is understood.
+Host FFmpeg and FFprobe remain unavailable; Docker remains the reliable render and verification path.
+```
+
+Pending:
+
+```text
+Run PNG sequence output.
+Run the tiny benchmark composition.
+Install one caption registry component in an isolated experiment.
+Decide whether to run Whisper transcription on the generated TTS audio.
+Re-render the main walkthrough after the source-only evidence text fix in compositions/010-evidence.html.
+```

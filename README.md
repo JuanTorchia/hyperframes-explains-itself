@@ -133,6 +133,8 @@ Completed:
 - HyperFrames validation now reports 0 errors, 0 warnings, and 0 layout issues.
 - V2 demo implemented and rendered with Docker.
 - HyperFrames capability map drafted in `docs/010-hyperframes-capability-map.md`.
+- Capability experiments started in `experiments/`.
+- Experiment suite notes documented in `docs/011-experiment-suite.md`.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.
@@ -146,5 +148,5 @@ Pending:
 - Keep `npm run doctor:docker` as an explicit Docker preflight for this tutorial.
 - Resolve `npm run doctor` host-local FFmpeg/FFprobe warnings only if local rendering is needed.
 - Review the final MP4 end to end.
-- Decide whether to split the single `index.html` into sub-compositions to remove the timeline density warning.
-- Evaluate whether `af_nova` is the final voice or whether to audition alternate voices.
+- Re-render the main walkthrough after source-only changes.
+- Continue the experiment suite: PNG sequence, benchmark, isolated registry install, and optional Whisper transcription.

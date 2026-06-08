@@ -1,0 +1,8 @@
+[h1] Capture a page, then turn it into video source.
+[p] This local page is stable test input for `hyperframes capture`.
+[strong] HTML
+[article] Structured source.
+[strong] CSS
+[article] Inspectable layout.
+[strong] Capture
+[article] Editable assets.

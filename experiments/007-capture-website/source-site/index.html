@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HyperFrames Capture Source</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f0e8;
+        color: #172027;
+      }
+
+      main {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 72px 36px;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 0 0 24px;
+        font-size: 72px;
+        line-height: 0.98;
+      }
+
+      p {
+        max-width: 720px;
+        margin: 0;
+        font-size: 28px;
+        line-height: 1.35;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 48px;
+      }
+
+      .tile {
+        min-height: 180px;
+        padding: 24px;
+        border: 1px solid #ccd3cf;
+        background: #ffffff;
+      }
+
+      .tile strong {
+        display: block;
+        margin-bottom: 16px;
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Capture a page, then turn it into video source.</h1>
+      <p>This local page is stable test input for `hyperframes capture`.</p>
+      <section class="grid">
+        <article class="tile"><strong>HTML</strong>Structured source.</article>
+        <article class="tile"><strong>CSS</strong>Inspectable layout.</article>
+        <article class="tile"><strong>Capture</strong>Editable assets.</article>
+      </section>
+    </main>
+  </body>
+</html>

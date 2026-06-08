@@ -1,0 +1,104 @@
+{
+  "compositions": [
+    {
+      "id": "main",
+      "duration": 108,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 13
+    },
+    {
+      "id": "scene-repository",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 13,
+      "source": "compositions/002-repository-proof.html"
+    },
+    {
+      "id": "scene-parent",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 10,
+      "source": "compositions/003-parent-composition.html"
+    },
+    {
+      "id": "scene-subcomps",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 16,
+      "source": "compositions/004-sub-compositions.html"
+    },
+    {
+      "id": "scene-timing",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 22,
+      "source": "compositions/005-explicit-timing.html"
+    },
+    {
+      "id": "scene-variables",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 16,
+      "source": "compositions/006-variables-and-reuse.html"
+    },
+    {
+      "id": "scene-loop",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 20,
+      "source": "compositions/007-developer-loop.html"
+    },
+    {
+      "id": "scene-docker",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 16,
+      "source": "compositions/008-docker-render-and-formats.html"
+    },
+    {
+      "id": "scene-audio",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 28,
+      "source": "compositions/009-audio-tts.html"
+    },
+    {
+      "id": "scene-evidence",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 9,
+      "source": "compositions/010-evidence.html"
+    },
+    {
+      "id": "scene-mistakes",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 16,
+      "source": "compositions/011-mistakes-found.html"
+    },
+    {
+      "id": "scene-close",
+      "duration": 0,
+      "width": 1920,
+      "height": 1080,
+      "elementCount": 10,
+      "source": "compositions/012-close.html"
+    }
+  ],
+  "_meta": {
+    "version": "0.6.80",
+    "latestVersion": "0.6.80",
+    "updateAvailable": false
+  }
+}

@@ -1,0 +1,22 @@
+Generated: 2026-06-07
+
+experiments\001-media-timing\assets\source-contact-sheet.jpg
+Size bytes: 95830
+SHA256: F65DA7FFEAF7C814B5DF2F5998398B4AE986E59BA8B78C728E06C9316961AC0C
+LastWriteTime: 2026-06-07 22:31:32 -03:00
+
+experiments\001-media-timing\assets\source-tutorial-keyframed.mp4
+Size bytes: 10616152
+SHA256: 5AECCDACA504C952CA2FD715E188F4BCABFEAB993CC26766CAB679B98E58FE34
+LastWriteTime: 2026-06-07 23:11:34 -03:00
+
+experiments\001-media-timing\output\media-timing-proof.mp4
+Size bytes: 739531
+SHA256: EBB8C2A21F204B3CCA231213E97A53E2128231E6B66AA3E4FDB70378C475B35E
+LastWriteTime: 2026-06-07 23:14:12 -03:00
+
+experiments\002-output-formats\output\media-timing-proof.webm
+Size bytes: 564992
+SHA256: C48206BFCE4DC020A12B2676C72D3A964EF86E1E1D4FA4355B3909581011FAB1
+LastWriteTime: 2026-06-07 23:25:52 -03:00
+
