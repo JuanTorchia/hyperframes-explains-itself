@@ -661,3 +661,34 @@ experiments/005-transcribe-captions/evidence/generated-transcript-official-whisp
 experiments/005-transcribe-captions/source/official-hyperframes-transcript.json
 audio/generated/transcript.json
 ```
+
+### Caption Layer Proof
+
+Implemented:
+
+```text
+008-captions-layer -> automatic Whisper captions vs curated script captions
+tools/run-caption-layer-evidence.mjs -> generates caption groups and comparison evidence
+```
+
+Rendered:
+
+```text
+experiments/008-captions-layer/output/captions-layer-proof.mp4
+```
+
+Validation:
+
+```text
+npm run experiment:captions:check -> 0 errors, 0 warnings, 0 layout issues
+npm run experiment:captions:render -> completed
+ffprobe -> h264, 1920x1080, 30fps, 12.000000 seconds
+frames extracted at 2s, 5s, and 9s for article screenshots
+```
+
+Decision:
+
+```text
+Use Whisper output for timing evidence and bootstrap captions.
+Use curated script text for final developer-facing captions unless the article explicitly wants to show raw machine transcript quality.
+```

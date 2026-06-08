@@ -1,0 +1,258 @@
+window.__captionData = {
+  "generatedAt": "2026-06-08",
+  "durationSeconds": 12,
+  "sourceTranscript": "audio/generated/transcript.json",
+  "automaticCaptions": [
+    {
+      "start": 0.05,
+      "end": 1.86,
+      "text": "Hyperframes explain hyperframes.",
+      "words": [
+        {
+          "text": "Hyperframes",
+          "start": 0.05,
+          "end": 0.69
+        },
+        {
+          "text": "explain",
+          "start": 0.69,
+          "end": 1.09
+        },
+        {
+          "text": "hyperframes.",
+          "start": 1.13,
+          "end": 1.86
+        }
+      ]
+    },
+    {
+      "start": 1.97,
+      "end": 3.54,
+      "text": "This repository is the test.",
+      "words": [
+        {
+          "text": "This",
+          "start": 1.97,
+          "end": 2.1
+        },
+        {
+          "text": "repository",
+          "start": 2.16,
+          "end": 2.6
+        },
+        {
+          "text": "is",
+          "start": 2.78,
+          "end": 2.87
+        },
+        {
+          "text": "the",
+          "start": 2.87,
+          "end": 3.06
+        },
+        {
+          "text": "test.",
+          "start": 3.06,
+          "end": 3.54
+        }
+      ]
+    },
+    {
+      "start": 3.65,
+      "end": 4.84,
+      "text": "The video you are watching is not",
+      "words": [
+        {
+          "text": "The",
+          "start": 3.65,
+          "end": 3.66
+        },
+        {
+          "text": "video",
+          "start": 3.67,
+          "end": 3.88
+        },
+        {
+          "text": "you",
+          "start": 3.88,
+          "end": 3.91
+        },
+        {
+          "text": "are",
+          "start": 4.01,
+          "end": 4.14
+        },
+        {
+          "text": "watching",
+          "start": 4.14,
+          "end": 4.5
+        },
+        {
+          "text": "is",
+          "start": 4.5,
+          "end": 4.62
+        },
+        {
+          "text": "not",
+          "start": 4.62,
+          "end": 4.84
+        }
+      ]
+    },
+    {
+      "start": 4.84,
+      "end": 6.3,
+      "text": "edited in a traditional timeline.",
+      "words": [
+        {
+          "text": "edited",
+          "start": 4.84,
+          "end": 5.14
+        },
+        {
+          "text": "in",
+          "start": 5.14,
+          "end": 5.25
+        },
+        {
+          "text": "a",
+          "start": 5.25,
+          "end": 5.26
+        },
+        {
+          "text": "traditional",
+          "start": 5.28,
+          "end": 5.78
+        },
+        {
+          "text": "timeline.",
+          "start": 5.78,
+          "end": 6.3
+        }
+      ]
+    },
+    {
+      "start": 6.41,
+      "end": 9.35,
+      "text": "It sources HTML, CSS, JavaScript, Markdown planning",
+      "words": [
+        {
+          "text": "It",
+          "start": 6.41,
+          "end": 6.44
+        },
+        {
+          "text": "sources",
+          "start": 6.44,
+          "end": 6.95
+        },
+        {
+          "text": "HTML,",
+          "start": 6.95,
+          "end": 7.38
+        },
+        {
+          "text": "CSS,",
+          "start": 7.38,
+          "end": 7.65
+        },
+        {
+          "text": "JavaScript,",
+          "start": 7.75,
+          "end": 8.64
+        },
+        {
+          "text": "Markdown",
+          "start": 8.64,
+          "end": 9.04
+        },
+        {
+          "text": "planning",
+          "start": 9.12,
+          "end": 9.35
+        }
+      ]
+    },
+    {
+      "start": 9.35,
+      "end": 11.31,
+      "text": "files, a generated voiceover asset, and a",
+      "words": [
+        {
+          "text": "files,",
+          "start": 9.35,
+          "end": 9.74
+        },
+        {
+          "text": "a",
+          "start": 9.78,
+          "end": 9.79
+        },
+        {
+          "text": "generated",
+          "start": 9.88,
+          "end": 10.29
+        },
+        {
+          "text": "voiceover",
+          "start": 10.29,
+          "end": 10.79
+        },
+        {
+          "text": "asset,",
+          "start": 10.79,
+          "end": 11.17
+        },
+        {
+          "text": "and",
+          "start": 11.19,
+          "end": 11.28
+        },
+        {
+          "text": "a",
+          "start": 11.28,
+          "end": 11.31
+        }
+      ]
+    },
+    {
+      "start": 11.31,
+      "end": 12.48,
+      "text": "Docker render command.",
+      "words": [
+        {
+          "text": "Docker",
+          "start": 11.31,
+          "end": 11.47
+        },
+        {
+          "text": "render",
+          "start": 11.64,
+          "end": 11.9
+        },
+        {
+          "text": "command.",
+          "start": 11.9,
+          "end": 12.48
+        }
+      ]
+    }
+  ],
+  "curatedCaptions": [
+    {
+      "start": 0,
+      "end": 3.5,
+      "text": "Can HyperFrames explain HyperFrames? This repository is the test."
+    },
+    {
+      "start": 3.5,
+      "end": 7.1,
+      "text": "The video you are watching is not edited in a traditional timeline."
+    },
+    {
+      "start": 7.1,
+      "end": 12,
+      "text": "Its source is HTML, CSS, JavaScript, Markdown planning files, a generated voiceover asset, and a Docker render command."
+    }
+  ]
+};

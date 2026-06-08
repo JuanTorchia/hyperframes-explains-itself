@@ -119,3 +119,53 @@ experiments\002-output-formats\output\png-sequence-proof-frames
 Frame count: 30
 Total bytes: 1068448
 
+experiments\008-captions-layer\source\automatic-caption-groups.json
+Size bytes: 3989
+SHA256: 187F1EEF7D1490DDDD03FD2EF828E9F46F3FAA7AE39AA319C25C3B06089CE333
+LastWriteTime: 2026-06-08 09:47:44 -03:00
+
+experiments\008-captions-layer\source\curated-caption-groups.json
+Size bytes: 424
+SHA256: 883FFCD0C85DA39D9809F7C77B8C608C1237AC9E4DBF6A3AFC6EE3BF5DF19DD5
+LastWriteTime: 2026-06-08 09:47:44 -03:00
+
+experiments\008-captions-layer\source\caption-data.js
+Size bytes: 5103
+SHA256: 2B9BF698A6B36C7F6984CDEA0709B15C6529DA41E604CF4F4DBFDBD24ECDB1FC
+LastWriteTime: 2026-06-08 09:47:44 -03:00
+
+experiments\008-captions-layer\evidence\caption-comparison.json
+Size bytes: 742
+SHA256: 3C3BE906D0FC697DB0613E1DCA8AD0F5A392F8C11E15ACD0C13FC86ECB6D3D7E
+LastWriteTime: 2026-06-08 09:47:44 -03:00
+
+experiments\008-captions-layer\evidence\captions-render.txt
+Size bytes: 48814
+SHA256: 55D48F1A045CC7C1E2B83EA1511F9C32968B0BC1E95457F2FCD8E6EB3B3211FD
+LastWriteTime: 2026-06-08 09:53:23 -03:00
+
+experiments\008-captions-layer\evidence\ffprobe-captions-layer.json
+Size bytes: 2833
+SHA256: 0E3480ACC84936A139B160EFD134B60FDEE090E7151F43E5B27ADA5EC4C2BEAE
+LastWriteTime: 2026-06-08 09:54:08 -03:00
+
+experiments\008-captions-layer\output\captions-layer-proof.mp4
+Size bytes: 1025922
+SHA256: 1278E44F60D560746D0BAD0DC5C0716DD71401E4DF2AD7094633BDC49367DA11
+LastWriteTime: 2026-06-08 09:53:14 -03:00
+
+experiments\008-captions-layer\evidence\frames\frame-2s.png
+Size bytes: 342065
+SHA256: B439756B40DA335AC331B82C977E3259453BB45880DC15C871794C12A4DA3F18
+LastWriteTime: 2026-06-08 09:56:16 -03:00
+
+experiments\008-captions-layer\evidence\frames\frame-5s.png
+Size bytes: 360703
+SHA256: 792ABFD86891B80018ABC6C593AE58A591966F5E43B4EBA56DF2BC809A67DCB4
+LastWriteTime: 2026-06-08 09:56:22 -03:00
+
+experiments\008-captions-layer\evidence\frames\frame-9s.png
+Size bytes: 468825
+SHA256: 2677C4D0F77FA92413B6BE33EFA6EF75D40216B4DED618F7D8CCECD2E18CA6B9
+LastWriteTime: 2026-06-08 09:56:28 -03:00
+

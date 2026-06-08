@@ -1,0 +1,17 @@
+[
+  {
+    "start": 0,
+    "end": 3.5,
+    "text": "Can HyperFrames explain HyperFrames? This repository is the test."
+  },
+  {
+    "start": 3.5,
+    "end": 7.1,
+    "text": "The video you are watching is not edited in a traditional timeline."
+  },
+  {
+    "start": 7.1,
+    "end": 12,
+    "text": "Its source is HTML, CSS, JavaScript, Markdown planning files, a generated voiceover asset, and a Docker render command."
+  }
+]

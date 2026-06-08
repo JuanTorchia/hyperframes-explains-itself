@@ -15,6 +15,7 @@ The main walkthrough proves the core workflow, but it should not carry every Hyp
 | `005-transcribe-captions` | Imported SRT, tested a local Python Whisper package, captured its compatibility failure, imported generated Whisper JSON, and validated direct audio transcription with the official whisper.cpp Windows x64 release. |
 | `006-registry-components` | Captured full catalog and captions catalog JSON; installed one caption component in an isolated sandbox. |
 | `007-capture-website` | Captured a local static website into HyperFrames capture output. |
+| `008-captions-layer` | Rendered a 12-second MP4 comparing automatic Whisper captions with curated script captions. |
 
 ## Practical Findings
 
@@ -108,6 +109,32 @@ Chrome: cached
 
 The local capture output includes screenshots, design tokens, visible text, font metadata, and generated agent instructions. This is useful article material because it shows HyperFrames can inspect an existing page before building video source from it.
 
+### Captions Layer
+
+The caption layer proof compares two sources for the first 12 seconds of the voiceover:
+
+```text
+Automatic: audio/generated/transcript.json grouped into 7 caption groups
+Curated: audio/source/voiceover.txt reduced to 3 intentional caption groups
+```
+
+The rendered proof:
+
+```text
+experiments/008-captions-layer/output/captions-layer-proof.mp4
+```
+
+FFprobe verified:
+
+```text
+h264
+1920x1080
+30fps
+12.000000 seconds
+```
+
+This is useful article material because it shows the practical difference between machine timing and final tutorial copy. It should not be presented as the final captions implementation yet.
+
 ### Registry
 
 The captions catalog has useful components. One isolated install was tested:
@@ -182,4 +209,5 @@ This changes the recommendation: use the official `ggml-org/whisper.cpp` Windows
 1. Decide whether final captions should be generated from official Whisper output, curated from the script, or shown as both machine output and edited captions.
 2. Investigate why the 30fps standard 4-worker benchmark preset remains unstable.
 3. Decide whether the isolated caption component should be adapted into a real captions scene.
-4. Extract 2-3 short clips from the experiment artifacts for the article draft.
+4. Decide whether to adapt the curated captions layer into the main tutorial render.
+5. Extract 2-3 short clips from the experiment artifacts for the article draft.

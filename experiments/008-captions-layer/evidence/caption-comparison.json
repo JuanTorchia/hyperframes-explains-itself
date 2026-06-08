@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-06-08",
+  "durationSeconds": 12,
+  "automatic": {
+    "source": "audio/generated/transcript.json",
+    "groupCount": 7,
+    "wordCount": 37,
+    "firstText": "Hyperframes explain hyperframes.",
+    "lastText": "Docker render command."
+  },
+  "curated": {
+    "source": "audio/source/voiceover.txt",
+    "groupCount": 3,
+    "wordCount": 39,
+    "firstText": "Can HyperFrames explain HyperFrames? This repository is the test.",
+    "lastText": "Its source is HTML, CSS, JavaScript, Markdown planning files, a generated voiceover asset, and a Docker render command."
+  },
+  "finding": "Automatic Whisper captions are usable for timing evidence, but curated script captions are better for final developer-facing copy."
+}

@@ -15,6 +15,7 @@ The main video should not become a command encyclopedia. These experiments let t
 | `005-transcribe-captions` | Transcript import, local Whisper JSON, caption source data | SRT import works; Python package import workaround works; official whisper.cpp direct audio transcription works |
 | `006-registry-components` | `catalog` and `add` discovery | Catalog discovery and isolated component install captured |
 | `007-capture-website` | Local website capture | Local capture completed |
+| `008-captions-layer` | Automatic vs curated captions | 12-second caption comparison MP4 rendered and verified |
 
 ## Commands
 
@@ -29,6 +30,9 @@ npm run experiment:transcribe
 npm run transcribe:setup:official
 npm run experiment:transcribe:official
 npm run experiment:capture
+npm run experiment:captions
+npm run experiment:captions:check
+npm run experiment:captions:render
 ```
 
 ## Results So Far
@@ -44,6 +48,7 @@ npm run experiment:capture
 - `005-transcribe-captions` installed `whisper.cpp-cli` in `.venv`, captured the Python-package direct-audio failure, generated Whisper JSON directly, imported that JSON with HyperFrames, then validated direct HyperFrames audio transcription with the official `whisper-bin-x64.zip` release asset.
 - `006-registry-components` captured registry catalog JSON, caption-specific catalog JSON, and an isolated `caption-weight-shift` install.
 - `007-capture-website` captured a local static website into editable capture output.
+- `008-captions-layer` generated automatic and curated caption groups, then rendered a 12-second comparison clip.
 
 ## Open Findings
 
@@ -53,6 +58,7 @@ npm run experiment:capture
 - `hyperframes benchmark` does not expose Docker mode in the current CLI help. The local benchmark initially failed because workers did not receive a browser executable path, then failed because host FFmpeg was missing. The current runner fixes both locally, but one 4-worker preset can still fail.
 - `hyperframes transcribe` can import SRT and Whisper JSON. Direct audio transcription works locally with the official Windows x64 `whisper-cli.exe`; the tested Python package does not support HyperFrames' `--suppress-nst` argument.
 - `hyperframes add caption-weight-shift --no-clipboard --json` wrote the expected component file in an isolated sandbox, but the JSON reported `clipboardCopied: true`.
+- `008-captions-layer` is intentionally silent. It is evidence for caption rendering and copy comparison, not a final audio-synced tutorial export.
 
 ## Rules
 
