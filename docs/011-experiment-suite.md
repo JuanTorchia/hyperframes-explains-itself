@@ -11,7 +11,7 @@ The main walkthrough proves the core workflow, but it should not carry every Hyp
 | `001-media-timing` | Rendered a 6-second MP4 using real video media, `data-media-start`, low-volume source audio, image layer, and HTML overlays. |
 | `002-output-formats` | Rendered and verified WebM plus a 30-frame PNG sequence. |
 | `003-cli-introspection` | Captured `info`, `compositions`, `doctor`, and browser-path evidence. |
-| `004-benchmark` | Attempted a tiny local benchmark; render workers failed due missing Puppeteer executable path. |
+| `004-benchmark` | Fixed enough to produce timing evidence with managed Chrome and project-local FFmpeg; one 4-worker preset remains unstable. |
 | `005-transcribe-captions` | Imported an SRT transcript into HyperFrames transcript JSON; audio transcription is blocked by missing `whisper-cpp`. |
 | `006-registry-components` | Captured full catalog and captions catalog JSON; installed one caption component in an isolated sandbox. |
 | `007-capture-website` | Captured a local static website into HyperFrames capture output. |
@@ -68,19 +68,28 @@ This is the better article example for PNG sequence output because the expected 
 
 ### Benchmark
 
-The benchmark command was attempted with one run:
+The benchmark command was repaired and made reproducible:
 
 ```bash
 npm run experiment:benchmark
 ```
 
-It failed in local render workers:
+The failure path is useful for the post:
 
 ```text
-An `executablePath` or `channel` must be specified for `puppeteer-core`
+Attempt 1: workers did not receive a Puppeteer executable path.
+Attempt 2: explicit browser path fixed capture, but encode failed with ffmpeg ENOENT.
+Fix: use the managed Chrome path plus project-local ffmpeg-static copied into tools/.cache/bin.
 ```
 
-The CLI help for `hyperframes benchmark` does not expose `--docker`, so the current project should document this as a host-local limitation, not as a completed benchmark comparison.
+Latest evidence:
+
+```text
+experiments/004-benchmark/evidence/benchmark-runs-1-fixed.txt
+experiments/004-benchmark/evidence/benchmark-fixed-summary.txt
+```
+
+Current caveat: one 4-worker standard preset still failed in the latest run, so the article should present benchmark output as environment-sensitive evidence, not a universal performance claim.
 
 ### CLI Introspection
 
@@ -128,6 +137,6 @@ Audio transcription failed because `whisper-cpp` is not installed:
 ## Next Recommended Proofs
 
 1. Decide whether to install `whisper-cpp` for real audio transcription.
-2. Investigate the local benchmark Puppeteer executable path failure.
+2. Investigate why the 30fps standard 4-worker benchmark preset remains unstable.
 3. Decide whether the isolated caption component should be adapted into a real captions scene.
 4. Extract 2-3 short clips from the experiment artifacts for the article draft.

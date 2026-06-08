@@ -5,6 +5,7 @@ renders/*
 !renders/hyperframes-in-60-seconds.mp4
 snapshots/
 .hyperframes/
+tools/.cache/
 .hyperframes-preview*.log
 .thumbnails/
 .DS_Store

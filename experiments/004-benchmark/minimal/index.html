@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Experiment 004 - Minimal Benchmark</title>
+    <script src="../../../node_modules/gsap/dist/gsap.min.js"></script>
     <style>
       body {
         margin: 0;
@@ -38,10 +39,17 @@
   </head>
   <body>
     <main id="root" data-composition-id="benchmark-minimal" data-start="0" data-duration="3" data-width="1920" data-height="1080" data-fps="30">
-      <section class="card clip" data-start="0" data-duration="3" data-track-index="0">
+      <section id="benchmark-card" class="card clip" data-start="0" data-duration="3" data-track-index="0">
         <h1>Benchmark target</h1>
         <p>Small composition, stable text, no external media.</p>
       </section>
     </main>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from("#benchmark-card", { opacity: 0, y: 16, duration: 0.25 }, 0);
+      tl.to({}, { duration: 3 }, 0);
+      window.__timelines["benchmark-minimal"] = tl;
+    </script>
   </body>
 </html>

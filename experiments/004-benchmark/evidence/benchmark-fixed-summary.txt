@@ -1,0 +1,7 @@
+Benchmark fixed summary
+
+30fps · draft · 2w: avgTimeMs=19946, avgSizeBytes=88195, failures=0
+30fps · standard · 2w: avgTimeMs=16207, avgSizeBytes=67450, failures=0
+30fps · high · 2w: avgTimeMs=31899, avgSizeBytes=93022, failures=0
+30fps · standard · 4w: avgTimeMs=failed, avgSizeBytes=failed, failures=1
+60fps · standard · 4w: avgTimeMs=30778, avgSizeBytes=65465, failures=0

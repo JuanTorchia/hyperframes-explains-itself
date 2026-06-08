@@ -135,6 +135,7 @@ Completed:
 - HyperFrames capability map drafted in `docs/010-hyperframes-capability-map.md`.
 - Capability experiments started in `experiments/`.
 - Experiment suite notes documented in `docs/011-experiment-suite.md`.
+- Local tooling fixes documented in `docs/012-local-tooling-fixes.md`.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.
@@ -149,4 +150,4 @@ Pending:
 - Resolve `npm run doctor` host-local FFmpeg/FFprobe warnings only if local rendering is needed.
 - Review the final MP4 end to end.
 - Re-render the main walkthrough after source-only changes.
-- Continue the experiment suite: investigate benchmark browser path, decide on `whisper-cpp`, and decide whether the isolated caption component should become a real captions scene.
+- Continue the experiment suite: investigate the unstable 4-worker benchmark preset, decide on `whisper-cpp`, and decide whether the isolated caption component should become a real captions scene.

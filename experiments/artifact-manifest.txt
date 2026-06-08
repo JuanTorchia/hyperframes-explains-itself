@@ -25,10 +25,15 @@ Size bytes: 412
 SHA256: 28B1ECF1584A470BB1E5900DEDC26A09B390F8C68021D98D43F88F55506EE119
 LastWriteTime: 2026-06-08 00:07:48 -03:00
 
-experiments\004-benchmark\evidence\benchmark-runs-1.txt
-Size bytes: 33952
-SHA256: D1351656741AC93CC515D4AC830C6F70CB5DCD47AF7F929B848E9446D34AD93D
-LastWriteTime: 2026-06-08 00:09:48 -03:00
+experiments\004-benchmark\evidence\benchmark-runs-1-fixed.txt
+Size bytes: 39588
+SHA256: 6842090C3FBE1C9740FB9304D9D90DD189ECC302ACBA260D608AD7537F8DA8F8
+LastWriteTime: 2026-06-08 00:59:24 -03:00
+
+experiments\004-benchmark\evidence\benchmark-fixed-summary.txt
+Size bytes: 391
+SHA256: A47B1723D0343D9B655BBD6853E0654BC2F1CFE982F46921ED4556A96BA7DCBE
+LastWriteTime: 2026-06-08 01:07:09 -03:00
 
 experiments\005-transcribe-captions\evidence\generated-transcript.json
 Size bytes: 109

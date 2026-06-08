@@ -18,7 +18,7 @@
     "experiment:formats:webm": "hyperframes render experiments/001-media-timing --docker --strict-all --workers 1 --format webm --output experiments/002-output-formats/output/media-timing-proof.webm",
     "experiment:formats:png": "hyperframes render experiments/002-output-formats/png-sequence --docker --strict-all --workers 1 --format png-sequence --output experiments/002-output-formats/output/png-sequence-proof-frames",
     "experiment:introspection": "node tools/run-introspection-evidence.mjs",
-    "experiment:benchmark": "hyperframes benchmark experiments/004-benchmark/minimal --runs 1 --json",
+    "experiment:benchmark": "node tools/run-benchmark-evidence.mjs",
     "experiment:capture": "node tools/run-local-capture.mjs",
     "tts:setup": "node tools/setup-tts-python.mjs",
     "tts": "node tools/run-with-venv.mjs hyperframes tts audio/source/voiceover.txt --voice af_nova --lang en-us --speed 1.15 --output audio/generated/hyperframes-in-60-seconds-af-nova.wav",
@@ -37,6 +37,7 @@
     "node": ">=22"
   },
   "devDependencies": {
+    "ffmpeg-static": "5.3.0",
     "gsap": "3.14.2",
     "hyperframes": "0.6.80"
   }

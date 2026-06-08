@@ -557,3 +557,36 @@ npm run experiment:media:check -> 0 errors, 0 warnings, 0 layout issues
 npx hyperframes lint experiments/002-output-formats/png-sequence -> 0 errors, 0 warnings
 npx hyperframes inspect experiments/002-output-formats/png-sequence -> 0 layout issues
 ```
+
+### Benchmark Fix And Transcription Documentation
+
+Fixed:
+
+```text
+The benchmark composition now has a registered GSAP timeline and stable editable id.
+npm run experiment:benchmark now uses tools/run-benchmark-evidence.mjs.
+The benchmark runner reads the managed Chrome path from introspection evidence.
+The benchmark runner sets HYPERFRAMES_BROWSER_PATH, PRODUCER_HEADLESS_SHELL_PATH, and PUPPETEER_EXECUTABLE_PATH.
+The benchmark runner uses ffmpeg-static through a project-local tools/.cache/bin/ffmpeg.exe path.
+```
+
+Latest benchmark evidence:
+
+```text
+experiments/004-benchmark/evidence/benchmark-runs-1-fixed.txt
+experiments/004-benchmark/evidence/benchmark-fixed-summary.txt
+```
+
+Result:
+
+```text
+The benchmark now produces timing and size evidence for most presets.
+One 30fps standard 4-worker preset still failed in the latest run, so benchmark evidence remains environment-sensitive.
+```
+
+Documented:
+
+```text
+Audio transcription still requires whisper-cpp. The project does not install it silently.
+docs/012-local-tooling-fixes.md records the benchmark fixes and transcription prerequisite.
+```

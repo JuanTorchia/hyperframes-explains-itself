@@ -14,17 +14,9 @@ Benchmarking the 108-second main video would be slow. This experiment uses a tin
 npm run experiment:benchmark
 ```
 
-## Expected Evidence
-
-Save output to:
-
-```text
-experiments/004-benchmark/evidence/benchmark-runs-1.json
-```
-
 ## Result
 
-The benchmark command was attempted:
+The benchmark command is now reproducible through a project runner:
 
 ```bash
 npm run experiment:benchmark
@@ -33,13 +25,35 @@ npm run experiment:benchmark
 Evidence:
 
 ```text
+experiments/004-benchmark/evidence/benchmark-runs-1-fixed.txt
+experiments/004-benchmark/evidence/benchmark-fixed-summary.txt
+```
+
+Earlier attempts are preserved:
+
+```text
 experiments/004-benchmark/evidence/benchmark-runs-1.txt
 ```
 
-The local benchmark did not produce useful timing comparisons. Render workers failed with:
+## Fixes Applied
+
+The first attempt failed because render workers did not receive a Puppeteer executable path. The second attempt fixed browser discovery but failed because host `ffmpeg` was missing.
+
+The runner now:
+
+- Reads the managed Chrome path from `experiments/003-cli-introspection/evidence/browser-path.txt`.
+- Sets `HYPERFRAMES_BROWSER_PATH`, `PRODUCER_HEADLESS_SHELL_PATH`, and `PUPPETEER_EXECUTABLE_PATH`.
+- Copies `ffmpeg-static` into `tools/.cache/bin/ffmpeg.exe`.
+- Prepends `tools/.cache/bin` to `PATH` before running `hyperframes benchmark`.
+
+## Latest Summary
 
 ```text
-An `executablePath` or `channel` must be specified for `puppeteer-core`
+30fps · draft · 2w: avgTimeMs=19946, avgSizeBytes=88195, failures=0
+30fps · standard · 2w: avgTimeMs=16207, avgSizeBytes=67450, failures=0
+30fps · high · 2w: avgTimeMs=31899, avgSizeBytes=93022, failures=0
+30fps · standard · 4w: avgTimeMs=, avgSizeBytes=, failures=1
+60fps · standard · 4w: avgTimeMs=30778, avgSizeBytes=65465, failures=0
 ```
 
-The current CLI help for `hyperframes benchmark` exposes `--runs` and `--json`, but not `--docker`, so this remains a local-environment limitation rather than a Docker-first benchmark proof.
+The benchmark is fixed enough to produce useful evidence, but the failed 4-worker standard preset should be mentioned honestly in the article.
