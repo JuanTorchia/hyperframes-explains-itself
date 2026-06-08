@@ -40,6 +40,51 @@ Size bytes: 109
 SHA256: 29BD9D2796149CED427A72AA40EC571EFBC76EBFE639229632FBF435205BFB0B
 LastWriteTime: 2026-06-08 00:13:42 -03:00
 
+experiments\005-transcribe-captions\evidence\generated-transcript-with-local-whisper.json
+Size bytes: 47
+SHA256: C8AD1E86743A172AD18F1DF7E878BEDEF91F9E50C0649DA0221881795974564E
+LastWriteTime: 2026-06-08 02:07:07 -03:00
+
+experiments\005-transcribe-captions\evidence\generated-transcript-fixed.json
+Size bytes: 77
+SHA256: 52E8DBB9CEEF888E24B5412221DF59098F2D306AD6D99A5E75A87C9C89B42E13
+LastWriteTime: 2026-06-08 02:07:10 -03:00
+
+experiments\005-transcribe-captions\evidence\direct-whisper.stderr.txt
+Size bytes: 4013
+SHA256: CF5F1D04DD55B18D3D2E2A3A2BAE270133423779CE051ACF64B3245BE6C7BE63
+LastWriteTime: 2026-06-08 02:07:10 -03:00
+
+experiments\005-transcribe-captions\evidence\direct-whisper-nosuppress.stderr.txt
+Size bytes: 2471
+SHA256: 3418ADD4F7670007C0D3ED49D97D864BCBB637FB0BD9811E6B868FB57ED036F1
+LastWriteTime: 2026-06-08 02:08:07 -03:00
+
+experiments\005-transcribe-captions\evidence\direct-whisper-nosuppress.stdout.txt
+Size bytes: 3324
+SHA256: CB9CD410FF5B5B6C6BCD32C01F7B164F8C692DF64D6D877E2212D81795F880D5
+LastWriteTime: 2026-06-08 02:08:07 -03:00
+
+experiments\005-transcribe-captions\evidence\ffmpeg-voiceover-16k.stderr.txt
+Size bytes: 2438
+SHA256: ED3E101895B4B7CC6A34F779A3448AFD67C128990CA2B68F7FBA0609FA660F04
+LastWriteTime: 2026-06-08 02:07:10 -03:00
+
+experiments\005-transcribe-captions\evidence\imported-direct-whisper-json.json
+Size bytes: 184
+SHA256: 01A250AB869282913B660A1A6B36F430FF195F2AFF236E59864A15D619ED5EF1
+LastWriteTime: 2026-06-08 02:08:09 -03:00
+
+experiments\005-transcribe-captions\source\direct-whisper-transcript.json
+Size bytes: 126240
+SHA256: 30B33ACFFF0273B8EAA036D1A05680D067E69EF91EBBD651209C0506E0145608
+LastWriteTime: 2026-06-08 02:08:07 -03:00
+
+experiments\005-transcribe-captions\source\direct-whisper-imported-transcript.json
+Size bytes: 20754
+SHA256: 3664A3ABCDE55B4C5D8F9466C7E4A336BE292C37F8F049D68F2D93B344FFBDDC
+LastWriteTime: 2026-06-08 02:08:08 -03:00
+
 experiments\006-registry-components\install-sandbox\compositions\components\caption-weight-shift.html
 Size bytes: 13590
 SHA256: E057DD3396E8A4133F27C8F9F9647F9297A300391BACDD7CD5ADAF8146A381B3

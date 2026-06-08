@@ -590,3 +590,41 @@ Documented:
 Audio transcription still requires whisper-cpp. The project does not install it silently.
 docs/012-local-tooling-fixes.md records the benchmark fixes and transcription prerequisite.
 ```
+
+### Transcription Tooling Probe
+
+Installed and tested:
+
+```text
+npm run transcribe:setup -> installed whisper.cpp-cli into .venv
+npm run experiment:transcribe -> completed
+```
+
+Findings:
+
+```text
+HyperFrames found the local whisper-cpp.exe when HYPERFRAMES_WHISPER_PATH was set.
+The first local HyperFrames attempt advanced from missing Whisper to missing FFmpeg.
+Adding project-local ffmpeg-static advanced the command again.
+Direct HyperFrames audio transcription still failed because the tested Python package does not accept --suppress-nst.
+The same package generated whisper.cpp JSON directly when --suppress-nst was omitted.
+HyperFrames successfully imported that generated whisper.cpp JSON.
+```
+
+Evidence:
+
+```text
+experiments/005-transcribe-captions/evidence/generated-transcript-fixed.json
+experiments/005-transcribe-captions/evidence/direct-whisper.stderr.txt
+experiments/005-transcribe-captions/evidence/direct-whisper-nosuppress.stderr.txt
+experiments/005-transcribe-captions/evidence/imported-direct-whisper-json.json
+experiments/005-transcribe-captions/source/direct-whisper-transcript.json
+experiments/005-transcribe-captions/source/direct-whisper-imported-transcript.json
+```
+
+Pending:
+
+```text
+Test a full whisper.cpp build or official whisper-cli binary that supports --suppress-nst.
+Decide whether final captions should come from Whisper output, curated script text, or both.
+```

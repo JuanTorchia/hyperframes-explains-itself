@@ -1,0 +1,83 @@
+whisper_init_from_file_with_params_no_state: loading model from 'C:\Users\jstor\.cache\hyperframes\whisper\models\ggml-tiny.en.bin'
+
+whisper_model_load: loading model
+
+whisper_model_load: n_vocab       = 51864
+
+whisper_model_load: n_audio_ctx   = 1500
+
+whisper_model_load: n_audio_state = 384
+
+whisper_model_load: n_audio_head  = 6
+
+whisper_model_load: n_audio_layer = 4
+
+whisper_model_load: n_text_ctx    = 448
+
+whisper_model_load: n_text_state  = 384
+
+whisper_model_load: n_text_head   = 6
+
+whisper_model_load: n_text_layer  = 4
+
+whisper_model_load: n_mels        = 80
+
+whisper_model_load: ftype         = 1
+
+whisper_model_load: qntvr         = 0
+
+whisper_model_load: type          = 1 (tiny)
+
+whisper_model_load: adding 1607 extra tokens
+
+whisper_model_load: n_langs       = 99
+
+whisper_model_load:      CPU total size =    77.11 MB
+
+whisper_model_load: model size    =   77.11 MB
+
+whisper_init_state: kv self size  =    8.26 MB
+
+whisper_init_state: kv cross size =    9.22 MB
+
+whisper_init_state: alignment heads masks size = 192 B
+
+whisper_init_state: compute buffer (conv)   =   13.32 MB
+
+whisper_init_state: compute buffer (encode) =   85.66 MB
+
+whisper_init_state: compute buffer (cross)  =    4.01 MB
+
+whisper_init_state: compute buffer (decode) =  124.07 MB
+
+
+
+system_info: n_threads = 4 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | METAL = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 0 | VSX = 0 | CUDA = 0 | COREML = 0 | OPENVINO = 0
+
+
+
+main: processing 'experiments/005-transcribe-captions/scratch/voiceover-16k.wav' (1559552 samples, 97.5 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
+
+
+
+output_json: saving output to 'experiments/005-transcribe-captions/source/direct-whisper-transcript.json'
+
+
+
+whisper_print_timings:     load time =   125.03 ms
+
+whisper_print_timings:     fallbacks =   0 p /   0 h
+
+whisper_print_timings:      mel time =   215.38 ms
+
+whisper_print_timings:   sample time = 19345.08 ms /  2478 runs (    7.81 ms per run)
+
+whisper_print_timings:   encode time =  6260.22 ms /     4 runs ( 1565.06 ms per run)
+
+whisper_print_timings:   decode time =   506.97 ms /     2 runs (  253.48 ms per run)
+
+whisper_print_timings:   batchd time = 26145.73 ms /  2457 runs (   10.64 ms per run)
+
+whisper_print_timings:   prompt time =  3441.90 ms /  1018 runs (    3.38 ms per run)
+
+whisper_print_timings:    total time = 56944.88 ms

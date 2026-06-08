@@ -12,7 +12,7 @@ The main walkthrough proves the core workflow, but it should not carry every Hyp
 | `002-output-formats` | Rendered and verified WebM plus a 30-frame PNG sequence. |
 | `003-cli-introspection` | Captured `info`, `compositions`, `doctor`, and browser-path evidence. |
 | `004-benchmark` | Fixed enough to produce timing evidence with managed Chrome and project-local FFmpeg; one 4-worker preset remains unstable. |
-| `005-transcribe-captions` | Imported an SRT transcript into HyperFrames transcript JSON; audio transcription is blocked by missing `whisper-cpp`. |
+| `005-transcribe-captions` | Imported SRT, installed a local Whisper package, captured a direct-audio compatibility failure, generated Whisper JSON directly, and imported that JSON with HyperFrames. |
 | `006-registry-components` | Captured full catalog and captions catalog JSON; installed one caption component in an isolated sandbox. |
 | `007-capture-website` | Captured a local static website into HyperFrames capture output. |
 
@@ -128,15 +128,43 @@ Open finding: the JSON response reported `clipboardCopied: true` even with `--no
 
 SRT import works and produced `source/transcript.json`.
 
-Audio transcription failed because `whisper-cpp` is not installed:
+Audio transcription first failed because `whisper-cpp` was not installed:
 
 ```json
 {"ok":false,"error":"whisper-cpp not found. Install: See https://github.com/ggml-org/whisper.cpp#building"}
 ```
 
+After installing `whisper.cpp-cli` into `.venv`, HyperFrames found the local binary and the tiny English model was downloaded to the HyperFrames cache. The next direct-audio attempt failed with:
+
+```json
+{"ok":false,"error":"Whisper did not produce output. Check the input file."}
+```
+
+A direct probe showed the reason:
+
+```text
+error: unknown argument: --suppress-nst
+```
+
+The useful workaround is to run `whisper.cpp-cli` directly without `--suppress-nst`, save `direct-whisper-transcript.json`, and import that JSON through HyperFrames:
+
+```bash
+npm run experiment:transcribe
+```
+
+This produced:
+
+```text
+experiments/005-transcribe-captions/source/direct-whisper-transcript.json
+experiments/005-transcribe-captions/source/direct-whisper-imported-transcript.json
+experiments/005-transcribe-captions/evidence/imported-direct-whisper-json.json
+```
+
+The transcript should be treated as local evidence, not as final copy. It uses `tiny.en` and contains recognition errors.
+
 ## Next Recommended Proofs
 
-1. Decide whether to install `whisper-cpp` for real audio transcription.
+1. Test a full `whisper.cpp` build or official `whisper-cli` binary that supports HyperFrames' transcription arguments.
 2. Investigate why the 30fps standard 4-worker benchmark preset remains unstable.
 3. Decide whether the isolated caption component should be adapted into a real captions scene.
 4. Extract 2-3 short clips from the experiment artifacts for the article draft.

@@ -6,6 +6,7 @@ renders/*
 snapshots/
 .hyperframes/
 tools/.cache/
+experiments/**/scratch/
 .hyperframes-preview*.log
 .thumbnails/
 .DS_Store
