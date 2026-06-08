@@ -63,6 +63,9 @@ npm run experiment:remove-background:render
 
 ## Results So Far
 
+- The article evidence map now lives in `docs/017-article-evidence-map.md`.
+- The selected article media references live in `article-assets/README.md`.
+- The final demo plan lives in `docs/018-final-demo-plan.md`.
 - `001-media-timing` produced `experiments/001-media-timing/output/media-timing-proof.mp4`.
 - The media experiment uses `data-media-start`, `data-volume`, a real MP4 source, a static image layer, and HTML overlays.
 - The first media render exposed sparse source keyframes. The source asset was re-encoded with the Docker renderer image and FFmpeg before the final proof render.

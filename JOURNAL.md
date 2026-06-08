@@ -1095,3 +1095,48 @@ Decision:
 PixiJS is now covered as a project-local `hf-seek` bridge.
 Rive remains pending because a real `.riv` fixture should be local, small, and clearly licensed before we claim evidence.
 ```
+
+## 2026-06-08 - Article Evidence Map And Final Demo Plan
+
+Created:
+
+```text
+docs/017-article-evidence-map.md
+docs/018-final-demo-plan.md
+article-assets/README.md
+```
+
+Decision:
+
+```text
+Stop adding feature probes by default.
+Move into editorial curation: claim mapping, selected assets, and final demo planning.
+```
+
+Article rule:
+
+```text
+No claim without a command, artifact, or documented caveat.
+```
+
+Selected evidence themes:
+
+```text
+init scaffold
+lint and inspect
+Docker rendering
+captions
+output formats
+adapter sampler
+remove-background alpha evidence
+mistakes and fixes from the build log
+```
+
+Final demo direction:
+
+```text
+One cohesive 60-90 second developer demo.
+Use experiments as source material.
+Do not turn the final demo into a command encyclopedia.
+Keep untested cloud, publish, lambda, auth, Rive, and dotLottie surfaces out of the demo claims.
+```
