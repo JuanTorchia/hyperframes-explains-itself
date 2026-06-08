@@ -405,3 +405,25 @@ npm run check -> 0 errors, 0 warnings, 0 layout issues
 npm run snapshot -> 4 frames captured and moved into video/hyperframes-in-60-seconds/screenshots
 npm run render -> completed with Docker, --strict-all, and --workers 1
 ```
+
+### Demo V2 Planning
+
+Created:
+
+```text
+video/hyperframes-in-60-seconds/v2-script.md
+video/hyperframes-in-60-seconds/v2-storyboard.md
+docs/009-demo-v2-implementation-plan.md
+```
+
+Decision:
+
+```text
+V2 should become a developer walkthrough, not just a 60 second intro. It should show the repository, parent composition, sub-compositions, explicit timing, developer loop, Docker render, TTS audio, proof, and mistakes found.
+```
+
+Pending:
+
+```text
+No v2 render has been produced. The v2 script should be reviewed before implementation, TTS regeneration, or rendering.
+```

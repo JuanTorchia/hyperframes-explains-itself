@@ -131,6 +131,7 @@ Completed:
 - Reproducible proof captured under `evidence/2026-06-07/`.
 - Composition architecture refactored into `index.html`, `compositions/`, and `styles/video.css`.
 - HyperFrames validation now reports 0 errors, 0 warnings, and 0 layout issues.
+- V2 demo script, storyboard, and implementation plan drafted. No v2 render has been produced yet.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.
