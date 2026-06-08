@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-evidence" data-width="1920" data-height="1080">
+      <div class="scene">
+        <p class="kicker">Evidence</p>
+        <h2>The proof is <code>ffprobe</code>.</h2>
+        <div class="proof-card">
+          <span>video: h264, 1920x1080, 30fps</span>
+          <span>audio: aac, 60.053333s</span>
+          <span>container: 60.054000s</span>
+          <span>file: renders/hyperframes-in-60-seconds.mp4</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".proof-card span", { opacity: 0, x: 20, stagger: 0.14, duration: 0.35 }, 0.4);
+      tl.to({}, { duration: 10 }, 0);
+      window.__timelines["scene-evidence"] = tl;
+    </script>
+  </body>
+</html>

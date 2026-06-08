@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft. This script is not rendered yet.
+Rendered into the current v2 MP4.
 
 ## Target
 
@@ -46,7 +46,7 @@ That distinction matters: TTS is the variable step. The saved WAV is the reprodu
 
 The final proof is not a slogan. It is `ffprobe`.
 
-The MP4 has an H.264 video stream, an AAC audio stream, 1080p resolution, 30 frames per second, and a 60 second timeline.
+The MP4 has an H.264 video stream, an AAC audio stream, 1080p resolution, 30 frames per second, and a 108 second timeline.
 
 We also found real issues along the way: a dense timeline warning, a blank first frame, Python dependencies for TTS, and mismatched sub-composition timeline IDs.
 
@@ -128,6 +128,6 @@ MP4 is the artifact.
 
 ## Notes
 
-- Do not claim this version has rendered until it has.
-- Keep the current rendered MP4 as v1 evidence until v2 is implemented and rendered.
-- The voiceover will need to be regenerated after this script is accepted.
+- This script has been rendered as v2.
+- The generated voiceover duration is `97.472000` seconds.
+- The current MP4 container duration is `108.054000` seconds.

@@ -2,7 +2,7 @@
 
 ## Status
 
-Planning document. No v2 render has been produced yet.
+Implemented. The v2 Docker render has been produced.
 
 ## Objective
 
@@ -174,10 +174,7 @@ V2 is successful when:
 
 ## Current Pending Work
 
-- Review `v2-script.md`.
-- Review `v2-storyboard.md`.
-- Use `docs/010-hyperframes-capability-map.md` as the source of truth for capability coverage.
-- Implement v2 scene files.
-- Update parent timeline and duration.
-- Regenerate TTS.
-- Run check, snapshot, render, and evidence refresh.
+- Review the rendered v2 video for pacing and voiceover timing.
+- Decide whether to add a real media trimming example with `data-media-start`.
+- Keep `docs/010-hyperframes-capability-map.md` as the source of truth for future capability coverage.
+- Refresh evidence after any future render.

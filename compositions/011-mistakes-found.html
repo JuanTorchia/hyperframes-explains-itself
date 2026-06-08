@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-mistakes" data-width="1920" data-height="1080">
+      <div class="scene">
+        <p class="kicker">Mistakes found</p>
+        <h2>The build log is part of the demo.</h2>
+        <div class="mistake-grid">
+          <div><strong>timeline_track_too_dense</strong><span>split scenes</span></div>
+          <div><strong>blank t=0 frame</strong><span>keep hook inline</span></div>
+          <div><strong>TTS Python deps</strong><span>local .venv</span></div>
+          <div><strong>timeline ID mismatch</strong><span>match host IDs</span></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".mistake-grid > div", { opacity: 0, y: 24, stagger: 0.1, duration: 0.35 }, 0.3);
+      tl.to({}, { duration: 8 }, 0);
+      window.__timelines["scene-mistakes"] = tl;
+    </script>
+  </body>
+</html>

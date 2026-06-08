@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-timing" data-width="1920" data-height="1080">
+      <div class="scene">
+        <p class="kicker">Explicit timing</p>
+        <h2><code>data-start</code> plus <code>data-duration</code>.</h2>
+        <div class="timeline-strip">
+          <div class="timeline-block wide">hook<br /><span>0-6s</span></div>
+          <div class="timeline-block">repo<br /><span>6-14s</span></div>
+          <div class="timeline-block">parent<br /><span>14-22s</span></div>
+          <div class="timeline-block long">timing<br /><span>32-42s</span></div>
+          <div class="timeline-block">render<br /><span>64-74s</span></div>
+          <div class="playhead"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".timeline-block", { opacity: 0, y: 20, stagger: 0.08, duration: 0.35 }, 0.2);
+      tl.fromTo(".playhead", { x: 0 }, { x: 1180, duration: 9, ease: "none" }, 0.5);
+      tl.to({}, { duration: 10 }, 0);
+      window.__timelines["scene-timing"] = tl;
+    </script>
+  </body>
+</html>

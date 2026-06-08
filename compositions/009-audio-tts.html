@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-audio" data-width="1920" data-height="1080">
+      <div class="scene">
+        <p class="kicker">Audio and TTS</p>
+        <h2>TTS is variable. The WAV is input.</h2>
+        <div class="pipeline">
+          <div>voiceover.txt</div>
+          <span>-&gt;</span>
+          <div>hyperframes tts</div>
+          <span>-&gt;</span>
+          <div>generated WAV</div>
+          <span>-&gt;</span>
+          <div>&lt;audio&gt;</div>
+        </div>
+        <div class="waveform">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".pipeline > *", { opacity: 0, y: 18, stagger: 0.1, duration: 0.3 }, 0.2);
+      tl.from(".waveform span", { scaleY: 0.25, opacity: 0.4, stagger: 0.04, duration: 0.5 }, 0.9);
+      tl.to({}, { duration: 10 }, 0);
+      window.__timelines["scene-audio"] = tl;
+    </script>
+  </body>
+</html>

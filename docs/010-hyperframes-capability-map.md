@@ -3,6 +3,7 @@
 ## Status
 
 Planning document. This maps HyperFrames capabilities to practical examples for the v2 demo. It does not claim that the v2 video has rendered.
+The v2 video has now rendered; this map remains the source of truth for future capability coverage decisions.
 
 ## Source Basis
 
@@ -117,7 +118,7 @@ Show the audio track as a real media example:
 <audio
   src="audio/generated/hyperframes-in-60-seconds-af-nova.wav"
   data-start="0"
-  data-duration="55.850667"
+  data-duration="97.472000"
   data-volume="1"
 ></audio>
 ```
@@ -159,4 +160,3 @@ The article should include two sections:
 - "What HyperFrames also provides, but this build does not exercise yet"
 
 That keeps the tutorial practical without hiding the broader tool surface.
-

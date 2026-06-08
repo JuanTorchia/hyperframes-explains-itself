@@ -35,10 +35,10 @@ docker run --rm --entrypoint ffprobe -v "${PWD}:/work" -w /work hyperframes-rend
 The current MP4 has:
 
 ```text
-Video stream: h264, 1920x1080, 30fps, 60.000000 seconds
-Audio stream: aac, 60.053333 seconds
-Container duration: 60.054000 seconds
-Size: 2488679 bytes
+Video stream: h264, 1920x1080, 30fps, 108.000000 seconds
+Audio stream: aac, 108.053333 seconds
+Container duration: 108.054000 seconds
+Size: 6251312 bytes
 ```
 
 HyperFrames validation currently reports:

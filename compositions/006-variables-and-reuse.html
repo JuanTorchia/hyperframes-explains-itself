@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-variables" data-width="1920" data-height="1080">
+      <div class="scene">
+        <p class="kicker">Variables</p>
+        <h2>One scene pattern, many values.</h2>
+        <div class="status-row">
+          <div class="status-card" style="--accent: #7bdcb5">
+            <strong>Lint</strong>
+            <span>0 warnings</span>
+          </div>
+          <div class="status-card" style="--accent: #f6c34b">
+            <strong>Inspect</strong>
+            <span>0 layout issues</span>
+          </div>
+          <div class="status-card" style="--accent: #8cb4ff">
+            <strong>Render</strong>
+            <span>MP4 artifact</span>
+          </div>
+        </div>
+        <div class="source-panel small">
+          <span>data-composition-variables</span>
+          <span>data-variable-values='{"label":"Lint","value":"0 warnings"}'</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".status-card", { opacity: 0, y: 28, stagger: 0.16, duration: 0.45 }, 0.2);
+      tl.from(".source-panel", { opacity: 0, y: 18, duration: 0.4 }, 1.1);
+      tl.to({}, { duration: 10 }, 0);
+      window.__timelines["scene-variables"] = tl;
+    </script>
+  </body>
+</html>

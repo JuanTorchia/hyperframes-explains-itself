@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft. This storyboard is not rendered yet.
+Rendered into the current v2 MP4.
 
 ## Scene 1: Hook
 
@@ -131,6 +131,6 @@ timeline ID mismatch
 
 - Keep all content in English.
 - Use real filenames and real commands.
-- Do not claim v2 has rendered until it has.
+- V2 has rendered; update evidence after future changes.
 - Keep `npm run check` at 0 errors and 0 warnings after implementation.
 - Regenerate voiceover only after the script is stable.

@@ -10,18 +10,18 @@
             "width": 1920,
             "height": 1080,
             "r_frame_rate": "30/1",
-            "duration": "60.000000"
+            "duration": "108.000000"
         },
         {
             "index": 1,
             "codec_name": "aac",
             "codec_type": "audio",
             "r_frame_rate": "0/0",
-            "duration": "60.053333"
+            "duration": "108.053333"
         }
     ],
     "format": {
-        "duration": "60.054000",
-        "size": "2488679"
+        "duration": "108.054000",
+        "size": "6251312"
     }
 }

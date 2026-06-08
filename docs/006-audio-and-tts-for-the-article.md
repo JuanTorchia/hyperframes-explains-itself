@@ -57,7 +57,7 @@ audio/generated/hyperframes-in-60-seconds-af-nova.wav
 Measured duration:
 
 ```text
-55.850667 seconds
+97.472000 seconds
 ```
 
 We added the generated WAV to `index.html`:
@@ -67,7 +67,7 @@ We added the generated WAV to `index.html`:
   id="voiceover"
   src="audio/generated/hyperframes-in-60-seconds-af-nova.wav"
   data-start="0"
-  data-duration="55.850667"
+  data-duration="97.472000"
   data-track-index="0"
   data-volume="1"
 ></audio>
@@ -82,9 +82,9 @@ npm run render
 The final MP4 includes:
 
 ```text
-Video stream: h264, 1920x1080, 30fps, 60.000000 seconds
-Audio stream: aac, 60.053333 seconds
-Container duration: 60.054000 seconds
+Video stream: h264, 1920x1080, 30fps, 108.000000 seconds
+Audio stream: aac, 108.053333 seconds
+Container duration: 108.054000 seconds
 ```
 
 ## What To Say In The Article
@@ -131,4 +131,3 @@ That matters because the article should show the boring but useful engineering w
 - HyperFrames data attributes docs: `https://hyperframes.video/docs/concepts/data-attributes`
 - HyperFrames timing and tracks docs: `https://hyperframes.video/docs/concepts/timing-and-tracks`
 - HyperFrames CLI TTS help from local `hyperframes@0.6.80`.
-

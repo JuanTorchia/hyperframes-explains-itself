@@ -13,7 +13,7 @@
         <div class="artifact">
           <div class="artifact-box">
             <strong>Source</strong>
-            <span>index.html</span>
+            <span>index.html + compositions/</span>
           </div>
           <div class="arrow">-&gt;</div>
           <div class="artifact-box">
@@ -26,7 +26,8 @@
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
-      tl.to({}, { duration: 4 }, 0);
+      tl.from(".artifact > *", { opacity: 0, y: 20, stagger: 0.14, duration: 0.4 }, 0.4);
+      tl.to({}, { duration: 6 }, 0);
       window.__timelines["scene-close"] = tl;
     </script>
   </body>

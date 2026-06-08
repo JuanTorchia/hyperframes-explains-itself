@@ -1,5 +1,7 @@
 # HyperFrames In 60 Seconds Script
 
+Status: legacy v1 script. The current rendered walkthrough uses `v2-script.md`.
+
 Target length: approximately 60 seconds.
 
 ## Voiceover
@@ -28,7 +30,6 @@ HTML is the source. MP4 is the artifact.
 
 ## Notes
 
-- No render has been completed yet.
-- AI TTS voiceover was generated with HyperFrames `tts`, Kokoro-82M, voice `af_nova`, speed `1.15`.
-- Generated voiceover duration: 55.850667 seconds.
-- Timing may change after audio review.
+- This script was used for the first proof render.
+- It is kept to document the original shorter version and the project evolution.
+- The current rendered audio and MP4 are documented in `v2-script.md`, `render-notes.md`, and `evidence/`.

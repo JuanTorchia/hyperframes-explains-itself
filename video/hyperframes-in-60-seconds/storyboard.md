@@ -1,5 +1,7 @@
 # HyperFrames In 60 Seconds Storyboard
 
+Status: legacy v1 storyboard. The current rendered walkthrough uses `v2-storyboard.md`.
+
 ## Scene 1
 
 - Timestamp: 0:00-0:06

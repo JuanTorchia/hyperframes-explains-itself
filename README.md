@@ -16,7 +16,7 @@ This project tries to prove that HyperFrames can be used as a practical develope
 
 ## Expected Output
 
-The target output is a roughly 60-second technical video titled "HyperFrames in 60 Seconds".
+The current output is a 108-second technical developer walkthrough generated from this repository.
 
 The video should explain:
 
@@ -26,7 +26,7 @@ The video should explain:
 - The high-level workflow: initialize, preview, render.
 - The final idea: HTML is the source, MP4 is the artifact.
 
-The first Docker-rendered MP4 has been produced at `renders/hyperframes-in-60-seconds.mp4`.
+The current Docker-rendered MP4 has been produced at `renders/hyperframes-in-60-seconds.mp4`.
 
 ## Tools
 
@@ -107,7 +107,7 @@ npm run tts
 
 ## Current Project Status
 
-Status: first Docker render completed.
+Status: v2 Docker render completed.
 
 Completed:
 
@@ -121,7 +121,7 @@ Completed:
 - `npm run snapshot` captured four verification frames and a contact sheet.
 - Docker-first rendering plan documented.
 - `npm run render` produced `renders/hyperframes-in-60-seconds.mp4`.
-- Rendered MP4 verified with containerized `ffprobe`: 1920x1080, 30fps, 60 seconds, 1800 frames.
+- Rendered MP4 verified with containerized `ffprobe`: 1920x1080, 30fps, 108 seconds, 3240 frames.
 - Rendered MP4 contact sheet extracted to `video/hyperframes-in-60-seconds/screenshots/render-contact-sheet.jpg`.
 - AI TTS voiceover generated with HyperFrames `tts`, Kokoro-82M, voice `af_nova`.
 - Rendered MP4 now includes AAC audio.
@@ -131,7 +131,7 @@ Completed:
 - Reproducible proof captured under `evidence/2026-06-07/`.
 - Composition architecture refactored into `index.html`, `compositions/`, and `styles/video.css`.
 - HyperFrames validation now reports 0 errors, 0 warnings, and 0 layout issues.
-- V2 demo script, storyboard, and implementation plan drafted. No v2 render has been produced yet.
+- V2 demo implemented and rendered with Docker.
 - HyperFrames capability map drafted in `docs/010-hyperframes-capability-map.md`.
 - Thesis document started.
 - Research notes started.

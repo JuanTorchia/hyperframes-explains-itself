@@ -432,5 +432,41 @@ V2 should also show practical capability examples: composition variables, reusab
 Pending:
 
 ```text
-No v2 render has been produced. The v2 script should be reviewed before implementation, TTS regeneration, or rendering.
+V2 has been implemented, TTS has been regenerated, and the Docker render has completed.
+```
+
+### Demo V2 Implementation
+
+Implemented:
+
+```text
+index.html
+styles/video.css
+compositions/002-repository-proof.html
+compositions/003-parent-composition.html
+compositions/004-sub-compositions.html
+compositions/005-explicit-timing.html
+compositions/006-variables-and-reuse.html
+compositions/007-developer-loop.html
+compositions/008-docker-render-and-formats.html
+compositions/009-audio-tts.html
+compositions/010-evidence.html
+compositions/011-mistakes-found.html
+compositions/012-close.html
+```
+
+Generated:
+
+```text
+audio/generated/hyperframes-in-60-seconds-af-nova.wav -> 97.472000 seconds
+renders/hyperframes-in-60-seconds.mp4 -> 108.054000 seconds
+```
+
+Validation:
+
+```text
+npm run check -> 0 errors, 0 warnings, 0 layout issues
+npm run snapshot -> frames at 0, 36, 69, and 105 seconds
+npm run render -> Docker render completed in 7m 46.0s
+ffprobe -> h264 video stream and aac audio stream
 ```

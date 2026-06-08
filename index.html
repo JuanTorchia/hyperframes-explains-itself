@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>HyperFrames in 60 Seconds</title>
+    <title>HyperFrames Developer Walkthrough</title>
     <script src="./node_modules/gsap/dist/gsap.min.js"></script>
     <link rel="stylesheet" href="./styles/video.css" />
   </head>
@@ -13,7 +13,7 @@
       class="hf-stage"
       data-composition-id="main"
       data-start="0"
-      data-duration="60"
+      data-duration="108"
       data-width="1920"
       data-height="1080"
       data-fps="30"
@@ -22,7 +22,7 @@
         id="voiceover"
         src="audio/generated/hyperframes-in-60-seconds-af-nova.wav"
         data-start="0"
-        data-duration="55.850667"
+        data-duration="97.472000"
         data-track-index="0"
         data-volume="1"
       ></audio>
@@ -35,62 +35,102 @@
       </section>
 
       <div
-        id="scene-what"
+        id="scene-repository"
         class="clip"
-        data-composition-id="scene-what"
-        data-composition-src="compositions/002-what-it-is.html"
+        data-composition-id="scene-repository"
+        data-composition-src="compositions/002-repository-proof.html"
         data-start="6"
         data-duration="8"
         data-track-index="1"
       ></div>
 
       <div
-        id="scene-source"
+        id="scene-parent"
         class="clip"
-        data-composition-id="scene-source"
-        data-composition-src="compositions/003-html-source.html"
+        data-composition-id="scene-parent"
+        data-composition-src="compositions/003-parent-composition.html"
         data-start="14"
+        data-duration="8"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-subcomps"
+        class="clip"
+        data-composition-id="scene-subcomps"
+        data-composition-src="compositions/004-sub-compositions.html"
+        data-start="22"
         data-duration="10"
         data-track-index="1"
       ></div>
 
       <div
-        id="scene-setup"
+        id="scene-timing"
         class="clip"
-        data-composition-id="scene-setup"
-        data-composition-src="compositions/004-setup.html"
-        data-start="24"
-        data-duration="8"
-        data-track-index="1"
-      ></div>
-
-      <div
-        id="scene-init"
-        class="clip"
-        data-composition-id="scene-init"
-        data-composition-src="compositions/005-init.html"
+        data-composition-id="scene-timing"
+        data-composition-src="compositions/005-explicit-timing.html"
         data-start="32"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-variables"
+        class="clip"
+        data-composition-id="scene-variables"
+        data-composition-src="compositions/006-variables-and-reuse.html"
+        data-start="42"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-loop"
+        class="clip"
+        data-composition-id="scene-loop"
+        data-composition-src="compositions/007-developer-loop.html"
+        data-start="52"
+        data-duration="12"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-docker"
+        class="clip"
+        data-composition-id="scene-docker"
+        data-composition-src="compositions/008-docker-render-and-formats.html"
+        data-start="64"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-audio"
+        class="clip"
+        data-composition-id="scene-audio"
+        data-composition-src="compositions/009-audio-tts.html"
+        data-start="74"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-evidence"
+        class="clip"
+        data-composition-id="scene-evidence"
+        data-composition-src="compositions/010-evidence.html"
+        data-start="84"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene-mistakes"
+        class="clip"
+        data-composition-id="scene-mistakes"
+        data-composition-src="compositions/011-mistakes-found.html"
+        data-start="94"
         data-duration="8"
-        data-track-index="1"
-      ></div>
-
-      <div
-        id="scene-preview"
-        class="clip"
-        data-composition-id="scene-preview"
-        data-composition-src="compositions/006-preview.html"
-        data-start="40"
-        data-duration="9"
-        data-track-index="1"
-      ></div>
-
-      <div
-        id="scene-render"
-        class="clip"
-        data-composition-id="scene-render"
-        data-composition-src="compositions/007-render.html"
-        data-start="49"
-        data-duration="7"
         data-track-index="1"
       ></div>
 
@@ -98,9 +138,9 @@
         id="scene-close"
         class="clip"
         data-composition-id="scene-close"
-        data-composition-src="compositions/008-close.html"
-        data-start="56"
-        data-duration="4"
+        data-composition-src="compositions/012-close.html"
+        data-start="102"
+        data-duration="6"
         data-track-index="1"
       ></div>
 
@@ -110,39 +150,34 @@
     <script>
       window.__timelines = window.__timelines || {};
 
-      const sceneIds = [
-        "scene-what",
-        "scene-source",
-        "scene-setup",
-        "scene-init",
-        "scene-preview",
-        "scene-render",
-        "scene-close",
+      const sceneRanges = [
+        ["scene-repository", 6, 14],
+        ["scene-parent", 14, 22],
+        ["scene-subcomps", 22, 32],
+        ["scene-timing", 32, 42],
+        ["scene-variables", 42, 52],
+        ["scene-loop", 52, 64],
+        ["scene-docker", 64, 74],
+        ["scene-audio", 74, 84],
+        ["scene-evidence", 84, 94],
+        ["scene-mistakes", 94, 102],
+        ["scene-close", 102, 108],
       ];
 
       const tl = gsap.timeline({ paused: true });
-      for (const id of sceneIds) {
+      for (const [id] of sceneRanges) {
         tl.set(`#${id}`, { autoAlpha: 0 }, 0);
       }
 
       tl.set("#scene-hook", { autoAlpha: 0 }, 6);
-      tl.set("#scene-what", { autoAlpha: 1 }, 6);
-      tl.set("#scene-what", { autoAlpha: 0 }, 14);
-      tl.set("#scene-source", { autoAlpha: 1 }, 14);
-      tl.set("#scene-source", { autoAlpha: 0 }, 24);
-      tl.set("#scene-setup", { autoAlpha: 1 }, 24);
-      tl.set("#scene-setup", { autoAlpha: 0 }, 32);
-      tl.set("#scene-init", { autoAlpha: 1 }, 32);
-      tl.set("#scene-init", { autoAlpha: 0 }, 40);
-      tl.set("#scene-preview", { autoAlpha: 1 }, 40);
-      tl.set("#scene-preview", { autoAlpha: 0 }, 49);
-      tl.set("#scene-render", { autoAlpha: 1 }, 49);
-      tl.set("#scene-render", { autoAlpha: 0 }, 56);
-      tl.set("#scene-close", { autoAlpha: 1 }, 56);
-      tl.set("#scene-close", { autoAlpha: 0 }, 60);
-      tl.to({}, { duration: 60 }, 0);
+      for (const [id, start, end] of sceneRanges) {
+        tl.set(`#${id}`, { autoAlpha: 1 }, start);
+        tl.set(`#${id}`, { autoAlpha: 0 }, end);
+      }
+      tl.to({}, { duration: 108 }, 0);
 
       window.__timelines["main"] = tl;
     </script>
   </body>
 </html>
+

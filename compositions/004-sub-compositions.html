@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-subcomps" data-width="1920" data-height="1080">
+      <div class="scene">
+        <p class="kicker">Sub-compositions</p>
+        <h2>Scenes stay small enough to inspect.</h2>
+        <div class="mount-grid">
+          <div class="source-panel compact">
+            <span>&lt;div</span>
+            <span>data-composition-src=</span>
+            <span class="highlight">"compositions/004-sub-compositions.html"</span>
+            <span>data-start="22"</span>
+            <span>data-duration="10"&gt;</span>
+          </div>
+          <div class="file-tree compact-tree">
+            <span>002-repository-proof.html</span>
+            <span>003-parent-composition.html</span>
+            <span>004-sub-compositions.html</span>
+            <span>005-explicit-timing.html</span>
+            <span>006-variables-and-reuse.html</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".mount-grid > *", { opacity: 0, y: 20, stagger: 0.18, duration: 0.45 }, 0.3);
+      tl.to({}, { duration: 10 }, 0);
+      window.__timelines["scene-subcomps"] = tl;
+    </script>
+  </body>
+</html>

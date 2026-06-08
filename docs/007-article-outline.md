@@ -138,7 +138,7 @@ Show how the asset enters the composition:
   id="voiceover"
   src="audio/generated/hyperframes-in-60-seconds-af-nova.wav"
   data-start="0"
-  data-duration="55.850667"
+  data-duration="97.472000"
   data-track-index="0"
   data-volume="1"
 ></audio>
@@ -151,10 +151,10 @@ Use `evidence/2026-06-07/`.
 Include the important facts:
 
 ```text
-Video stream: h264, 1920x1080, 30fps, 60.000000 seconds
-Audio stream: aac, 60.053333 seconds
-Container duration: 60.054000 seconds
-MP4 size: 2488679 bytes
+Video stream: h264, 1920x1080, 30fps, 108.000000 seconds
+Audio stream: aac, 108.053333 seconds
+Container duration: 108.054000 seconds
+MP4 size: 6251312 bytes
 ```
 
 Also include:
@@ -218,4 +218,3 @@ TTS is the variable step. The committed WAV is the reproducible input.
 ## Current Status
 
 Pending article draft. This outline is a planning document, not a published post.
-

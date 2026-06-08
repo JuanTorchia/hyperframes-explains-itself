@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-repository" data-width="1920" data-height="1080">
+      <div class="scene split-scene">
+        <div>
+          <p class="kicker">Repository as proof</p>
+          <h2>The demo is the source tree.</h2>
+          <p>Docs, prompts, audio, evidence, source, and artifact stay together.</p>
+        </div>
+        <div class="file-tree">
+          <span>README.md</span>
+          <span>JOURNAL.md</span>
+          <span>index.html</span>
+          <span>compositions/</span>
+          <span>audio/</span>
+          <span>evidence/</span>
+          <span>renders/hyperframes-in-60-seconds.mp4</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".file-tree span", { opacity: 0, x: 24, stagger: 0.08, duration: 0.4 }, 0.2);
+      tl.to({}, { duration: 8 }, 0);
+      window.__timelines["scene-repository"] = tl;
+    </script>
+  </body>
+</html>

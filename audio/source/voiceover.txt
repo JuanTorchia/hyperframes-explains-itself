@@ -1,21 +1,45 @@
 Can HyperFrames explain HyperFrames?
 
-That is the test.
+This repository is the test.
 
-HyperFrames is a way to make video from web-native source files. Instead of treating video as something edited only on a timeline, it lets developers build scenes with the tools they already understand: HTML, CSS, JavaScript, and components.
+The video you are watching is not edited in a traditional timeline. Its source is HTML, CSS, JavaScript, Markdown planning files, a generated voiceover asset, and a Docker render command.
 
-That is interesting because HTML becomes inspectable source. Layout, timing, text, animation, and visual states can live in code. The MP4 is not the starting point. It is the artifact generated from the source.
+The parent composition is index dot HTML. It owns the duration, the audio track, and the scene mounts.
 
-For this project, the setup target is simple: Node 22 and Docker. Docker gives the render step a fixed environment, including the FFmpeg stack.
+Each scene after the hook lives in compositions. That keeps the timeline small enough to inspect, revise, and validate.
 
-First, initialize the project.
+Timing is explicit. A scene enters with data start, stays alive for data duration, and the parent timeline controls visibility.
 
-Then, preview the video so the timing, layout, and motion can be checked before creating a final file.
+The same pattern can be reused with variables. One status card composition can render different labels and values by changing variable values.
 
-Finally, render the MP4 and document exactly what happened.
+Before rendering, the developer loop is boring on purpose.
 
-This repository keeps the script, storyboard, prompts, setup notes, mistakes, fixes, screenshots, audio, and final output path visible.
+Preview the composition.
 
-The goal is not to pretend the workflow is perfect. The goal is to make it reproducible.
+Capture snapshots.
+
+Run lint and layout inspection.
+
+Only then render.
+
+Docker is the default render path here because it gives us a fixed browser and FFmpeg stack. The host machine does not need FFmpeg on PATH.
+
+The current target is MP4, but the renderer also supports WebM, MOV, and PNG sequences when the output needs a different artifact shape.
+
+Audio is part of the same source graph. HyperFrames generated the voiceover with TTS, but the generated WAV is committed as a normal media asset.
+
+That distinction matters: TTS is the variable step. The saved WAV is the reproducible input.
+
+The final proof is not a slogan. It is ffprobe.
+
+The MP4 has an H.264 video stream, an AAC audio stream, 1080p resolution, 30 frames per second, and a 108 second timeline.
+
+We also found real issues along the way: a dense timeline warning, a blank first frame, Python dependencies for TTS, and mismatched sub-composition timeline IDs.
+
+Those are now documented instead of hidden.
+
+So the thesis is simple.
 
 HTML is the source. MP4 is the artifact.
+
+And the build log is part of the demo.

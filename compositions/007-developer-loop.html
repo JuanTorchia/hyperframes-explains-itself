@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-loop" data-width="1920" data-height="1080">
+      <div class="scene split-scene">
+        <div>
+          <p class="kicker">Developer loop</p>
+          <h2>Preview. Snapshot. Check.</h2>
+          <div class="terminal compact-terminal">
+            <div class="terminal-bar"></div>
+            <div class="terminal-body">
+              <span class="prompt">$</span> npm run dev<br />
+              <span class="prompt">$</span> npm run snapshot<br />
+              <span class="prompt">$</span> npm run check
+            </div>
+          </div>
+        </div>
+        <div class="snapshot-grid">
+          <div>0s</div>
+          <div>32s</div>
+          <div>56s</div>
+          <div>108s</div>
+          <strong>0 errors<br />0 warnings<br />0 layout issues</strong>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".terminal", { opacity: 0, y: 24, duration: 0.45 }, 0.2);
+      tl.from(".snapshot-grid > *", { opacity: 0, scale: 0.94, stagger: 0.1, duration: 0.35 }, 0.7);
+      tl.to({}, { duration: 12 }, 0);
+      window.__timelines["scene-loop"] = tl;
+    </script>
+  </body>
+</html>

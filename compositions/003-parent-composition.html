@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-parent" data-width="1920" data-height="1080">
+      <div class="scene">
+        <p class="kicker">Parent composition</p>
+        <h2><code>index.html</code> owns the timeline.</h2>
+        <div class="source-panel">
+          <span>&lt;div id="root"</span>
+          <span class="highlight">data-composition-id="main"</span>
+          <span class="highlight">data-duration="108"</span>
+          <span class="highlight">data-width="1920" data-height="1080"</span>
+          <span class="highlight">data-fps="30"&gt;</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".highlight", { opacity: 0.35, color: "#f6f2e8", stagger: 0.2, duration: 0.3 }, 0.4);
+      tl.to({}, { duration: 8 }, 0);
+      window.__timelines["scene-parent"] = tl;
+    </script>
+  </body>
+</html>

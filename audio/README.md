@@ -18,6 +18,7 @@ The first full voiceover uses:
 - Language: `en-us`.
 - Speed: `1.15`.
 - Output: `audio/generated/hyperframes-in-60-seconds-af-nova.wav`.
+- Measured duration: `97.472000` seconds.
 
 ## Commands
 

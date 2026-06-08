@@ -6,7 +6,7 @@
 > hyperframes-explains-itself@0.1.0 lint
 > hyperframes lint
 
-◆  Linting HyperFrame/8 files
+◆  Linting HyperFrame/12 files
 
 ◇  0 errors, 0 warnings
 

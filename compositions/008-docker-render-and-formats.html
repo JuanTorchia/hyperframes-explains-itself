@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="../styles/video.css" />
+  </head>
+  <body>
+    <div id="root" class="hf-stage scene-frame" data-composition-id="scene-docker" data-width="1920" data-height="1080">
+      <div class="scene">
+        <p class="kicker">Docker render</p>
+        <h2>Fixed browser. Fixed FFmpeg stack.</h2>
+        <div class="artifact">
+          <div class="artifact-box">
+            <strong>Source</strong>
+            <span>HTML + audio</span>
+          </div>
+          <div class="arrow">-&gt;</div>
+          <div class="artifact-box">
+            <strong>Docker</strong>
+            <span>--strict-all --workers 1</span>
+          </div>
+        </div>
+        <div class="format-strip">
+          <span>mp4</span>
+          <span>webm</span>
+          <span>mov</span>
+          <span>png-sequence</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".artifact-box, .arrow", { opacity: 0, y: 20, stagger: 0.15, duration: 0.4 }, 0.2);
+      tl.from(".format-strip span", { opacity: 0, y: 12, stagger: 0.08, duration: 0.3 }, 1.2);
+      tl.to({}, { duration: 10 }, 0);
+      window.__timelines["scene-docker"] = tl;
+    </script>
+  </body>
+</html>
