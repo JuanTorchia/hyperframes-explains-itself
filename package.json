@@ -26,6 +26,10 @@
     "experiment:waapi:check": "hyperframes lint experiments/012-waapi-adapter && hyperframes inspect experiments/012-waapi-adapter",
     "experiment:waapi:render": "hyperframes render experiments/012-waapi-adapter --docker --strict-all --workers 1 --output experiments/012-waapi-adapter/output/waapi-adapter-proof.mp4",
     "experiment:frames": "node tools/extract-experiment-frames.mjs",
+    "experiment:adapters:prepare": "node tools/run-adapter-evidence.mjs prepare",
+    "experiment:adapters:check": "node tools/run-adapter-evidence.mjs check",
+    "experiment:adapters:render": "node tools/run-adapter-evidence.mjs render",
+    "experiment:adapters:frames": "node tools/run-adapter-evidence.mjs frames",
     "experiment:formats:webm": "hyperframes render experiments/001-media-timing --docker --strict-all --workers 1 --format webm --output experiments/002-output-formats/output/media-timing-proof.webm",
     "experiment:formats:png": "hyperframes render experiments/002-output-formats/png-sequence --docker --strict-all --workers 1 --format png-sequence --output experiments/002-output-formats/output/png-sequence-proof-frames",
     "experiment:introspection": "node tools/run-introspection-evidence.mjs",
@@ -55,8 +59,13 @@
     "node": ">=22"
   },
   "devDependencies": {
+    "animejs": "4.4.1",
+    "d3": "7.9.0",
+    "esbuild": "0.28.0",
     "ffmpeg-static": "5.3.0",
     "gsap": "3.14.2",
-    "hyperframes": "0.6.80"
+    "hyperframes": "0.6.80",
+    "lottie-web": "5.13.0",
+    "three": "0.184.0"
   }
 }

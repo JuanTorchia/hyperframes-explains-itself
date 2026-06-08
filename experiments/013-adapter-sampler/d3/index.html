@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Experiment 013 - D3 Adapter</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main id="root" data-composition-id="d3-adapter" data-start="0" data-width="1920" data-height="1080" data-duration="3" data-fps="30">
+      <section>
+        <p>D3</p>
+        <h1>Data-driven SVG redrawn from <code>hf-seek</code>.</h1>
+      </section>
+      <svg id="chart" viewBox="0 0 1200 420" aria-label="D3 chart"></svg>
+    </main>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["d3-adapter"] = { duration: () => 3, pause: () => undefined, seek: () => undefined };
+    </script>
+    <script type="module" src="./vendor/bundle.js"></script>
+  </body>
+</html>

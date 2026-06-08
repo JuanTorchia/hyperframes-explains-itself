@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Experiment 013 - Anime.js Adapter</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main id="root" data-composition-id="anime-adapter" data-start="0" data-width="1920" data-height="1080" data-duration="3" data-fps="30">
+      <section>
+        <p>Anime.js</p>
+        <h1>A DOM timeline controlled by the render clock.</h1>
+      </section>
+      <div class="rail">
+        <div id="anime-card" class="card">seek</div>
+      </div>
+    </main>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["anime-adapter"] = { duration: () => 3, pause: () => undefined, seek: () => undefined };
+    </script>
+    <script type="module" src="./vendor/bundle.js"></script>
+  </body>
+</html>

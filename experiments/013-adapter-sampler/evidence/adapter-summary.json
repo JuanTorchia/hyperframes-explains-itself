@@ -1,0 +1,62 @@
+[
+  {
+    "name": "three",
+    "project": "experiments/013-adapter-sampler/three",
+    "output": "experiments/013-adapter-sampler/output/three-adapter-proof.mp4",
+    "frame": "experiments/013-adapter-sampler/evidence/frame-three.png",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 3,
+      "fps": 30
+    },
+    "sizeBytes": 418195,
+    "frameSizeBytes": 253040,
+    "bridge": "project-local hf-seek bridge"
+  },
+  {
+    "name": "anime",
+    "project": "experiments/013-adapter-sampler/anime",
+    "output": "experiments/013-adapter-sampler/output/anime-adapter-proof.mp4",
+    "frame": "experiments/013-adapter-sampler/evidence/frame-anime.png",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 3,
+      "fps": 30
+    },
+    "sizeBytes": 221247,
+    "frameSizeBytes": 152433,
+    "bridge": "project-local hf-seek bridge"
+  },
+  {
+    "name": "d3",
+    "project": "experiments/013-adapter-sampler/d3",
+    "output": "experiments/013-adapter-sampler/output/d3-adapter-proof.mp4",
+    "frame": "experiments/013-adapter-sampler/evidence/frame-d3.png",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 3,
+      "fps": 30
+    },
+    "sizeBytes": 80397,
+    "frameSizeBytes": 186410,
+    "bridge": "project-local hf-seek bridge"
+  },
+  {
+    "name": "lottie",
+    "project": "experiments/013-adapter-sampler/lottie",
+    "output": "experiments/013-adapter-sampler/output/lottie-adapter-proof.mp4",
+    "frame": "experiments/013-adapter-sampler/evidence/frame-lottie.png",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "durationSeconds": 3,
+      "fps": 30
+    },
+    "sizeBytes": 122212,
+    "frameSizeBytes": 132787,
+    "bridge": "project-local hf-seek bridge"
+  }
+]

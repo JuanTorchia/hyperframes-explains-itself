@@ -841,3 +841,59 @@ Decide whether MOV output is worth proving separately.
 Add one more adapter family beyond WAAPI, likely Three.js or Lottie.
 Keep cloud, publish, Lambda, and auth as documented surfaces until there is an explicit credentials decision.
 ```
+
+## 2026-06-08 - Adapter Sampler Batch
+
+Investigated:
+
+```text
+HyperFrames frame adapter docs
+HyperFrames timing and `hf-seek` docs
+Local npm package availability for `@hyperframes/adapters`
+```
+
+Finding:
+
+```text
+The docs list adapters for GSAP, Lottie, Three.js, Rive, WAAPI, D3, and PixiJS, and describe the shared pattern as listening to `hf-seek`.
+`npm view @hyperframes/adapters version` returned a public registry 404 in this environment.
+The experiment therefore uses local `hf-seek` bridges instead of claiming official adapter package coverage.
+```
+
+Implemented:
+
+```text
+experiments/013-adapter-sampler/three
+experiments/013-adapter-sampler/anime
+experiments/013-adapter-sampler/d3
+experiments/013-adapter-sampler/lottie
+tools/run-adapter-evidence.mjs
+```
+
+Validated:
+
+```text
+npm run experiment:adapters:check
+npm run experiment:adapters:render
+```
+
+Evidence:
+
+```text
+experiments/013-adapter-sampler/evidence/adapter-summary.json
+experiments/013-adapter-sampler/evidence/frame-three.png
+experiments/013-adapter-sampler/evidence/frame-anime.png
+experiments/013-adapter-sampler/evidence/frame-d3.png
+experiments/013-adapter-sampler/evidence/frame-lottie.png
+experiments/013-adapter-sampler/output/three-adapter-proof.mp4
+experiments/013-adapter-sampler/output/anime-adapter-proof.mp4
+experiments/013-adapter-sampler/output/d3-adapter-proof.mp4
+experiments/013-adapter-sampler/output/lottie-adapter-proof.mp4
+```
+
+Operational note:
+
+```text
+npm install added `three`, `animejs`, `d3`, `lottie-web`, and explicit `esbuild` dev dependencies.
+npm printed an EPERM cleanup warning for a temporary `node_modules/@esbuild/.win32-x64-*` directory. It is inside node_modules and not a repository artifact.
+```

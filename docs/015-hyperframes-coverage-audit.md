@@ -143,16 +143,17 @@ Current coverage:
 
 ```text
 GSAP -> covered
-Lottie -> missing
-Three.js -> missing
+Lottie -> covered by local hf-seek bridge
+Three.js -> covered by local hf-seek bridge
 Rive -> missing
+Anime.js -> covered by local hf-seek bridge
 WAAPI -> covered by local seek-clock bridge
-D3 -> missing
+D3 -> covered by local hf-seek bridge
 PixiJS -> missing
 custom adapter -> missing
 ```
 
-This is the largest remaining gap if the article wants to claim broad animation support.
+Important caveat: the docs describe `@hyperframes/adapters/*`, but `@hyperframes/adapters` returned a public npm registry 404 during the adapter sampler run. The repository now proves local `hf-seek` bridges for several popular libraries, not official adapter package installation.
 
 ## Recipe Coverage
 
@@ -185,18 +186,31 @@ The following recommended probes were implemented and validated after the initia
 
 They added evidence for track/media attributes, social aspect outputs, render quality/encoder controls, and a practical WAAPI bridge.
 
-### 013: Frame Adapter Sampler
+### Completed In Adapter Sampler
+
+Experiment `013-adapter-sampler` rendered proof clips for:
+
+```text
+Three.js
+Anime.js
+D3
+Lottie Web
+```
+
+All four use project-local `hf-seek` bridges because the documented `@hyperframes/adapters/*` package was not installable from npm during this run.
+
+### 013: Remaining Adapter Sampler
 
 Goal:
 
 ```text
-Test at least one additional non-GSAP adapter beyond WAAPI, preferably Three.js or Lottie.
+Test Rive or PixiJS if we can keep fixtures local, small, and legally clean.
 ```
 
 Why:
 
 ```text
-Docs emphasize adapters. Our current project now exercises GSAP and one WAAPI bridge, but not the rest of the adapter surface.
+Docs emphasize adapters. Our current project now exercises GSAP, WAAPI, Three.js, Anime.js, D3, and Lottie bridge paths, but not Rive, PixiJS, dotLottie, or official adapter packages.
 ```
 
 ### 014: Remove Background

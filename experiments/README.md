@@ -20,6 +20,7 @@ The main video should not become a command encyclopedia. These experiments let t
 | `010-social-aspects` | Landscape, portrait, and square outputs | Three MP4 variants rendered and summarized |
 | `011-render-controls` | Quality, CRF, and bitrate controls | Five MP4 variants rendered and summarized |
 | `012-waapi-adapter` | Browser-native WAAPI animation bridge | MP4 rendered and verified |
+| `013-adapter-sampler` | Three.js, Anime.js, D3, and Lottie bridges | Four MP4 variants rendered and summarized |
 
 ## Commands
 
@@ -46,6 +47,9 @@ npm run experiment:render-controls:render
 npm run experiment:waapi:check
 npm run experiment:waapi:render
 npm run experiment:frames
+npm run experiment:adapters:check
+npm run experiment:adapters:render
+npm run experiment:adapters:frames
 ```
 
 ## Results So Far
@@ -68,6 +72,7 @@ npm run experiment:frames
 - `011-render-controls` rendered draft, standard, high, CRF, and bitrate variants and saved a size comparison.
 - `012-waapi-adapter` rendered a browser-native WAAPI animation controlled by a HyperFrames seek-clock bridge.
 - `experiment:frames` extracted static PNG frames from experiments `009` through `012` for article evidence.
+- `013-adapter-sampler` rendered Three.js, Anime.js, D3, and Lottie proof clips through project-local `hf-seek` bridges.
 
 ## Open Findings
 
@@ -80,6 +85,7 @@ npm run experiment:frames
 - `008-captions-layer` is intentionally silent. It is evidence for caption rendering and copy comparison, not a final audio-synced tutorial export.
 - The main walkthrough now has a captioned render variant documented in `docs/013-captioned-main-render.md`.
 - `012-waapi-adapter` proves one local WAAPI integration path, not the full adapter surface.
+- HyperFrames docs describe `@hyperframes/adapters/*`, but `@hyperframes/adapters` was not available from npm during the adapter sampler run. The adapter sampler should be described as local bridge evidence.
 
 ## Rules
 
