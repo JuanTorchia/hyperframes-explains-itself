@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Experiment 014 - MOV Output</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: transparent;
+        color: #f7f1e8;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      main {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      .lower-third {
+        position: absolute;
+        left: 104px;
+        bottom: 104px;
+        display: grid;
+        gap: 14px;
+      }
+
+      p,
+      h1 {
+        margin: 0;
+      }
+
+      p {
+        width: max-content;
+        border-radius: 8px;
+        background: #9bf0ca;
+        color: #101214;
+        padding: 14px 22px;
+        font-size: 30px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        width: max-content;
+        max-width: 1120px;
+        border-radius: 8px;
+        background: rgba(16, 18, 20, 0.86);
+        box-shadow: 0 22px 80px rgba(0, 0, 0, 0.34);
+        padding: 30px 36px;
+        font-size: 66px;
+        line-height: 1;
+      }
+
+      .mark {
+        position: absolute;
+        right: 104px;
+        top: 104px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: #f5cd6e;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="root" data-composition-id="mov-alpha" data-start="0" data-width="1920" data-height="1080" data-duration="2" data-fps="30">
+      <div class="mark"></div>
+      <section class="lower-third">
+        <p>MOV alpha</p>
+        <h1>Transparent overlay rendered from HTML.</h1>
+      </section>
+    </main>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["mov-alpha"] = {
+        duration: () => 2,
+        pause: () => undefined,
+        seek: (time) => {
+          const progress = Math.max(0, Math.min(1, time / 2));
+          document.querySelector(".lower-third").style.transform = `translateX(${(1 - progress) * -80}px)`;
+          document.querySelector(".lower-third").style.opacity = String(0.28 + progress * 0.72);
+          document.querySelector(".mark").style.transform = `scale(${0.72 + progress * 0.28})`;
+        },
+      };
+    </script>
+  </body>
+</html>
+

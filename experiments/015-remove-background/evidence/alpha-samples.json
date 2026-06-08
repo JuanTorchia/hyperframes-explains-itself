@@ -1,0 +1,41 @@
+{
+  "image": "experiments/015-remove-background/output/scott-carpenter-portrait-transparent.png",
+  "samples": [
+    {
+      "name": "top_left_background",
+      "x": 0,
+      "y": 0,
+      "alpha": 0,
+      "red": 0,
+      "green": 3,
+      "blue": 31
+    },
+    {
+      "name": "top_center_background",
+      "x": 1462,
+      "y": 120,
+      "alpha": 0,
+      "red": 177,
+      "green": 166,
+      "blue": 154
+    },
+    {
+      "name": "face_subject",
+      "x": 1462,
+      "y": 1500,
+      "alpha": 255,
+      "red": 94,
+      "green": 73,
+      "blue": 53
+    },
+    {
+      "name": "hands_subject",
+      "x": 1462,
+      "y": 3300,
+      "alpha": 255,
+      "red": 173,
+      "green": 131,
+      "blue": 100
+    }
+  ]
+}

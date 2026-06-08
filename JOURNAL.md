@@ -946,3 +946,71 @@ npm run experiment:adapters:render -> passed
 npm run check -> passed
 Adapter sampler artifact hashes stayed unchanged after the 0.6.81 render.
 ```
+
+## 2026-06-08 - MOV Output And Remove Background Proofs
+
+Implemented:
+
+```text
+experiments/014-mov-output
+experiments/015-remove-background
+tools/run-remove-background-evidence.mjs
+```
+
+Validated MOV output:
+
+```text
+npm run experiment:mov:check
+npm run experiment:mov:render
+```
+
+FFprobe confirmed:
+
+```text
+codec: prores
+profile: 4444
+pixel format: yuva444p12le
+duration: 2.000000 seconds
+frames: 60
+```
+
+Validated background removal:
+
+```text
+npm run experiment:remove-background:source
+npm run experiment:remove-background:info
+npm run experiment:remove-background:render
+```
+
+Result:
+
+```text
+provider: CPU
+frames processed: 1
+duration: 9.81 seconds
+format: png
+```
+
+Important finding:
+
+```text
+remove-background did not use the Docker render path in this local run.
+It required host-visible ffmpeg and ffprobe.
+The evidence runner now injects ffmpeg-static and ffprobe-static from project dev dependencies.
+```
+
+Fixture note:
+
+```text
+The first attempted fixture was a flat synthetic icon.
+HyperFrames returned success, but the output was fully transparent.
+That input was rejected as weak evidence.
+The validated fixture uses a NASA public domain portrait from Wikimedia Commons.
+```
+
+Alpha validation:
+
+```text
+background samples -> alpha 0
+subject samples -> alpha 255
+```

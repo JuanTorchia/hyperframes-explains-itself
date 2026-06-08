@@ -369,3 +369,47 @@ Size bytes: 122212
 SHA256: 3F7A85EF39CACDA1ECA48C870001923694EC4A12C7CC209CD686F799A7A9DDD3
 LastWriteTime: 2026-06-08 14:22:54 -03:00
 
+experiments\014-mov-output\evidence\ffprobe-mov-alpha.json
+Size bytes: 2429
+SHA256: 7E2AE8B67EE194470500E1129F9740A1E1696C30D73181B8B314574BD2199169
+LastWriteTime: 2026-06-08 15:27:49 -03:00
+
+experiments\014-mov-output\output\mov-alpha-proof.mov
+Size bytes: 14844297
+SHA256: A256724153C8E5967565F9420A53905ABD67207DD9EEA9F7CA1BD8F9B7CA01DD
+LastWriteTime: 2026-06-08 15:24:16 -03:00
+
+experiments\015-remove-background\source\scott-carpenter-portrait.jpg
+Size bytes: 1542627
+SHA256: 66D54C2F58E5716691F74FB34359D519B262765DBE93F5F271D5086E3BE3F14F
+LastWriteTime: 2026-06-08 15:38:42 -03:00
+
+experiments\015-remove-background\output\scott-carpenter-portrait-transparent.png
+Size bytes: 22051697
+SHA256: 4707D42BEFCB9980BDCBD7FEF0804DC41E101D1527B016811F288A0E64E8206E
+LastWriteTime: 2026-06-08 15:38:58 -03:00
+
+experiments\015-remove-background\evidence\source-image.json
+Size bytes: 421
+SHA256: 9CB7AA3C7AD422585478F0FFC5ED36D2833CC2F7D94544E21C0E6B6100D9B703
+LastWriteTime: 2026-06-08 15:38:42 -03:00
+
+experiments\015-remove-background\evidence\remove-background-info.json
+Size bytes: 226
+SHA256: 328D34A41A2678E9E4FA9DC6518EE1D41DE2DC090C9DC45CAA3B0D9DC27D05F7
+LastWriteTime: 2026-06-08 15:38:44 -03:00
+
+experiments\015-remove-background\evidence\remove-background-result.json
+Size bytes: 260
+SHA256: C16FA15EA64E84CC9B639E0D9ACDE0B66BA5E944F8F33CAD4A46A562D0AE6D8E
+LastWriteTime: 2026-06-08 15:38:59 -03:00
+
+experiments\015-remove-background\evidence\remove-background-summary.json
+Size bytes: 264
+SHA256: 7801DF53B46C35A72DC1EC73FD0A41D45A2D9E9C5651725B47E0D65DDC25FE27
+LastWriteTime: 2026-06-08 15:38:59 -03:00
+
+experiments\015-remove-background\evidence\alpha-samples.json
+Size bytes: 769
+SHA256: 6FA9DB9DAE6B14920D0EEA028A35014420B7512513859CAD22635B823EACD5AF
+LastWriteTime: 2026-06-08 15:39:26 -03:00

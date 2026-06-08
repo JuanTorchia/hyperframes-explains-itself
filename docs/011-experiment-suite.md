@@ -21,6 +21,8 @@ The main walkthrough proves the core workflow, but it should not carry every Hyp
 | `011-render-controls` | Rendered quality, CRF, and bitrate variants from one deterministic composition. |
 | `012-waapi-adapter` | Rendered a browser-native WAAPI animation controlled by a seek-clock bridge. |
 | `013-adapter-sampler` | Rendered Three.js, Anime.js, D3, and Lottie proof clips through project-local `hf-seek` bridges. |
+| `014-mov-output` | Rendered and verified a transparent ProRes 4444 MOV artifact. |
+| `015-remove-background` | Processed a public domain portrait with local CPU background removal and verified alpha samples. |
 
 ## Practical Findings
 
@@ -318,11 +320,72 @@ lottie -> 3 seconds, 1920x1080, 30fps, 122,212 bytes
 
 This covers practical rendering with WebGL, DOM animation, data-driven SVG, and Lottie JSON. It does not cover Rive, PixiJS, dotLottie, or official adapter-package installation.
 
+### MOV Output
+
+The MOV proof renders a transparent composition:
+
+```bash
+npm run experiment:mov:check
+npm run experiment:mov:render
+```
+
+FFprobe evidence:
+
+```text
+codec: prores
+profile: 4444
+pixel format: yuva444p12le
+duration: 2.000000 seconds
+frames: 60
+size: 14,844,297 bytes
+```
+
+This is useful article material because it shows HyperFrames can produce an editing-friendly alpha-capable artifact, not only MP4/WebM delivery files.
+
+### Remove Background
+
+The background removal proof uses a NASA public domain portrait from Wikimedia Commons:
+
+```bash
+npm run experiment:remove-background:source
+npm run experiment:remove-background:info
+npm run experiment:remove-background:render
+```
+
+Result evidence:
+
+```text
+provider: CPU
+frames processed: 1
+duration: 9.81 seconds
+format: png
+```
+
+Alpha evidence:
+
+```text
+top-left background: alpha 0
+top-center background: alpha 0
+face subject: alpha 255
+hands subject: alpha 255
+```
+
+Operational finding: this command needed host-visible `ffmpeg` and `ffprobe`. The repo now injects `ffmpeg-static` and `ffprobe-static` into the runner so the test does not require a global FFmpeg install.
+
+The model was already cached during the final validation run:
+
+```text
+default model: u2net_human_seg
+model cached: true
+available providers: cpu
+```
+
+The first input was a flat synthetic icon. It produced a successful command response but a fully transparent output. That is useful as a warning: choose a realistic human subject for this model.
+
 ## Next Recommended Proofs
 
-1. Test `remove-background` on a tiny image or video and document model/download/runtime behavior.
-2. Test MOV output or document why MP4/WebM/PNG are enough for the article.
-3. Add Rive or PixiJS only if we can use a real, small fixture without pulling in fragile external assets.
-4. Decide whether final captions should be generated from official Whisper output, curated from the script, or shown as both machine output and edited captions.
-5. Investigate why the 30fps standard 4-worker benchmark preset remains unstable.
-6. Extract 2-3 short clips from the experiment artifacts for the article draft.
+1. Add Rive or PixiJS only if we can use a real, small fixture without pulling in fragile external assets.
+2. Run an isolated `hyperframes init` probe because the public docs start there.
+3. Decide whether final captions should be generated from official Whisper output, curated from the script, or shown as both machine output and edited captions.
+4. Investigate why the 30fps standard 4-worker benchmark preset remains unstable.
+5. Extract 2-3 short clips from the experiment artifacts for the article draft.

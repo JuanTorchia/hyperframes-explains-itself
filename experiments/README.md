@@ -21,6 +21,8 @@ The main video should not become a command encyclopedia. These experiments let t
 | `011-render-controls` | Quality, CRF, and bitrate controls | Five MP4 variants rendered and summarized |
 | `012-waapi-adapter` | Browser-native WAAPI animation bridge | MP4 rendered and verified |
 | `013-adapter-sampler` | Three.js, Anime.js, D3, and Lottie bridges | Four MP4 variants rendered and summarized |
+| `014-mov-output` | Transparent ProRes 4444 MOV output | MOV rendered and verified with FFprobe |
+| `015-remove-background` | Local background removal command | CPU PNG output rendered and alpha samples verified |
 
 ## Commands
 
@@ -50,6 +52,11 @@ npm run experiment:frames
 npm run experiment:adapters:check
 npm run experiment:adapters:render
 npm run experiment:adapters:frames
+npm run experiment:mov:check
+npm run experiment:mov:render
+npm run experiment:remove-background:source
+npm run experiment:remove-background:info
+npm run experiment:remove-background:render
 ```
 
 ## Results So Far
@@ -73,6 +80,8 @@ npm run experiment:adapters:frames
 - `012-waapi-adapter` rendered a browser-native WAAPI animation controlled by a HyperFrames seek-clock bridge.
 - `experiment:frames` extracted static PNG frames from experiments `009` through `012` for article evidence.
 - `013-adapter-sampler` rendered Three.js, Anime.js, D3, and Lottie proof clips through project-local `hf-seek` bridges.
+- `014-mov-output` rendered a transparent ProRes 4444 MOV with `yuva444p12le` pixel format.
+- `015-remove-background` downloaded a NASA public domain portrait, processed it with `remove-background` on CPU, and verified transparent background pixels with alpha samples.
 
 ## Open Findings
 
@@ -86,6 +95,8 @@ npm run experiment:adapters:frames
 - The main walkthrough now has a captioned render variant documented in `docs/013-captioned-main-render.md`.
 - `012-waapi-adapter` proves one local WAAPI integration path, not the full adapter surface.
 - HyperFrames docs describe `@hyperframes/adapters/*`, but `@hyperframes/adapters` was not available from npm during the adapter sampler run. The adapter sampler should be described as local bridge evidence.
+- `remove-background` requires host-accessible `ffmpeg` and `ffprobe`; this repo now supplies them through `ffmpeg-static` and `ffprobe-static` in the evidence runner.
+- A flat synthetic icon was a poor `remove-background` fixture and produced an unusable fully transparent output. The validated fixture uses a real public domain portrait.
 
 ## Rules
 

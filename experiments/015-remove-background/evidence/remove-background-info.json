@@ -1,0 +1,1 @@
+{"defaultModel":"u2net_human_seg","modelCached":true,"modelPath":"C:\\Users\\jstor\\.cache\\hyperframes\\background-removal\\models\\u2net_human_seg.onnx","peakMemoryMb":1500,"availableProviders":["cpu"],"autoProvider":"CPU"}

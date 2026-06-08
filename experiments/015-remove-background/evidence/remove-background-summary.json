@@ -1,0 +1,7 @@
+{
+  "source": "experiments/015-remove-background/source/scott-carpenter-portrait.jpg",
+  "output": "experiments/015-remove-background/output/scott-carpenter-portrait-transparent.png",
+  "sourceSizeBytes": 1542627,
+  "outputSizeBytes": 22051697,
+  "device": "cpu"
+}

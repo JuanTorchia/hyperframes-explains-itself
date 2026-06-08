@@ -78,8 +78,8 @@ For this project, local CLI behavior is the operational source of truth. The art
 | Project scaffold | `init` | Repo was initialized manually; no isolated `init` experiment yet | Partial |
 | Preview | `preview`, `npm run dev` | Used during build, documented, not preserved as a standalone evidence run | Partial |
 | Render | `render --docker`, `--strict-all`, `--workers` | Main render and captioned render completed | Covered |
-| Output formats | `--format mp4`, `webm`, `png-sequence` | MP4, WebM, PNG sequence tested | Covered locally except MOV |
-| MOV output | `--format mov` | Not tested | Missing |
+| Output formats | `--format mp4`, `webm`, `png-sequence`, `mov` | MP4, WebM, PNG sequence, and MOV tested | Covered locally |
+| MOV output | `--format mov` | Transparent ProRes 4444 MOV rendered in `014-mov-output` | Covered |
 | Resolution presets | `--resolution landscape`, `portrait`, `square`, `4k` | Landscape, portrait, and square compositions rendered; 4k not tested | Partial |
 | Quality presets | `--quality draft/standard/high` | Draft, standard, and high variants rendered in `011-render-controls` | Covered |
 | Bitrate/CRF | `--video-bitrate`, `--crf` | `--video-bitrate 2M` and `--crf 28` rendered in `011-render-controls` | Covered |
@@ -107,7 +107,7 @@ For this project, local CLI behavior is the operational source of truth. The art
 | Captions | transcript/caption components | Automatic vs curated captions and captioned render tested | Covered |
 | Capture website | `capture` | Local website capture completed | Covered |
 | Benchmark | `benchmark` | Repaired and captured; one 4-worker preset unstable | Partial |
-| Remove background | `remove-background` | Not tested | Missing |
+| Remove background | `remove-background` | Public domain portrait processed on CPU; alpha samples verified | Covered locally |
 | Feedback/telemetry | `feedback`, `telemetry` | Not tested; not useful for tutorial proof | Intentionally skipped |
 
 ## HTML And Timeline Coverage
@@ -216,27 +216,62 @@ Why:
 Docs emphasize adapters. Our current project now exercises GSAP, WAAPI, Three.js, Anime.js, D3, and Lottie bridge paths, but not Rive, PixiJS, dotLottie, or official adapter packages.
 ```
 
-### 014: Remove Background
+### Completed MOV And Remove Background Probes
+
+Experiment `014-mov-output` rendered:
+
+```text
+experiments/014-mov-output/output/mov-alpha-proof.mov
+```
+
+FFprobe evidence:
+
+```text
+codec: prores
+profile: 4444
+pixel format: yuva444p12le
+duration: 2.000000 seconds
+frames: 60
+```
+
+Experiment `015-remove-background` processed a NASA public domain portrait on CPU:
+
+```text
+experiments/015-remove-background/output/scott-carpenter-portrait-transparent.png
+```
+
+Alpha evidence:
+
+```text
+background samples -> alpha 0
+subject samples -> alpha 255
+```
+
+Important finding: `remove-background` did not use the Docker render path in this local run. It required host-visible `ffmpeg` and `ffprobe`, so the repo now wires `ffmpeg-static` and `ffprobe-static` into the evidence runner.
+
+The first attempted fixture was a flat synthetic icon. HyperFrames returned success, but the output was fully transparent. That result is documented as a bad fixture, not a valid proof.
+
+### Optional: Remove Background Video Probe
 
 Goal:
 
 ```text
-Run remove-background on a small image or short video and save transparent output evidence.
+Run remove-background on a short video and save transparent output evidence.
 ```
 
 Why:
 
 ```text
-This is a real local AI/media command in the installed CLI and is currently untouched.
+Image background removal is covered. A short-video probe would test runtime, frame handling, and artifact size.
 ```
 
 Risk:
 
 ```text
-May download a local model or require CPU/GPU time. Keep input tiny.
+May require much more CPU/GPU time than the one-image proof, which took 9.81 seconds on CPU after the model was cached.
 ```
 
-### 015: Init And Template Probe
+### 016: Init And Template Probe
 
 Goal:
 
