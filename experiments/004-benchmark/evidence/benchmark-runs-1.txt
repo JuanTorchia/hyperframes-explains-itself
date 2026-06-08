@@ -1,0 +1,198 @@
+
+> hyperframes-explains-itself@0.1.0 experiment:benchmark
+> hyperframes benchmark experiments/004-benchmark/minimal --runs 1 --json
+
+[INFO] [Render] Pipeline started {"platform":"win32","arch":"x64","nodeVersion":"v24.11.1","fps":{"num":30,"den":1},"format":"mp4","quality":"draft","browserGpuMode":"software","forceScreenshot":false,"protocolTimeout":300000,"browserTimeout":120000,"pageNavigationTimeout":60000,"playerReadyTimeout":45000}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"pipeline","status":"checkpoint","elapsedMs":3,"message":"started","format":"mp4","quality":"draft","browserGpuMode":"software","forceScreenshot":false,"protocolTimeoutMs":300000,"pageNavigationTimeoutMs":60000,"playerReadyTimeoutMs":45000,"requestedWorkers":2}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"compile","status":"start","elapsedMs":79,"needsAlpha":false}
+[Compiler] Fetched 12 font face(s) for "Helvetica" from Google Fonts (cached to C:\Users\jstor\.cache\hyperframes\fonts\helvetica)
+[Compiler] Injected deterministic @font-face rules for 2 requested font families
+[INFO] Compiled composition metadata {"entryFile":"index.html","staticDuration":3,"width":1920,"height":1080,"videoCount":0,"audioCount":0,"renderModeHints":{"recommendScreenshot":false,"reasons":[]}}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"compile","status":"end","elapsedMs":1804,"durationMs":1725}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"compile","status":"checkpoint","elapsedMs":1805,"message":"composition metadata resolved","width":1920,"height":1080,"videoCount":0,"audioCount":0,"imageCount":0,"deviceScaleFactor":1,"forceScreenshot":false,"compositionHash":"20c1e3960b81fe86"}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"browser_probe","status":"start","elapsedMs":1805,"forceScreenshot":false}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"browser_probe","status":"end","elapsedMs":1807,"durationMs":2}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"browser_probe","status":"checkpoint","elapsedMs":1809,"message":"duration resolved","durationSeconds":3,"totalFrames":90,"compositionHash":"20c1e3960b81fe86"}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"video_extract","status":"start","elapsedMs":1809,"videoCount":0}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"video_extract","status":"end","elapsedMs":1810,"durationMs":1}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"video_extract","status":"checkpoint","elapsedMs":1810,"message":"frames resolved","videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0,"avgFramesPerExtractedVideo":null,"vfrPreflightCount":null,"vfrPreflightMs":null,"cacheHits":null,"cacheMisses":null}
+[INFO] [Render] No HDR sources detected — rendering SDR
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"hdr_detection","status":"checkpoint","elapsedMs":1810,"message":"resolved","requestedHdrMode":"auto","effectiveHdr":"sdr","nativeHdrVideoCount":0,"nativeHdrImageCount":0}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"audio_process","status":"start","elapsedMs":1810,"audioCount":0}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"audio_process","status":"end","elapsedMs":1811,"durationMs":1}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"file_server","status":"start","elapsedMs":1811,"reused":false}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"file_server","status":"end","elapsedMs":2274,"durationMs":463}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"capture_calibration","status":"checkpoint","elapsedMs":2278,"message":"skipped","requestedWorkers":2,"totalFrames":90,"htmlInCanvasDetected":false,"lowMemoryMode":false}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"worker_resolution","status":"checkpoint","elapsedMs":2562,"message":"resolved","workerCount":2}
+[INFO] streaming-encode gate {"enabled":false,"configFlag":true,"outputFormat":"mp4","workerCount":2,"durationSeconds":3,"maxDurationSeconds":240}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"capture_strategy","status":"checkpoint","elapsedMs":2563,"message":"resolved","workerCount":2,"forceScreenshot":false,"useStreamingEncode":false,"useLayeredComposite":false,"usePageSideCompositing":false,"hasHdrContent":false,"hasShaderTransitions":false,"isPngSequence":false}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"capture_disk","status":"start","elapsedMs":2571,"workerCount":2,"forceScreenshot":false,"needsAlpha":false}
+[INFO] [Render:trace] {"renderJobId":"7c4e626e-6b73-4479-b1ba-a4f5081efdd9","phase":"capture_disk","status":"error","elapsedMs":25324,"durationMs":22753,"message":"[Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`"}
+[INFO] [Render] Failure summary {"failedStage":"Failed: [Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`","error":"[Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`","elapsedMs":25360,"stageTimings":{"compileOnlyMs":1721,"browserProbeMs":0,"compileMs":1730,"videoExtractMs":0,"audioProcessMs":0},"isTimeout":false,"workers":2,"protocolTimeout":300000,"observedFailedPhase":"capture_disk","observedLastPhase":"capture_disk","observedLastStatus":"error","browserDiagnostics":{"total":0,"errors":0,"pageErrors":0,"requestFailed":0,"httpErrors":0,"navigationStarts":0,"navigationFailures":0,"consoleErrors":0,"consoleWarnings":0},"extraction":{"videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0},"browserConsoleErrors":[]}
+[INFO] [Render] Pipeline started {"platform":"win32","arch":"x64","nodeVersion":"v24.11.1","fps":{"num":30,"den":1},"format":"mp4","quality":"standard","browserGpuMode":"software","forceScreenshot":false,"protocolTimeout":300000,"browserTimeout":120000,"pageNavigationTimeout":60000,"playerReadyTimeout":45000}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"pipeline","status":"checkpoint","elapsedMs":50,"message":"started","format":"mp4","quality":"standard","browserGpuMode":"software","forceScreenshot":false,"protocolTimeoutMs":300000,"pageNavigationTimeoutMs":60000,"playerReadyTimeoutMs":45000,"requestedWorkers":2}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"compile","status":"start","elapsedMs":52,"needsAlpha":false}
+[Compiler] Fetched 12 font face(s) for "Helvetica" from Google Fonts (cached to C:\Users\jstor\.cache\hyperframes\fonts\helvetica)
+[Compiler] Injected deterministic @font-face rules for 2 requested font families
+[INFO] Compiled composition metadata {"entryFile":"index.html","staticDuration":3,"width":1920,"height":1080,"videoCount":0,"audioCount":0,"renderModeHints":{"recommendScreenshot":false,"reasons":[]}}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"compile","status":"end","elapsedMs":397,"durationMs":345}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"compile","status":"checkpoint","elapsedMs":401,"message":"composition metadata resolved","width":1920,"height":1080,"videoCount":0,"audioCount":0,"imageCount":0,"deviceScaleFactor":1,"forceScreenshot":false,"compositionHash":"20c1e3960b81fe86"}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"browser_probe","status":"start","elapsedMs":411,"forceScreenshot":false}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"browser_probe","status":"end","elapsedMs":413,"durationMs":1}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"browser_probe","status":"checkpoint","elapsedMs":438,"message":"duration resolved","durationSeconds":3,"totalFrames":90,"compositionHash":"20c1e3960b81fe86"}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"video_extract","status":"start","elapsedMs":438,"videoCount":0}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"video_extract","status":"end","elapsedMs":438,"durationMs":0}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"video_extract","status":"checkpoint","elapsedMs":438,"message":"frames resolved","videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0,"avgFramesPerExtractedVideo":null,"vfrPreflightCount":null,"vfrPreflightMs":null,"cacheHits":null,"cacheMisses":null}
+[INFO] [Render] No HDR sources detected — rendering SDR
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"hdr_detection","status":"checkpoint","elapsedMs":438,"message":"resolved","requestedHdrMode":"auto","effectiveHdr":"sdr","nativeHdrVideoCount":0,"nativeHdrImageCount":0}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"audio_process","status":"start","elapsedMs":438,"audioCount":0}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"audio_process","status":"end","elapsedMs":438,"durationMs":0}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"file_server","status":"start","elapsedMs":438,"reused":false}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"file_server","status":"end","elapsedMs":446,"durationMs":8}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"capture_calibration","status":"checkpoint","elapsedMs":447,"message":"skipped","requestedWorkers":2,"totalFrames":90,"htmlInCanvasDetected":false,"lowMemoryMode":false}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"worker_resolution","status":"checkpoint","elapsedMs":468,"message":"resolved","workerCount":2}
+[INFO] streaming-encode gate {"enabled":false,"configFlag":true,"outputFormat":"mp4","workerCount":2,"durationSeconds":3,"maxDurationSeconds":240}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"capture_strategy","status":"checkpoint","elapsedMs":469,"message":"resolved","workerCount":2,"forceScreenshot":false,"useStreamingEncode":false,"useLayeredComposite":false,"usePageSideCompositing":false,"hasHdrContent":false,"hasShaderTransitions":false,"isPngSequence":false}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"capture_disk","status":"start","elapsedMs":469,"workerCount":2,"forceScreenshot":false,"needsAlpha":false}
+[INFO] [Render:trace] {"renderJobId":"9d16e207-edae-40e4-885a-4f9d1c097bdc","phase":"capture_disk","status":"error","elapsedMs":563,"durationMs":94,"message":"[Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`"}
+[INFO] [Render] Failure summary {"failedStage":"Failed: [Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`","error":"[Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`","elapsedMs":563,"stageTimings":{"compileOnlyMs":333,"browserProbeMs":1,"compileMs":387,"videoExtractMs":0,"audioProcessMs":0},"isTimeout":false,"workers":2,"protocolTimeout":300000,"observedFailedPhase":"capture_disk","observedLastPhase":"capture_disk","observedLastStatus":"error","browserDiagnostics":{"total":0,"errors":0,"pageErrors":0,"requestFailed":0,"httpErrors":0,"navigationStarts":0,"navigationFailures":0,"consoleErrors":0,"consoleWarnings":0},"extraction":{"videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0},"browserConsoleErrors":[]}
+[INFO] [Render] Pipeline started {"platform":"win32","arch":"x64","nodeVersion":"v24.11.1","fps":{"num":30,"den":1},"format":"mp4","quality":"high","browserGpuMode":"software","forceScreenshot":false,"protocolTimeout":300000,"browserTimeout":120000,"pageNavigationTimeout":60000,"playerReadyTimeout":45000}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"pipeline","status":"checkpoint","elapsedMs":1,"message":"started","format":"mp4","quality":"high","browserGpuMode":"software","forceScreenshot":false,"protocolTimeoutMs":300000,"pageNavigationTimeoutMs":60000,"playerReadyTimeoutMs":45000,"requestedWorkers":2}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"compile","status":"start","elapsedMs":10,"needsAlpha":false}
+[Compiler] Fetched 12 font face(s) for "Helvetica" from Google Fonts (cached to C:\Users\jstor\.cache\hyperframes\fonts\helvetica)
+[Compiler] Injected deterministic @font-face rules for 2 requested font families
+[INFO] Compiled composition metadata {"entryFile":"index.html","staticDuration":3,"width":1920,"height":1080,"videoCount":0,"audioCount":0,"renderModeHints":{"recommendScreenshot":false,"reasons":[]}}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"compile","status":"end","elapsedMs":291,"durationMs":279}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"compile","status":"checkpoint","elapsedMs":292,"message":"composition metadata resolved","width":1920,"height":1080,"videoCount":0,"audioCount":0,"imageCount":0,"deviceScaleFactor":1,"forceScreenshot":false,"compositionHash":"20c1e3960b81fe86"}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"browser_probe","status":"start","elapsedMs":293,"forceScreenshot":false}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"browser_probe","status":"end","elapsedMs":293,"durationMs":0}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"browser_probe","status":"checkpoint","elapsedMs":300,"message":"duration resolved","durationSeconds":3,"totalFrames":90,"compositionHash":"20c1e3960b81fe86"}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"video_extract","status":"start","elapsedMs":300,"videoCount":0}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"video_extract","status":"end","elapsedMs":300,"durationMs":0}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"video_extract","status":"checkpoint","elapsedMs":300,"message":"frames resolved","videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0,"avgFramesPerExtractedVideo":null,"vfrPreflightCount":null,"vfrPreflightMs":null,"cacheHits":null,"cacheMisses":null}
+[INFO] [Render] No HDR sources detected — rendering SDR
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"hdr_detection","status":"checkpoint","elapsedMs":300,"message":"resolved","requestedHdrMode":"auto","effectiveHdr":"sdr","nativeHdrVideoCount":0,"nativeHdrImageCount":0}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"audio_process","status":"start","elapsedMs":300,"audioCount":0}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"audio_process","status":"end","elapsedMs":301,"durationMs":0}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"file_server","status":"start","elapsedMs":301,"reused":false}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"file_server","status":"end","elapsedMs":319,"durationMs":18}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"capture_calibration","status":"checkpoint","elapsedMs":319,"message":"skipped","requestedWorkers":2,"totalFrames":90,"htmlInCanvasDetected":false,"lowMemoryMode":false}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"worker_resolution","status":"checkpoint","elapsedMs":356,"message":"resolved","workerCount":2}
+[INFO] streaming-encode gate {"enabled":false,"configFlag":true,"outputFormat":"mp4","workerCount":2,"durationSeconds":3,"maxDurationSeconds":240}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"capture_strategy","status":"checkpoint","elapsedMs":356,"message":"resolved","workerCount":2,"forceScreenshot":false,"useStreamingEncode":false,"useLayeredComposite":false,"usePageSideCompositing":false,"hasHdrContent":false,"hasShaderTransitions":false,"isPngSequence":false}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"capture_disk","status":"start","elapsedMs":356,"workerCount":2,"forceScreenshot":false,"needsAlpha":false}
+[INFO] [Render:trace] {"renderJobId":"94f61a2c-78a7-408c-9b40-6a877143c4f0","phase":"capture_disk","status":"error","elapsedMs":427,"durationMs":71,"message":"[Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`"}
+[INFO] [Render] Failure summary {"failedStage":"Failed: [Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`","error":"[Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`","elapsedMs":427,"stageTimings":{"compileOnlyMs":269,"browserProbeMs":0,"compileMs":290,"videoExtractMs":0,"audioProcessMs":0},"isTimeout":false,"workers":2,"protocolTimeout":300000,"observedFailedPhase":"capture_disk","observedLastPhase":"capture_disk","observedLastStatus":"error","browserDiagnostics":{"total":0,"errors":0,"pageErrors":0,"requestFailed":0,"httpErrors":0,"navigationStarts":0,"navigationFailures":0,"consoleErrors":0,"consoleWarnings":0},"extraction":{"videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0},"browserConsoleErrors":[]}
+[INFO] [Render] Pipeline started {"platform":"win32","arch":"x64","nodeVersion":"v24.11.1","fps":{"num":30,"den":1},"format":"mp4","quality":"standard","browserGpuMode":"software","forceScreenshot":false,"protocolTimeout":300000,"browserTimeout":120000,"pageNavigationTimeout":60000,"playerReadyTimeout":45000}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"pipeline","status":"checkpoint","elapsedMs":0,"message":"started","format":"mp4","quality":"standard","browserGpuMode":"software","forceScreenshot":false,"protocolTimeoutMs":300000,"pageNavigationTimeoutMs":60000,"playerReadyTimeoutMs":45000,"requestedWorkers":4}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"compile","status":"start","elapsedMs":1,"needsAlpha":false}
+[Compiler] Fetched 12 font face(s) for "Helvetica" from Google Fonts (cached to C:\Users\jstor\.cache\hyperframes\fonts\helvetica)
+[Compiler] Injected deterministic @font-face rules for 2 requested font families
+[INFO] Compiled composition metadata {"entryFile":"index.html","staticDuration":3,"width":1920,"height":1080,"videoCount":0,"audioCount":0,"renderModeHints":{"recommendScreenshot":false,"reasons":[]}}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"compile","status":"end","elapsedMs":173,"durationMs":172}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"compile","status":"checkpoint","elapsedMs":180,"message":"composition metadata resolved","width":1920,"height":1080,"videoCount":0,"audioCount":0,"imageCount":0,"deviceScaleFactor":1,"forceScreenshot":false,"compositionHash":"20c1e3960b81fe86"}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"browser_probe","status":"start","elapsedMs":187,"forceScreenshot":false}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"browser_probe","status":"end","elapsedMs":188,"durationMs":0}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"browser_probe","status":"checkpoint","elapsedMs":190,"message":"duration resolved","durationSeconds":3,"totalFrames":90,"compositionHash":"20c1e3960b81fe86"}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"video_extract","status":"start","elapsedMs":190,"videoCount":0}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"video_extract","status":"end","elapsedMs":191,"durationMs":1}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"video_extract","status":"checkpoint","elapsedMs":191,"message":"frames resolved","videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0,"avgFramesPerExtractedVideo":null,"vfrPreflightCount":null,"vfrPreflightMs":null,"cacheHits":null,"cacheMisses":null}
+[INFO] [Render] No HDR sources detected — rendering SDR
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"hdr_detection","status":"checkpoint","elapsedMs":192,"message":"resolved","requestedHdrMode":"auto","effectiveHdr":"sdr","nativeHdrVideoCount":0,"nativeHdrImageCount":0}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"audio_process","status":"start","elapsedMs":192,"audioCount":0}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"audio_process","status":"end","elapsedMs":192,"durationMs":0}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"file_server","status":"start","elapsedMs":192,"reused":false}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"file_server","status":"end","elapsedMs":199,"durationMs":7}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"capture_calibration","status":"checkpoint","elapsedMs":201,"message":"skipped","requestedWorkers":4,"totalFrames":90,"htmlInCanvasDetected":false,"lowMemoryMode":false}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"worker_resolution","status":"checkpoint","elapsedMs":214,"message":"resolved","workerCount":4}
+[INFO] streaming-encode gate {"enabled":false,"configFlag":true,"outputFormat":"mp4","workerCount":4,"durationSeconds":3,"maxDurationSeconds":240}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"capture_strategy","status":"checkpoint","elapsedMs":215,"message":"resolved","workerCount":4,"forceScreenshot":false,"useStreamingEncode":false,"useLayeredComposite":false,"usePageSideCompositing":false,"hasHdrContent":false,"hasShaderTransitions":false,"isPngSequence":false}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"capture_disk","status":"start","elapsedMs":215,"workerCount":4,"forceScreenshot":false,"needsAlpha":false}
+[INFO] [Render:trace] {"renderJobId":"35722fb0-7f03-44bd-bee7-bb0caee2c37d","phase":"capture_disk","status":"error","elapsedMs":281,"durationMs":66,"message":"[Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 2: An `executablePath` or `channel` mus…"}
+[INFO] [Render] Failure summary {"failedStage":"Failed: [Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 2: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 3: An `executablePath` or `channel` must be specified for `puppeteer-core`","error":"[Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 2: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 3: An `executablePath` or `channel` must be specified for `puppeteer-core`","elapsedMs":281,"stageTimings":{"compileOnlyMs":163,"browserProbeMs":0,"compileMs":189,"videoExtractMs":0,"audioProcessMs":0},"isTimeout":false,"workers":4,"protocolTimeout":300000,"observedFailedPhase":"capture_disk","observedLastPhase":"capture_disk","observedLastStatus":"error","browserDiagnostics":{"total":0,"errors":0,"pageErrors":0,"requestFailed":0,"httpErrors":0,"navigationStarts":0,"navigationFailures":0,"consoleErrors":0,"consoleWarnings":0},"extraction":{"videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0},"browserConsoleErrors":[]}
+[INFO] [Render] Pipeline started {"platform":"win32","arch":"x64","nodeVersion":"v24.11.1","fps":{"num":60,"den":1},"format":"mp4","quality":"standard","browserGpuMode":"software","forceScreenshot":false,"protocolTimeout":300000,"browserTimeout":120000,"pageNavigationTimeout":60000,"playerReadyTimeout":45000}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"pipeline","status":"checkpoint","elapsedMs":0,"message":"started","format":"mp4","quality":"standard","browserGpuMode":"software","forceScreenshot":false,"protocolTimeoutMs":300000,"pageNavigationTimeoutMs":60000,"playerReadyTimeoutMs":45000,"requestedWorkers":4}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"compile","status":"start","elapsedMs":0,"needsAlpha":false}
+[Compiler] Fetched 12 font face(s) for "Helvetica" from Google Fonts (cached to C:\Users\jstor\.cache\hyperframes\fonts\helvetica)
+[Compiler] Injected deterministic @font-face rules for 2 requested font families
+[INFO] Compiled composition metadata {"entryFile":"index.html","staticDuration":3,"width":1920,"height":1080,"videoCount":0,"audioCount":0,"renderModeHints":{"recommendScreenshot":false,"reasons":[]}}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"compile","status":"end","elapsedMs":139,"durationMs":139}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"compile","status":"checkpoint","elapsedMs":161,"message":"composition metadata resolved","width":1920,"height":1080,"videoCount":0,"audioCount":0,"imageCount":0,"deviceScaleFactor":1,"forceScreenshot":false,"compositionHash":"20c1e3960b81fe86"}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"browser_probe","status":"start","elapsedMs":161,"forceScreenshot":false}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"browser_probe","status":"end","elapsedMs":161,"durationMs":0}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"browser_probe","status":"checkpoint","elapsedMs":172,"message":"duration resolved","durationSeconds":3,"totalFrames":180,"compositionHash":"20c1e3960b81fe86"}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"video_extract","status":"start","elapsedMs":172,"videoCount":0}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"video_extract","status":"end","elapsedMs":172,"durationMs":0}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"video_extract","status":"checkpoint","elapsedMs":172,"message":"frames resolved","videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0,"avgFramesPerExtractedVideo":null,"vfrPreflightCount":null,"vfrPreflightMs":null,"cacheHits":null,"cacheMisses":null}
+[INFO] [Render] No HDR sources detected — rendering SDR
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"hdr_detection","status":"checkpoint","elapsedMs":172,"message":"resolved","requestedHdrMode":"auto","effectiveHdr":"sdr","nativeHdrVideoCount":0,"nativeHdrImageCount":0}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"audio_process","status":"start","elapsedMs":172,"audioCount":0}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"audio_process","status":"end","elapsedMs":172,"durationMs":0}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"file_server","status":"start","elapsedMs":172,"reused":false}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"file_server","status":"end","elapsedMs":189,"durationMs":17}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"capture_calibration","status":"checkpoint","elapsedMs":190,"message":"skipped","requestedWorkers":4,"totalFrames":180,"htmlInCanvasDetected":false,"lowMemoryMode":false}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"worker_resolution","status":"checkpoint","elapsedMs":191,"message":"resolved","workerCount":4}
+[INFO] streaming-encode gate {"enabled":false,"configFlag":true,"outputFormat":"mp4","workerCount":4,"durationSeconds":3,"maxDurationSeconds":240}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"capture_strategy","status":"checkpoint","elapsedMs":192,"message":"resolved","workerCount":4,"forceScreenshot":false,"useStreamingEncode":false,"useLayeredComposite":false,"usePageSideCompositing":false,"hasHdrContent":false,"hasShaderTransitions":false,"isPngSequence":false}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"capture_disk","status":"start","elapsedMs":192,"workerCount":4,"forceScreenshot":false,"needsAlpha":false}
+[INFO] [Render:trace] {"renderJobId":"ec44720c-8f80-4a98-a253-555038781982","phase":"capture_disk","status":"error","elapsedMs":343,"durationMs":151,"message":"[Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 2: An `executablePath` or `channel` mus…"}
+[INFO] [Render] Failure summary {"failedStage":"Failed: [Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 2: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 3: An `executablePath` or `channel` must be specified for `puppeteer-core`","error":"[Parallel] Capture failed: Worker 0: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 1: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 2: An `executablePath` or `channel` must be specified for `puppeteer-core`; Worker 3: An `executablePath` or `channel` must be specified for `puppeteer-core`","elapsedMs":343,"stageTimings":{"compileOnlyMs":135,"browserProbeMs":0,"compileMs":172,"videoExtractMs":0,"audioProcessMs":0},"isTimeout":false,"workers":4,"protocolTimeout":300000,"observedFailedPhase":"capture_disk","observedLastPhase":"capture_disk","observedLastStatus":"error","browserDiagnostics":{"total":0,"errors":0,"pageErrors":0,"requestFailed":0,"httpErrors":0,"navigationStarts":0,"navigationFailures":0,"consoleErrors":0,"consoleWarnings":0},"extraction":{"videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0},"browserConsoleErrors":[]}
+{
+  "results": [
+    {
+      "config": "30fps · draft · 2w",
+      "fps": "30",
+      "quality": "draft",
+      "workers": 2,
+      "avgTimeMs": null,
+      "avgSizeBytes": null,
+      "failures": 1,
+      "runs": []
+    },
+    {
+      "config": "30fps · standard · 2w",
+      "fps": "30",
+      "quality": "standard",
+      "workers": 2,
+      "avgTimeMs": null,
+      "avgSizeBytes": null,
+      "failures": 1,
+      "runs": []
+    },
+    {
+      "config": "30fps · high · 2w",
+      "fps": "30",
+      "quality": "high",
+      "workers": 2,
+      "avgTimeMs": null,
+      "avgSizeBytes": null,
+      "failures": 1,
+      "runs": []
+    },
+    {
+      "config": "30fps · standard · 4w",
+      "fps": "30",
+      "quality": "standard",
+      "workers": 4,
+      "avgTimeMs": null,
+      "avgSizeBytes": null,
+      "failures": 1,
+      "runs": []
+    },
+    {
+      "config": "60fps · standard · 4w",
+      "fps": "60",
+      "quality": "standard",
+      "workers": 4,
+      "avgTimeMs": null,
+      "avgSizeBytes": null,
+      "failures": 1,
+      "runs": []
+    }
+  ],
+  "_meta": {
+    "version": "0.6.80",
+    "latestVersion": "0.6.80",
+    "updateAvailable": false
+  }
+}

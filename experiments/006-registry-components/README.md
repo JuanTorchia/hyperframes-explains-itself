@@ -36,4 +36,22 @@ The caption catalog includes reusable caption style components such as `caption-
 
 ## Pending
 
-No registry item has been installed yet. Installation should happen in a throwaway branch or isolated experiment first, because `hyperframes add` writes files into the project.
+An isolated component install was tested:
+
+```bash
+npx hyperframes add caption-weight-shift --dir experiments/006-registry-components/install-sandbox --no-clipboard --json
+```
+
+It wrote:
+
+```text
+experiments/006-registry-components/install-sandbox/compositions/components/caption-weight-shift.html
+```
+
+Evidence:
+
+```text
+experiments/006-registry-components/evidence/add-caption-weight-shift.json
+```
+
+Open finding: the JSON reports `clipboardCopied: true` even though the command passed `--no-clipboard`.

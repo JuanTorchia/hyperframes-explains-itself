@@ -22,6 +22,24 @@ Save output to:
 experiments/004-benchmark/evidence/benchmark-runs-1.json
 ```
 
-## Status
+## Result
 
-Ready to run, but potentially slower than introspection or snapshot checks.
+The benchmark command was attempted:
+
+```bash
+npm run experiment:benchmark
+```
+
+Evidence:
+
+```text
+experiments/004-benchmark/evidence/benchmark-runs-1.txt
+```
+
+The local benchmark did not produce useful timing comparisons. Render workers failed with:
+
+```text
+An `executablePath` or `channel` must be specified for `puppeteer-core`
+```
+
+The current CLI help for `hyperframes benchmark` exposes `--runs` and `--json`, but not `--docker`, so this remains a local-environment limitation rather than a Docker-first benchmark proof.

@@ -39,4 +39,23 @@ The import result is useful for caption workflows even before running Whisper tr
 
 ## Pending
 
-Run audio transcription only after deciding whether the model download/runtime cost is acceptable for the article.
+Audio transcription was attempted:
+
+```bash
+npx hyperframes transcribe audio/generated/hyperframes-in-60-seconds-af-nova.wav --model tiny.en --language en --json
+```
+
+It failed quickly with:
+
+```json
+{"ok":false,"error":"whisper-cpp not found. Install: See https://github.com/ggml-org/whisper.cpp#building"}
+```
+
+Evidence:
+
+```text
+experiments/005-transcribe-captions/evidence/generated-transcript.json
+experiments/005-transcribe-captions/evidence/generated-transcript.stderr.txt
+```
+
+This separates two caption paths for the article: transcript import works now; audio transcription requires installing `whisper-cpp`.

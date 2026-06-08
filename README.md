@@ -149,4 +149,4 @@ Pending:
 - Resolve `npm run doctor` host-local FFmpeg/FFprobe warnings only if local rendering is needed.
 - Review the final MP4 end to end.
 - Re-render the main walkthrough after source-only changes.
-- Continue the experiment suite: PNG sequence, benchmark, isolated registry install, and optional Whisper transcription.
+- Continue the experiment suite: investigate benchmark browser path, decide on `whisper-cpp`, and decide whether the isolated caption component should become a real captions scene.

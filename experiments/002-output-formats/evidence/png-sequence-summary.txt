@@ -1,0 +1,12 @@
+PNG sequence proof
+
+Frame count: 30
+Directory: experiments\002-output-formats\output\png-sequence-proof-frames
+
+First frame: frame_000001.png
+First frame size bytes: 35880
+First frame SHA256: 8504B9CB5B263674E4380D284A45B39694F54C16109A964A0E516948F554360A
+
+Last frame: frame_000030.png
+Last frame size bytes: 35107
+Last frame SHA256: E192F64F041FC5D9BE3097D975548F7367EA068CF727A8BD20615564282B0E97

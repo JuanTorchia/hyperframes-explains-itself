@@ -1,4 +1,4 @@
-Generated: 2026-06-07
+Generated: 2026-06-08
 
 experiments\001-media-timing\assets\source-contact-sheet.jpg
 Size bytes: 95830
@@ -19,4 +19,28 @@ experiments\002-output-formats\output\media-timing-proof.webm
 Size bytes: 564992
 SHA256: C48206BFCE4DC020A12B2676C72D3A964EF86E1E1D4FA4355B3909581011FAB1
 LastWriteTime: 2026-06-07 23:25:52 -03:00
+
+experiments\002-output-formats\evidence\png-sequence-summary.txt
+Size bytes: 412
+SHA256: 28B1ECF1584A470BB1E5900DEDC26A09B390F8C68021D98D43F88F55506EE119
+LastWriteTime: 2026-06-08 00:07:48 -03:00
+
+experiments\004-benchmark\evidence\benchmark-runs-1.txt
+Size bytes: 33952
+SHA256: D1351656741AC93CC515D4AC830C6F70CB5DCD47AF7F929B848E9446D34AD93D
+LastWriteTime: 2026-06-08 00:09:48 -03:00
+
+experiments\005-transcribe-captions\evidence\generated-transcript.json
+Size bytes: 109
+SHA256: 29BD9D2796149CED427A72AA40EC571EFBC76EBFE639229632FBF435205BFB0B
+LastWriteTime: 2026-06-08 00:13:42 -03:00
+
+experiments\006-registry-components\install-sandbox\compositions\components\caption-weight-shift.html
+Size bytes: 13590
+SHA256: E057DD3396E8A4133F27C8F9F9647F9297A300391BACDD7CD5ADAF8146A381B3
+LastWriteTime: 2026-06-08 00:11:24 -03:00
+
+experiments\002-output-formats\output\png-sequence-proof-frames
+Frame count: 30
+Total bytes: 1068448
 

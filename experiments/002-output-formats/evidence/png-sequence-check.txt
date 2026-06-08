@@ -1,0 +1,6 @@
+◆  Linting png-sequence/index.html
+
+◇  0 errors, 0 warnings
+◆  Inspecting layout for png-sequence (9 timeline samples)
+
+◇  0 layout issues across 9 sample(s)

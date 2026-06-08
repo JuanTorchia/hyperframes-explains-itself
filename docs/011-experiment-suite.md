@@ -9,11 +9,11 @@ The main walkthrough proves the core workflow, but it should not carry every Hyp
 | Experiment | Result |
 | --- | --- |
 | `001-media-timing` | Rendered a 6-second MP4 using real video media, `data-media-start`, low-volume source audio, image layer, and HTML overlays. |
-| `002-output-formats` | Rendered and verified a WebM artifact from the same media composition. PNG sequence is pending. |
+| `002-output-formats` | Rendered and verified WebM plus a 30-frame PNG sequence. |
 | `003-cli-introspection` | Captured `info`, `compositions`, `doctor`, and browser-path evidence. |
-| `004-benchmark` | Prepared a tiny benchmark composition; not run yet. |
-| `005-transcribe-captions` | Imported an SRT transcript into HyperFrames transcript JSON. Audio transcription is pending. |
-| `006-registry-components` | Captured full catalog and captions catalog JSON. No install yet. |
+| `004-benchmark` | Attempted a tiny local benchmark; render workers failed due missing Puppeteer executable path. |
+| `005-transcribe-captions` | Imported an SRT transcript into HyperFrames transcript JSON; audio transcription is blocked by missing `whisper-cpp`. |
+| `006-registry-components` | Captured full catalog and captions catalog JSON; installed one caption component in an isolated sandbox. |
 | `007-capture-website` | Captured a local static website into HyperFrames capture output. |
 
 ## Practical Findings
@@ -47,6 +47,41 @@ size: 564992 bytes
 
 The command exceeded the shell timeout, so article wording should say the artifact was verified after a timed-out command wrapper, not that the command cleanly returned.
 
+### PNG Sequence Output
+
+The first PNG sequence attempt used the media timing composition. It exceeded a 10-minute timeout and left 174 partial frames. That is not a valid proof artifact.
+
+The reproducible PNG proof now uses a 1-second composition:
+
+```text
+experiments/002-output-formats/png-sequence/index.html
+```
+
+It produced:
+
+```text
+30 PNG frames
+frame_000001.png through frame_000030.png
+```
+
+This is the better article example for PNG sequence output because the expected frame count is obvious: 1 second at 30fps.
+
+### Benchmark
+
+The benchmark command was attempted with one run:
+
+```bash
+npm run experiment:benchmark
+```
+
+It failed in local render workers:
+
+```text
+An `executablePath` or `channel` must be specified for `puppeteer-core`
+```
+
+The CLI help for `hyperframes benchmark` does not expose `--docker`, so the current project should document this as a host-local limitation, not as a completed benchmark comparison.
+
 ### CLI Introspection
 
 `doctor.json` confirms why this project remains Docker-first:
@@ -66,12 +101,33 @@ The local capture output includes screenshots, design tokens, visible text, font
 
 ### Registry
 
-The captions catalog has useful components. The next safe step is to install one caption component into an isolated experiment and document the files written by `hyperframes add`.
+The captions catalog has useful components. One isolated install was tested:
+
+```bash
+npx hyperframes add caption-weight-shift --dir experiments/006-registry-components/install-sandbox --no-clipboard --json
+```
+
+It wrote:
+
+```text
+experiments/006-registry-components/install-sandbox/compositions/components/caption-weight-shift.html
+```
+
+Open finding: the JSON response reported `clipboardCopied: true` even with `--no-clipboard`.
+
+### Transcription
+
+SRT import works and produced `source/transcript.json`.
+
+Audio transcription failed because `whisper-cpp` is not installed:
+
+```json
+{"ok":false,"error":"whisper-cpp not found. Install: See https://github.com/ggml-org/whisper.cpp#building"}
+```
 
 ## Next Recommended Proofs
 
-1. Run PNG sequence output from `001-media-timing`.
-2. Run the tiny benchmark and store JSON output.
-3. Install one caption registry component in an isolated experiment.
-4. Decide whether to run Whisper transcription on the generated TTS audio.
-5. Extract 2-3 short clips from the experiment artifacts for the article draft.
+1. Decide whether to install `whisper-cpp` for real audio transcription.
+2. Investigate the local benchmark Puppeteer executable path failure.
+3. Decide whether the isolated caption component should be adapted into a real captions scene.
+4. Extract 2-3 short clips from the experiment artifacts for the article draft.

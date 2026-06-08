@@ -16,7 +16,7 @@
     "experiment:media:check": "hyperframes lint experiments/001-media-timing && hyperframes inspect experiments/001-media-timing",
     "experiment:media:render": "hyperframes render experiments/001-media-timing --docker --strict-all --workers 1 --output experiments/001-media-timing/output/media-timing-proof.mp4",
     "experiment:formats:webm": "hyperframes render experiments/001-media-timing --docker --strict-all --workers 1 --format webm --output experiments/002-output-formats/output/media-timing-proof.webm",
-    "experiment:formats:png": "hyperframes render experiments/001-media-timing --docker --strict-all --workers 1 --format png-sequence --output experiments/002-output-formats/output/media-timing-proof-frames",
+    "experiment:formats:png": "hyperframes render experiments/002-output-formats/png-sequence --docker --strict-all --workers 1 --format png-sequence --output experiments/002-output-formats/output/png-sequence-proof-frames",
     "experiment:introspection": "node tools/run-introspection-evidence.mjs",
     "experiment:benchmark": "hyperframes benchmark experiments/004-benchmark/minimal --runs 1 --json",
     "experiment:capture": "node tools/run-local-capture.mjs",

@@ -504,9 +504,12 @@ Implemented and validated:
 001-media-timing -> lint and inspect passed with 0 errors, 0 warnings, 0 layout issues
 001-media-timing -> rendered 6-second MP4 proof with real video source, data-media-start, data-volume, image layer, HTML overlays, and audio
 002-output-formats -> produced WebM artifact and verified VP9 video plus Opus audio with FFprobe
+002-output-formats -> produced 30 PNG frames from a dedicated 1-second composition
 003-cli-introspection -> captured info, compositions, doctor, and browser-path evidence
+004-benchmark -> attempted benchmark and captured local render worker failure
 005-transcribe-captions -> imported SRT transcript and generated transcript.json
-006-registry-components -> captured full catalog JSON and captions catalog JSON
+005-transcribe-captions -> attempted audio transcription and captured missing whisper-cpp requirement
+006-registry-components -> captured full catalog JSON, captions catalog JSON, and isolated caption-weight-shift install
 007-capture-website -> captured a local static website into screenshots, extracted tokens, visible text, font metadata, and agent instructions
 ```
 
@@ -516,6 +519,10 @@ Mistakes and findings:
 The first media render referenced assets outside the experiment root. HyperFrames rendered but warned that the video and image could not be resolved. The fix was to copy source assets into experiments/001-media-timing/assets.
 The first valid media-source render warned about sparse keyframes in the input MP4. The fix was to re-encode the source with FFmpeg inside the Docker renderer image using -g 30.
 The WebM render exceeded the shell timeout, but the artifact existed afterward and passed FFprobe verification. Treat this as an operational warning before recommending WebM for short proof clips.
+A PNG sequence render against the media-heavy composition exceeded a 10-minute timeout and left partial frames. The reproducible PNG proof now uses a dedicated 1-second composition and produces 30 complete frames.
+hyperframes benchmark failed in local render workers because Puppeteer did not receive an executablePath or channel. The benchmark CLI help does not expose --docker.
+hyperframes transcribe imported SRT successfully, but audio transcription failed because whisper-cpp is not installed.
+hyperframes add wrote the caption-weight-shift component into an isolated sandbox. The JSON response reported clipboardCopied: true even with --no-clipboard.
 hyperframes info --json reported duration 107, while hyperframes compositions --json reported main.duration 108. Do not use info.duration as proof until that mismatch is understood.
 Host FFmpeg and FFprobe remain unavailable; Docker remains the reliable render and verification path.
 ```
@@ -523,9 +530,30 @@ Host FFmpeg and FFprobe remain unavailable; Docker remains the reliable render a
 Pending:
 
 ```text
-Run PNG sequence output.
-Run the tiny benchmark composition.
-Install one caption registry component in an isolated experiment.
-Decide whether to run Whisper transcription on the generated TTS audio.
+Decide whether to install whisper-cpp for real audio transcription.
+Investigate benchmark local browser executable path.
+Decide whether caption-weight-shift should become a real captions scene.
 Re-render the main walkthrough after the source-only evidence text fix in compositions/010-evidence.html.
+```
+
+## 2026-06-08
+
+### Capability Experiment Continuation
+
+Completed:
+
+```text
+002-output-formats -> PNG sequence proof completed with 30 frames from a dedicated 1-second composition.
+004-benchmark -> benchmark command attempted; output captured as evidence, but local render workers failed before timing comparisons were produced.
+005-transcribe-captions -> audio transcription attempted; blocked by missing whisper-cpp.
+006-registry-components -> caption-weight-shift installed into an isolated sandbox and the written component file was preserved.
+```
+
+Validation:
+
+```text
+npm run check -> 0 errors, 0 warnings, 0 layout issues
+npm run experiment:media:check -> 0 errors, 0 warnings, 0 layout issues
+npx hyperframes lint experiments/002-output-formats/png-sequence -> 0 errors, 0 warnings
+npx hyperframes inspect experiments/002-output-formats/png-sequence -> 0 layout issues
 ```

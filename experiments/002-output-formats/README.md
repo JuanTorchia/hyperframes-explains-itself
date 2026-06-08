@@ -22,7 +22,7 @@ npm run experiment:formats:png
 
 ```text
 experiments/002-output-formats/output/media-timing-proof.webm
-experiments/002-output-formats/output/media-timing-proof-frames/
+experiments/002-output-formats/output/png-sequence-proof-frames/
 ```
 
 ## Result
@@ -46,4 +46,19 @@ size: 564992 bytes
 
 The WebM command exceeded the shell timeout, but the artifact existed afterward and passed FFprobe verification. Keep this as an operational note before recommending WebM renders in the article.
 
-PNG sequence output is still pending.
+PNG sequence output was produced with a dedicated 1-second composition:
+
+```text
+experiments/002-output-formats/png-sequence/index.html
+experiments/002-output-formats/output/png-sequence-proof-frames/
+```
+
+Verification:
+
+```text
+frame count: 30
+first frame: frame_000001.png
+last frame: frame_000030.png
+```
+
+The first attempt used the media timing composition and exceeded a 10-minute timeout after writing 174 partial frames. The shorter PNG-specific composition is the reproducible proof.
