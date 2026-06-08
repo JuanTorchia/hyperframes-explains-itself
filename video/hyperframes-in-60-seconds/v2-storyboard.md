@@ -39,9 +39,16 @@ Draft. This storyboard is not rendered yet.
 - Suggested visual: A horizontal timeline with blocks for hook, source, setup, preview, render, close.
 - Animation notes: A playhead moves across scene blocks. Each block shows start and duration.
 
-## Scene 6: Developer Loop
+## Scene 6: Variables And Reuse
 
-- Timestamp: 0:42-0:54
+- Timestamp: 0:42-0:52
+- On-screen text: "One composition, many instances"
+- Suggested visual: A reusable `status-card.html` scene mounted three times with different `data-variable-values`.
+- Animation notes: Show `Lint -> 0 warnings`, `Inspect -> 0 layout issues`, and `Render -> MP4` using one shared visual pattern.
+
+## Scene 7: Developer Loop
+
+- Timestamp: 0:52-1:04
 - On-screen text: "Preview. Snapshot. Check."
 - Suggested visual: Terminal commands plus four snapshot thumbnails.
 - Animation notes: Commands appear as real commands:
@@ -54,23 +61,23 @@ npm run check
 
 Show `0 errors`, `0 warnings`, `0 layout issues`.
 
-## Scene 7: Docker Render
-
-- Timestamp: 0:54-1:04
-- On-screen text: "Docker is the default render path"
-- Suggested visual: Docker renderer box producing `renders/hyperframes-in-60-seconds.mp4`.
-- Animation notes: Include `--strict-all --workers 1`. Mention fixed browser and FFmpeg stack.
-
-## Scene 8: Audio And TTS
+## Scene 8: Docker Render And Output Formats
 
 - Timestamp: 1:04-1:14
+- On-screen text: "Docker is the default render path"
+- Suggested visual: Docker renderer box producing `renders/hyperframes-in-60-seconds.mp4`.
+- Animation notes: Include `--strict-all --workers 1`. Mention fixed browser and FFmpeg stack. Add small output chips: `mp4`, `webm`, `mov`, `png-sequence`.
+
+## Scene 9: Audio And TTS
+
+- Timestamp: 1:14-1:24
 - On-screen text: "TTS is variable. The WAV is input."
 - Suggested visual: `voiceover.txt` -> `hyperframes tts` -> generated WAV -> `<audio>` tag.
 - Animation notes: Add a simple waveform strip or level meter. Keep the disclosure clear.
 
-## Scene 9: Evidence
+## Scene 10: Evidence
 
-- Timestamp: 1:14-1:24
+- Timestamp: 1:24-1:34
 - On-screen text: "`ffprobe` confirms the artifact"
 - Suggested visual: Evidence panel with the real stream summary:
 
@@ -84,9 +91,9 @@ aac audio
 
 - Animation notes: Use a compact proof card, not a big celebratory finish.
 
-## Scene 10: Mistakes Found
+## Scene 11: Mistakes Found
 
-- Timestamp: 1:24-1:34
+- Timestamp: 1:34-1:44
 - On-screen text: "Mistakes are part of the build log"
 - Suggested visual: Four short issue cards:
 
@@ -99,9 +106,9 @@ timeline ID mismatch
 
 - Animation notes: Each issue flips to a short fix. Keep text readable.
 
-## Scene 11: Close
+## Scene 12: Close
 
-- Timestamp: 1:34-1:40
+- Timestamp: 1:44-1:50
 - On-screen text: "HTML is the source. MP4 is the artifact."
 - Suggested visual: Source tree on the left, MP4 artifact and evidence on the right.
 - Animation notes: Clean final hold. No extra marketing copy.
@@ -111,9 +118,11 @@ timeline ID mismatch
 - File tree reveal.
 - Code attribute highlight.
 - Timeline block visualization.
+- Variable-driven reusable cards.
 - Terminal command sequence.
 - Snapshot/contact-sheet montage.
 - Docker render diagram.
+- Output format chips.
 - Audio waveform or TTS pipeline.
 - Evidence card.
 - Mistake/fix cards.
@@ -125,4 +134,3 @@ timeline ID mismatch
 - Do not claim v2 has rendered until it has.
 - Keep `npm run check` at 0 errors and 0 warnings after implementation.
 - Regenerate voiceover only after the script is stable.
-

@@ -414,12 +414,19 @@ Created:
 video/hyperframes-in-60-seconds/v2-script.md
 video/hyperframes-in-60-seconds/v2-storyboard.md
 docs/009-demo-v2-implementation-plan.md
+docs/010-hyperframes-capability-map.md
 ```
 
 Decision:
 
 ```text
 V2 should become a developer walkthrough, not just a 60 second intro. It should show the repository, parent composition, sub-compositions, explicit timing, developer loop, Docker render, TTS audio, proof, and mistakes found.
+```
+
+Expanded decision:
+
+```text
+V2 should also show practical capability examples: composition variables, reusable scene cards, output format awareness, strict validation, snapshots, and FFprobe evidence. Advanced features like cloud, Lambda, publish, transcription, background removal, capture, registry blocks, and benchmarking should be documented but not shown unless this repo actually uses them.
 ```
 
 Pending:

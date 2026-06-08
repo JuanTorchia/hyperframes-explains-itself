@@ -14,19 +14,21 @@ The v2 demo should explain:
 - `index.html` is the parent composition.
 - `compositions/` keeps scenes modular.
 - Timing is declared with `data-start` and `data-duration`.
+- Reusable scenes can be driven with composition variables.
 - The developer loop uses preview, snapshot, lint, inspect, and render.
 - Docker is the default render path.
+- MP4 is the current target, while other output formats are available.
 - TTS is used, but the committed WAV is the reproducible input.
 - Evidence comes from `ffprobe` and captured command output.
 - Mistakes are documented instead of hidden.
 
 ## Recommended Duration
 
-Target 75-90 seconds.
+Target 90 seconds, with a hard maximum of 110 seconds.
 
 Reason:
 
-The current 60 second version is useful as proof, but it is too compressed to show architecture, Docker, TTS, evidence, and mistakes clearly.
+The current 60 second version is useful as proof, but it is too compressed to show architecture, variables, Docker, TTS, evidence, output formats, and mistakes clearly.
 
 ## Proposed Scene Files
 
@@ -39,12 +41,14 @@ compositions/002-repository-proof.html
 compositions/003-parent-composition.html
 compositions/004-sub-compositions.html
 compositions/005-explicit-timing.html
-compositions/006-developer-loop.html
-compositions/007-docker-render.html
-compositions/008-audio-tts.html
-compositions/009-evidence.html
-compositions/010-mistakes-found.html
-compositions/011-close.html
+compositions/006-variables-and-reuse.html
+compositions/007-developer-loop.html
+compositions/008-docker-render-and-formats.html
+compositions/009-audio-tts.html
+compositions/010-evidence.html
+compositions/011-mistakes-found.html
+compositions/012-close.html
+compositions/status-card.html
 ```
 
 The current scene files can be reused where they still fit, but v2 should not be constrained by the v1 labels.
@@ -77,6 +81,7 @@ Add shared CSS components in `styles/video.css`:
 - `.timeline-block`
 - `.command-stack`
 - `.status-badge`
+- `.format-strip`
 - `.proof-card`
 - `.mistake-grid`
 - `.waveform`
@@ -97,6 +102,32 @@ npm run tts
 3. Measure the WAV duration.
 4. Update the `<audio>` tag duration in `index.html`.
 5. Document the voice settings and duration in `audio/README.md` and render notes.
+
+## Capability Coverage
+
+V2 should demonstrate these capabilities directly:
+
+- HTML composition.
+- Nested compositions.
+- Explicit timing.
+- GSAP timeline registration.
+- Composition variables through a reusable status card.
+- Preview, snapshot, lint, and inspect.
+- Docker render.
+- Output format awareness.
+- TTS and audio as media assets.
+- FFprobe evidence.
+
+Keep these capabilities documented but out of the v2 video unless they become real project work:
+
+- Cloud render.
+- Lambda render.
+- Publish.
+- Transcription.
+- Background removal.
+- Website capture.
+- Registry blocks.
+- Benchmarking.
 
 ## Verification Plan
 
@@ -134,7 +165,7 @@ video/hyperframes-in-60-seconds/screenshots/render-contact-sheet.jpg
 
 V2 is successful when:
 
-- It shows at least six HyperFrames capabilities or workflow concepts.
+- It shows at least ten HyperFrames capabilities or workflow concepts.
 - It still validates with zero warnings.
 - The visual examples are tied to real repository files.
 - The final MP4 includes audio.
@@ -145,8 +176,8 @@ V2 is successful when:
 
 - Review `v2-script.md`.
 - Review `v2-storyboard.md`.
+- Use `docs/010-hyperframes-capability-map.md` as the source of truth for capability coverage.
 - Implement v2 scene files.
 - Update parent timeline and duration.
 - Regenerate TTS.
 - Run check, snapshot, render, and evidence refresh.
-

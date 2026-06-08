@@ -132,6 +132,7 @@ Completed:
 - Composition architecture refactored into `index.html`, `compositions/`, and `styles/video.css`.
 - HyperFrames validation now reports 0 errors, 0 warnings, and 0 layout issues.
 - V2 demo script, storyboard, and implementation plan drafted. No v2 render has been produced yet.
+- HyperFrames capability map drafted in `docs/010-hyperframes-capability-map.md`.
 - Thesis document started.
 - Research notes started.
 - Setup plan started.

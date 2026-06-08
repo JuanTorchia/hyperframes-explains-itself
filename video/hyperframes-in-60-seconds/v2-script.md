@@ -24,6 +24,8 @@ Each scene after the hook lives in `compositions/`. That keeps the timeline smal
 
 Timing is explicit. A scene enters with `data-start`, stays alive for `data-duration`, and the parent timeline controls visibility.
 
+The same pattern can be reused with variables. One status-card composition can render different labels and values by changing `data-variable-values`.
+
 Before rendering, the developer loop is boring on purpose:
 
 Preview the composition.
@@ -35,6 +37,8 @@ Run lint and layout inspection.
 Only then render.
 
 Docker is the default render path here because it gives us a fixed browser and FFmpeg stack. The host machine does not need FFmpeg on PATH.
+
+The current target is MP4, but the renderer also supports WebM, MOV, and PNG sequences when the output needs a different artifact shape.
 
 Audio is part of the same source graph. HyperFrames generated the voiceover with TTS, but the generated WAV is committed as a normal media asset.
 
@@ -73,6 +77,12 @@ data-start + data-duration = explicit timing
 ```
 
 ```text
+One component, many instances:
+data-composition-variables
+data-variable-values
+```
+
+```text
 npm run dev
 npm run snapshot
 npm run check
@@ -81,6 +91,14 @@ npm run check
 ```text
 Docker render path
 fixed browser + FFmpeg stack
+```
+
+```text
+Output targets:
+mp4
+webm
+mov
+png-sequence
 ```
 
 ```text
@@ -113,4 +131,3 @@ MP4 is the artifact.
 - Do not claim this version has rendered until it has.
 - Keep the current rendered MP4 as v1 evidence until v2 is implemented and rendered.
 - The voiceover will need to be regenerated after this script is accepted.
-
